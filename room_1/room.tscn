@@ -5,8 +5,110 @@
 [ext_resource type="PackedScene" uid="uid://ykbunqep4ksj" path="res://room_1/door.tscn" id="2_qf3ue"]
 [ext_resource type="PackedScene" uid="uid://b3omyt6wexpmn" path="res://room_1/crowbar.tscn" id="3_xid5c"]
 [ext_resource type="PackedScene" uid="uid://cmf4kqmij5bga" path="res://room_1/lock.tscn" id="4_qf3ue"]
+[ext_resource type="PackedScene" uid="uid://bbi5m5pef446a" path="res://abstract/play_animation.tscn" id="6_s38v5"]
+[ext_resource type="Script" uid="uid://bxi6h27k6to77" path="res://room_1/set_fallen.gd" id="7_iebxs"]
+
+[sub_resource type="Animation" id="Animation_qf3ue"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlay:process_mode")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Overlay:mouse_filter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_s38v5"]
+resource_name = "Wake"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlay:process_mode")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.9333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SetFallen")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.9333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"do"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Overlay:mouse_filter")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.94),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iebxs"]
+_data = {
+&"RESET": SubResource("Animation_qf3ue"),
+&"Wake": SubResource("Animation_s38v5")
+}
 
 [node name="Room" unique_id=1002500821 instance=ExtResource("1_fnk3y")]
+room_id = "jail-cell"
 
 [node name="Door" parent="Background" parent_id_path=PackedInt32Array(931085633) index="0" unique_id=140587019 instance=ExtResource("2_qf3ue")]
 position = Vector2(1118, 485)
@@ -20,3 +122,25 @@ position = Vector2(1489, 665)
 
 [node name="Lock" parent="." index="4" unique_id=1628269606 instance=ExtResource("4_qf3ue")]
 position = Vector2(1253, 554)
+
+[node name="Discover" type="Node2D" parent="." index="5" unique_id=562376656]
+z_index = 50
+
+[node name="Overlay" type="ColorRect" parent="Discover" index="0" unique_id=1105498124]
+process_mode = 4
+offset_right = 2009.0
+offset_bottom = 1144.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Discover" index="1" unique_id=325670746]
+libraries/ = SubResource("AnimationLibrary_iebxs")
+
+[node name="PlayAnimation" parent="Discover" index="2" unique_id=869030643 node_paths=PackedStringArray("player") instance=ExtResource("6_s38v5")]
+animation = "Wake"
+player = NodePath("../AnimationPlayer")
+
+[node name="SetFallen" type="Node" parent="Discover" index="3" unique_id=1270733927]
+script = ExtResource("7_iebxs")
+
+[connection signal="discover" from="." to="Discover/PlayAnimation" method="play"]

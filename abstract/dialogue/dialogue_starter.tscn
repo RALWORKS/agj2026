@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://eq7fysmrmi2s"]
+
+[ext_resource type="Script" uid="uid://cxauggu5ykdr3" path="res://abstract/dialogue/dialogue_starter.gd" id="1_3ocih"]
+
+[node name="DialogueStarter" type="Node" unique_id=1045975685]
+script = ExtResource("1_3ocih")

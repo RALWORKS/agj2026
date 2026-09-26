@@ -1,0 +1,203 @@
+[gd_scene format=3 uid="uid://bbp6228xolifc"]
+
+[ext_resource type="PackedScene" uid="uid://dyhokgsp7v7w1" path="res://abstract/room.tscn" id="1_v1tvy"]
+[ext_resource type="Texture2D" uid="uid://bm1cbky8r7h47" path="res://assets/backgrounds/hospital.png" id="2_fa8ga"]
+[ext_resource type="PackedScene" uid="uid://eq7fysmrmi2s" path="res://abstract/dialogue/dialogue_starter.tscn" id="3_ftqrv"]
+[ext_resource type="PackedScene" uid="uid://brym5fvw30dn2" path="res://hospital/thoughts.tscn" id="4_ftqrv"]
+[ext_resource type="PackedScene" uid="uid://pv13w0ljpnlr" path="res://abstract/dialogue/dialogue_listener.tscn" id="5_tg4jt"]
+[ext_resource type="PackedScene" uid="uid://bbi5m5pef446a" path="res://abstract/play_animation.tscn" id="6_40g67"]
+[ext_resource type="PackedScene" uid="uid://dbkippq16d3jw" path="res://abstract/set_player_position.tscn" id="7_gren5"]
+[ext_resource type="PackedScene" uid="uid://c1vhhnm7kel0" path="res://hospital/grim_reaper_says.tscn" id="8_kdqg3"]
+[ext_resource type="PackedScene" uid="uid://bhtcnbuysmp54" path="res://abstract/door.tscn" id="9_o223p"]
+
+[sub_resource type="Animation" id="Animation_fa8ga"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1243, -7)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.1, 1.1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SetPlayerPosition:new_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(400, 800)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SetPlayerPosition:new_scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_087n5"]
+resource_name = "zoom"
+length = 0.5
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1243, -7), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.1, 1.1), Vector2(0.67, 0.67)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1243, -7), Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = false
+tracks/3/path = NodePath(".:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.1, 1.1), Vector2(0.67, 0.67)]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GrimReaperTalks")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"start"
+}]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SetPlayerPosition:new_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(400, 800), Vector2(1000, 800)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SetPlayerPosition:new_scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.25, 0.375),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(-1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ftqrv"]
+_data = {
+&"RESET": SubResource("Animation_fa8ga"),
+&"zoom": SubResource("Animation_087n5")
+}
+
+[node name="Hospital" unique_id=1002500821 instance=ExtResource("1_v1tvy")]
+room_id = "hospital"
+
+[node name="Background" parent="." index="0" unique_id=931085633]
+position = Vector2(-1243, -7)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("2_fa8ga")
+
+[node name="Door" parent="Background" index="0" unique_id=863558398 instance=ExtResource("9_o223p")]
+offset_left = 283.6364
+offset_top = 1615.4545
+offset_right = 433.6364
+offset_bottom = 1765.4545
+rotation = -2.237512
+destination = "uid://daj4qh1tyktri"
+lock_id = "hospital"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2" unique_id=230422593]
+libraries/ = SubResource("AnimationLibrary_ftqrv")
+
+[node name="StartThinking" parent="." index="3" unique_id=1045975685 instance=ExtResource("3_ftqrv")]
+dialogue = ExtResource("4_ftqrv")
+
+[node name="DialogueListener" parent="." index="4" unique_id=1743827519 instance=ExtResource("5_tg4jt")]
+dialogue_id = "hospital-thoughts"
+
+[node name="PlayAnimation" parent="." index="5" unique_id=869030643 node_paths=PackedStringArray("player") instance=ExtResource("6_40g67")]
+animation = "zoom"
+player = NodePath("../AnimationPlayer")
+
+[node name="SetPlayerPosition" parent="." index="6" unique_id=421699032 instance=ExtResource("7_gren5")]
+new_position = Vector2(400, 800)
+new_scale = Vector2(1, 1)
+
+[node name="GrimReaperTalks" parent="." index="7" unique_id=163631948 instance=ExtResource("3_ftqrv")]
+dialogue = ExtResource("8_kdqg3")
+
+[node name="WaitDoneTalking" parent="." index="8" unique_id=660764354 instance=ExtResource("5_tg4jt")]
+dialogue_id = "grim-reaper-1"
+
+[connection signal="discover" from="." to="StartThinking" method="start"]
+[connection signal="found" from="DialogueListener" to="PlayAnimation" method="play"]
+[connection signal="found" from="WaitDoneTalking" to="Background/Door" method="unlock"]

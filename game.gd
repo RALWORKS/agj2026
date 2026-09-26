@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var starting_room = "res://room_1/room.tscn"
+@export_file_path("*.tscn") var starting_room: String = "res://room_1/room.tscn"
 var is_room = false
 
 # Called when the node enters the scene tree for the first time.

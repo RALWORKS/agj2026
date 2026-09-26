@@ -21,7 +21,6 @@ func _process(_delta: float) -> void:
 func play():
 	if not i < lines.size():
 		emit_signal("done")
-		print("free")
 		queue_free()
 		return
 	var l = lines[i]

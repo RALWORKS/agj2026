@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c1vhhnm7kel0"]
+
+[ext_resource type="PackedScene" uid="uid://xa8bvru8gofx" path="res://abstract/dialogue/main.tscn" id="1_q6h2q"]
+[ext_resource type="PackedScene" uid="uid://1x7xitwaoi7u" path="res://abstract/dialogue/data.tscn" id="2_orauj"]
+
+[node name="GrimReaper" unique_id=123258623 instance=ExtResource("1_q6h2q")]
+dialogue_id = "grim-reaper-1"
+
+[node name="1" parent="DATA" parent_id_path=PackedInt32Array(1453915955) index="0" unique_id=285697559 instance=ExtResource("2_orauj")]
+tag = "Grim Reaper"
+line = "I know where he is."
+
+[node name="2" parent="DATA" parent_id_path=PackedInt32Array(1453915955) index="1" unique_id=1287482103 instance=ExtResource("2_orauj")]
+tag = "Grim Reaper"
+line = "I'll take you there. Follow me."

@@ -11,6 +11,14 @@ var cur_dialogue: Dialogue
 
 @export var char_colors: Dictionary[String, Color]
 
+@export var discovered_rooms: Array[String]
+
+var fallen = false
+
+var _fallen = false
+
+var player: Player
+
 signal dialogue_ended
 
 
