@@ -3,6 +3,8 @@ extends Button
 
 signal done
 
+@export var dialogue_id: String
+
 @onready var lines: Array[Node] = $DATA.get_children()
 
 var i = 0

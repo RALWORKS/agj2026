@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://1x7xitwaoi7u" path="res://abstract/dialogue/data.tscn" id="2_tgpgy"]
 
 [node name="TMPDialogue" unique_id=123258623 instance=ExtResource("1_43oin")]
+dialogue_id = "tmp-hello"
 
 [node name="1" parent="DATA" parent_id_path=PackedInt32Array(1453915955) index="0" unique_id=1287482103 instance=ExtResource("2_tgpgy")]
 tag = "Grim Reaper"
