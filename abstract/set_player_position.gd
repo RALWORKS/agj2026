@@ -10,8 +10,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-
-func go():
+	if not Status.player:
+		return
 	Status.player.position = new_position
 	Status.player.scale = new_scale

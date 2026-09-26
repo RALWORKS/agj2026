@@ -7,9 +7,9 @@
 dialogue_id = "tmp-hello"
 
 [node name="1" parent="DATA" parent_id_path=PackedInt32Array(1453915955) index="0" unique_id=1287482103 instance=ExtResource("2_tgpgy")]
-tag = "Grim Reaper"
+tag = "Fish"
 line = "Hello, strange traveller."
 
 [node name="2" parent="DATA" parent_id_path=PackedInt32Array(1453915955) index="1" unique_id=1456862722 instance=ExtResource("2_tgpgy")]
-tag = "Grim Reaper"
+tag = "Fish"
 line = "Why have you come?"

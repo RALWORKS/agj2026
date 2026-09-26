@@ -15,6 +15,7 @@ bg_color = Color(1, 0, 0, 1)
 bg_color = Color(0.6504577, 0.6504576, 1.92523e-07, 1)
 
 [node name="StatusBar" type="Control" unique_id=837627880]
+visible = false
 z_index = 50
 layout_mode = 3
 anchor_right = 0.16700001

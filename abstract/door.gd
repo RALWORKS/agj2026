@@ -42,6 +42,7 @@ func lock():
 	visible = false
 
 func unlock():
+	Status.locks[lock_id] = false
 	visible = true
 	disabled = false
 

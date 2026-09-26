@@ -50,7 +50,7 @@ func _ready() -> void:
 	wealth_percent = wealth_bar.get("value")
 
 func _process(_delta: float) -> void:
-	visible = not Status.paused
+	visible = Status.fallen and not Status.paused
 
 # # Called every frame. 'delta' is the elapsed time since the previous frame.
 # func _process(delta: float) -> void:

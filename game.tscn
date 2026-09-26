@@ -4,6 +4,7 @@
 
 [node name="Game" type="Node2D" unique_id=1341571682]
 script = ExtResource("1_80nbo")
+starting_room = "res://hospital/room.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1909929779]
 offset_right = 1960.0
