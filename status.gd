@@ -5,6 +5,8 @@ var paused = true
 
 @export var locks: Dictionary[String, bool]
 
+@export var gone: Array[String]
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

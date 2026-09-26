@@ -10,12 +10,13 @@ var _locked = false
 func _ready() -> void:
 	check_lock()
 	refresh_lock()
+	unhover()
 
 func hover():
 	modulate = "#ffffffff"
 
 func unhover():
-	modulate = "#ffffff00"
+	modulate = "#ffffff88"
 
 func check_lock():
 	if not lock_id:

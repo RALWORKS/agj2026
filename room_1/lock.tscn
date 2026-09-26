@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://2ghi3fmde307" path="res://abstract/unlock_with_item.gd" id="4_1y727"]
 
 [node name="Lock" unique_id=140587019 instance=ExtResource("1_6y3so")]
+item_id = "room-1-lock"
 
 [node name="Texture" parent="." index="0" unique_id=288946275]
 texture = ExtResource("2_ddn0o")

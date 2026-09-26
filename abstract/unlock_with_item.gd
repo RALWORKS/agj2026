@@ -18,6 +18,7 @@ func _process(delta: float) -> void:
 func unlock():
 	Status.locks[lock_id] = false
 	lock.queue_free()
+	Status.gone.push_back(lock.item_id)
 	
 func clicked():
 	if Cursor.item_id() == required_item_id:

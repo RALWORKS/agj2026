@@ -39,6 +39,7 @@ func reload():
 	while i < data.size():
 		var c = data[i].instantiate()
 		c.as_icon()
+		c.inv_item = true
 		$GridContainer.get_child(i).add_child(c)
 		inv.push_back(c)
 		var u = UseDialogue.instantiate()

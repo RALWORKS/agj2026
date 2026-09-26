@@ -7,6 +7,8 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sdspu"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_at1t5"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_an8le"]
 
 [node name="Door" type="Button" unique_id=863558398]
@@ -18,6 +20,7 @@ offset_bottom = 75.0
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_sryqj")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_sdspu")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_at1t5")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_an8le")
 script = ExtResource("1_sryqj")
 
