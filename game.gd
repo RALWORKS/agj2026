@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var starting_room = "res://room_1/room.tscn"
+var is_room = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,6 +14,7 @@ func _process(delta: float) -> void:
 
 
 func _on_play_pressed() -> void:
+	Status.paused = false
 	get_tree().change_scene_to_file(starting_room)
 
 

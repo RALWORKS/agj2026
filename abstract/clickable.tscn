@@ -9,6 +9,17 @@ script = ExtResource("1_io3l6")
 [node name="Texture" type="Sprite2D" parent="." unique_id=288946275]
 texture = ExtResource("1_mjfbb")
 
+[node name="InvIcon" type="Button" parent="." unique_id=1125700512]
+process_mode = 4
+visible = false
+custom_minimum_size = Vector2(200, 200)
+clip_contents = true
+disabled = true
+
+[node name="Texture" type="Sprite2D" parent="InvIcon" unique_id=1007563994]
+texture = ExtResource("1_mjfbb")
+centered = false
+
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
