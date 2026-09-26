@@ -9,3 +9,11 @@ script = ExtResource("1_lkk1d")
 [node name="Background" type="Sprite2D" parent="." unique_id=931085633]
 texture = ExtResource("2_b7qqt")
 centered = false
+
+[node name="_conceal_base" type="ColorRect" parent="." unique_id=430115067]
+z_index = 1000
+offset_left = -35.0
+offset_top = 1077.0
+offset_right = 1966.0
+offset_bottom = 1314.0
+color = Color(0.3019608, 0.3019608, 0.3019608, 1)

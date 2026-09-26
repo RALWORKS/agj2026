@@ -12,11 +12,3 @@ takeable = null
 
 [node name="TalkingBox2" parent="." index="2" unique_id=2008862755 instance=ExtResource("3_rmhph")]
 position = Vector2(1544, 591)
-
-[node name="_conceal_base" type="ColorRect" parent="." index="3" unique_id=427155291]
-z_index = 1000
-offset_left = -35.0
-offset_top = 1077.0
-offset_right = 1966.0
-offset_bottom = 1314.0
-color = Color(0.3019608, 0.3019608, 0.3019608, 1)
