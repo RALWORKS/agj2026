@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://xa8bvru8gofx"]
+
+[ext_resource type="PackedScene" uid="uid://djg8rwljp35k6" path="res://abstract/dialogue/line.tscn" id="1_gldfx"]
+[ext_resource type="Script" uid="uid://dwwkt5kunm2m3" path="res://abstract/dialogue/main.gd" id="1_laler"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_laler"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vkwim"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wc1lq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_15fcy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d37ts"]
+
+[node name="Dialogue" type="Button" unique_id=123258623]
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_laler")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vkwim")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wc1lq")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_15fcy")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_d37ts")
+script = ExtResource("1_laler")
+
+[node name="Bg" type="ColorRect" parent="." unique_id=1491544400]
+layout_mode = 0
+offset_top = 827.0
+offset_right = 1923.0
+offset_bottom = 1077.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Text" parent="." unique_id=312395652 instance=ExtResource("1_gldfx")]
+position = Vector2(240, 856)
+
+[node name="DATA" type="Node" parent="." unique_id=1453915955]
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

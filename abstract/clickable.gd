@@ -15,6 +15,7 @@ var is_icon = false
 @export var takeable = false
 var taken = false
 var inv_item = false
+@export var dialogue: Resource
 
 
 # Called when the node enters the scene tree for the first time.
@@ -72,3 +73,6 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 func _on_clicked() -> void:
 	if takeable:
 		take()
+		return
+	if dialogue:
+		Status.start_dialogue(dialogue)

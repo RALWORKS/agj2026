@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://djg8rwljp35k6"]
+
+[ext_resource type="Script" uid="uid://f78qb0qhg33m" path="res://abstract/dialogue/line.gd" id="1_uvnyt"]
+
+[node name="Line" type="Node2D" unique_id=312395652]
+script = ExtResource("1_uvnyt")
+
+[node name="Tag" type="Label" parent="." unique_id=308787095]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 40
+text = "Character Name:"
+
+[node name="Line" type="Label" parent="." unique_id=168429304]
+custom_minimum_size = Vector2(900, 200)
+offset_top = 64.0
+offset_right = 900.0
+offset_bottom = 264.0
+theme_override_font_sizes/font_size = 30
+text = "Demo text"

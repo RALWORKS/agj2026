@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://xag8grlj64nl"]
 
 [ext_resource type="PackedScene" uid="uid://c20qgr7jnmjwg" path="res://abstract/clickable.tscn" id="1_q58hj"]
-[ext_resource type="PackedScene" uid="uid://bbi5m5pef446a" path="res://abstract/play_animation.tscn" id="2_0l406"]
+[ext_resource type="PackedScene" uid="uid://gtq5brxlc773" path="res://room_1/tmp_dialogue.tscn" id="2_0l406"]
 
 [sub_resource type="Animation" id="Animation_0l406"]
 length = 0.001
@@ -44,6 +44,7 @@ _data = {
 size = Vector2(343, 351)
 
 [node name="TalkingBox" unique_id=1367849640 instance=ExtResource("1_q58hj")]
+dialogue = ExtResource("2_0l406")
 
 [node name="Label" type="Label" parent="Texture" parent_id_path=PackedInt32Array(288946275) index="0" unique_id=1290829441]
 offset_left = -56.0
@@ -75,15 +76,9 @@ text = "HI"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2" unique_id=1287711379]
 libraries/ = SubResource("AnimationLibrary_x1h7g")
 
-[node name="PlayAnimation" parent="." index="3" unique_id=869030643 node_paths=PackedStringArray("player") instance=ExtResource("2_0l406")]
-animation = "hi"
-player = NodePath("../AnimationPlayer")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="4" unique_id=706095517]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3" unique_id=706095517]
 position = Vector2(1.5, 0.5)
 shape = SubResource("RectangleShape2D_2ato1")
 
 [node name="Texture" parent="InvIcon" parent_id_path=PackedInt32Array(1125700512) index="0" unique_id=1007563994]
 scale = Vector2(0.65, 0.65)
-
-[connection signal="clicked" from="." to="PlayAnimation" method="play"]
