@@ -20,6 +20,7 @@ disabled = true
 texture = ExtResource("1_mjfbb")
 centered = false
 
+[connection signal="clicked" from="." to="." method="_on_clicked"]
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

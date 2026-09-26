@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://cpn5r44gmyjrj"]
+
+[ext_resource type="Script" uid="uid://v0y2lfsbbjkv" path="res://abstract/inventory/use.gd" id="1_mwnw8"]
+
+[node name="Use" type="Panel" unique_id=1441495428]
+offset_right = 200.0
+offset_bottom = 200.0
+script = ExtResource("1_mwnw8")
+
+[node name="Label" type="Label" parent="." unique_id=2108990153]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 16.0
+offset_right = 394.0
+offset_bottom = 107.0
+theme_override_font_sizes/font_size = 50
+text = "Use?"
+
+[node name="Yes" type="Button" parent="." unique_id=1792870113]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 111.0
+offset_right = 88.0
+offset_bottom = 174.0
+theme_override_font_sizes/font_size = 40
+text = "Yes"
+
+[node name="No" type="Button" parent="." unique_id=1411474949]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 111.0
+offset_right = 184.0
+offset_bottom = 174.0
+theme_override_font_sizes/font_size = 40
+text = "No
+"
+
+[connection signal="pressed" from="Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="No" to="." method="_on_no_pressed"]

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c002h7qqnct36"]
+
+[ext_resource type="Script" uid="uid://buf61wd4plbri" path="res://cursor.gd" id="1_fsq4c"]
+
+[node name="Cursor" type="Node2D" unique_id=1738959827]
+z_index = 2000
+script = ExtResource("1_fsq4c")

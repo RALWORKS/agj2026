@@ -1,14 +1,20 @@
 @tool
+class_name Item
 extends Area2D
 
 signal clicked
 
 var _hovering: bool = false
 @onready var icon = $InvIcon
+@onready var preview = $InvIcon/Texture
+
+@export var item_id: String
 
 var is_icon = false
 
 @export var takeable = false
+var taken = false
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -26,6 +32,9 @@ func _process(delta: float) -> void:
 	pass
 
 func take():
+	if taken:
+		return
+	taken = true
 	var data = load(scene_file_path)
 	MyInventory.add(data)
 	await get_tree().create_timer(0.1).timeout

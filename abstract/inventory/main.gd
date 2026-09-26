@@ -9,6 +9,7 @@ var inv: Array[Node2D] = []
 @export var active = true
 
 var Slot = preload("res://abstract/inventory/slot.tscn")
+var UseDialogue = preload("res://abstract/inventory/use.tscn")
 
 @export var trigger_reload = false
 
@@ -40,4 +41,9 @@ func reload():
 		c.as_icon()
 		$GridContainer.get_child(i).add_child(c)
 		inv.push_back(c)
+		var u = UseDialogue.instantiate()
+		u.item = c
+		u.close()
+		c.icon.add_child(u)
+		c.icon.connect("pressed", u.open)
 		i += 1
