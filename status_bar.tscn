@@ -2,105 +2,153 @@
 
 [ext_resource type="Script" uid="uid://qsno2atlsvvt" path="res://status_bar.gd" id="1_fbxjq"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hehty"]
+bg_color = Color(0.478, 0.478, 0.478, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_blend = true
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g2tnx"]
 bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dljiy"]
 bg_color = Color(0.28627452, 0, 0.8627451, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m37av"]
-bg_color = Color(1, 0, 0, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4pqwi"]
 bg_color = Color(0.6504577, 0.6504576, 1.92523e-07, 1)
 
-[node name="StatusBar" type="Control" unique_id=837627880]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m37av"]
+bg_color = Color(1, 0, 0, 1)
+
+[node name="StatusBar" type="PanelContainer" unique_id=1733161956]
 z_index = 50
-layout_mode = 3
-anchor_right = 0.16700001
-anchor_bottom = 0.45700002
-offset_left = 1624.0
-offset_top = 779.0
-offset_right = 1623.616
-offset_bottom = 588.43994
+custom_minimum_size = Vector2(155, 200)
+offset_right = 155.0
+offset_bottom = 59.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hehty")
 script = ExtResource("1_fbxjq")
-soul_percent = 70.55
-vitality_percent = 91.0
-wealth_percent = 66.0
-status_debug = true
+soul_percent = 65.8
+vitality_percent = 41.0
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1310995465]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.47843137, 0.47843137, 0.47843137, 1)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1033751883]
-layout_mode = 0
-offset_right = 64.0
-offset_bottom = 296.0
-alignment = 1
-
-[node name="SoulProgressBar" type="ProgressBar" parent="VBoxContainer" unique_id=2012268132]
+[node name="StatusContainer" type="VBoxContainer" parent="." unique_id=10987026]
 layout_mode = 2
+
+[node name="ProgressBarContainer" type="HBoxContainer" parent="StatusContainer" unique_id=257173279]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SoulProgressBar" type="ProgressBar" parent="StatusContainer/ProgressBarContainer" unique_id=2012268132]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/background = SubResource("StyleBoxFlat_g2tnx")
 theme_override_styles/fill = SubResource("StyleBoxFlat_dljiy")
-value = 70.55
+value = 65.8
 fill_mode = 3
+show_percentage = false
 
-[node name="SoulLabel" type="Label" parent="VBoxContainer" unique_id=1253505007]
-layout_mode = 2
+[node name="SoulLabel" type="Label" parent="StatusContainer/ProgressBarContainer/SoulProgressBar" unique_id=1253505007]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -17.0
+offset_top = -23.0
+offset_right = 17.0
+grow_horizontal = 2
+grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_position_ratio = Vector2(0, 1)
+theme_override_font_sizes/font_size = 14
 text = "Soul"
 horizontal_alignment = 1
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=812572311]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.333
-anchor_right = 0.333
-offset_left = 0.063999176
-offset_right = 64.063995
-offset_bottom = 296.0
-alignment = 1
-
-[node name="VitalityProgressBar" type="ProgressBar" parent="VBoxContainer2" unique_id=333490027]
+[node name="WealthProgressBar" type="ProgressBar" parent="StatusContainer/ProgressBarContainer" unique_id=831567395]
+custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/background = SubResource("StyleBoxFlat_g2tnx")
-theme_override_styles/fill = SubResource("StyleBoxFlat_m37av")
-value = 91.0
-rounded = true
-fill_mode = 3
-
-[node name="VitalityLabel" type="Label" parent="VBoxContainer2" unique_id=1333416056]
-layout_mode = 2
-text = "Vitality"
-horizontal_alignment = 1
-
-[node name="VBoxContainer3" type="VBoxContainer" parent="." unique_id=1271108063]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.66700006
-anchor_right = 0.66700006
-offset_left = -0.06401062
-offset_right = 63.93599
-offset_bottom = 296.0
-alignment = 1
-
-[node name="WealthProgressBar" type="ProgressBar" parent="VBoxContainer3" unique_id=831567395]
-layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/background = SubResource("StyleBoxFlat_g2tnx")
 theme_override_styles/fill = SubResource("StyleBoxFlat_4pqwi")
-value = 66.0
+value = 100.0
 rounded = true
+allow_greater = true
 fill_mode = 3
+show_percentage = false
 
-[node name="WealthLabel" type="Label" parent="VBoxContainer3" unique_id=508986298]
-layout_mode = 2
+[node name="WealthLabel" type="Label" parent="StatusContainer/ProgressBarContainer/WealthProgressBar" unique_id=508986298]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -26.5
+offset_top = -23.0
+offset_right = 26.5
+grow_horizontal = 2
+grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_position_ratio = Vector2(0, 1)
+theme_override_font_sizes/font_size = 14
 text = "Money"
 horizontal_alignment = 1
+
+[node name="VitalityProgressBar" type="ProgressBar" parent="StatusContainer/ProgressBarContainer" unique_id=333490027]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/background = SubResource("StyleBoxFlat_g2tnx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_m37av")
+value = 41.0
+rounded = true
+fill_mode = 3
+show_percentage = false
+
+[node name="VitalityLabel" type="Label" parent="StatusContainer/ProgressBarContainer/VitalityProgressBar" unique_id=1333416056]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -27.0
+offset_top = -23.0
+offset_right = 27.0
+grow_horizontal = 2
+grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_position_ratio = Vector2(0, 1)
+theme_override_font_sizes/font_size = 14
+text = "Vitality"
+horizontal_alignment = 1
+
+[node name="Label Spacer" type="ColorRect" parent="StatusContainer" unique_id=32725724]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+color = Color(1, 1, 1, 0)
+
+[node name="TurnsContainer" type="HBoxContainer" parent="StatusContainer" unique_id=1450694528]
+custom_minimum_size = Vector2(0, 27.555)
+layout_mode = 2
+
+[node name="TableLabel" type="Label" parent="StatusContainer/TurnsContainer" unique_id=991603839]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Turns:"
+
+[node name="TurnCounter" type="Label" parent="StatusContainer/TurnsContainer" unique_id=284228162]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.59
+text = "40"
+horizontal_alignment = 2
+vertical_alignment = 2
