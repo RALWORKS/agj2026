@@ -10,3 +10,4 @@ locks = Dictionary[String, bool]({
 char_colors = Dictionary[String, Color]({
 "Grim Reaper": Color(0.5448583, 0.05183792, 0.9999998, 1)
 })
+discovered_rooms = null

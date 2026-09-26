@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dbkippq16d3jw"]
+
+[ext_resource type="Script" uid="uid://d3ce3cg4y1klj" path="res://abstract/set_player_position.gd" id="1_0hha2"]
+
+[node name="SetPlayerPosition" type="Node" unique_id=421699032]
+script = ExtResource("1_0hha2")
