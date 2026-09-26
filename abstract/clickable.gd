@@ -8,6 +8,8 @@ var _hovering: bool = false
 
 var is_icon = false
 
+@export var takeable = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -23,14 +25,16 @@ func as_icon():
 func _process(delta: float) -> void:
 	pass
 
-
+func take():
+	var data = load(scene_file_path)
+	MyInventory.add(data)
+	await get_tree().create_timer(0.1).timeout
+	self.queue_free()
 
 func _on_mouse_entered() -> void:
 	if is_icon:
 		return
 	_hovering = true
-
-
 
 
 func _on_mouse_exited() -> void:
@@ -46,3 +50,8 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		return
 	if event.is_action("click"):
 		emit_signal("clicked")
+
+
+func _on_clicked() -> void:
+	if takeable:
+		take()

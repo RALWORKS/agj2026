@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dllq6bl41vc3m"]
+
+[ext_resource type="PackedScene" uid="uid://c20qgr7jnmjwg" path="res://abstract/clickable.tscn" id="1_q4pev"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ato1"]
+size = Vector2(343, 351)
+
+[node name="TalkingBox" unique_id=1367849640 instance=ExtResource("1_q4pev")]
+takeable = true
+
+[node name="Texture" parent="." index="0" unique_id=288946275]
+modulate = Color(0.75507146, 0.65526575, 0.98454803, 1)
+
+[node name="Label" type="Label" parent="Texture" index="0" unique_id=1290829441]
+offset_left = -96.0
+offset_top = 32.0
+offset_right = 124.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(1, 0.2901961, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "Please take"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1" unique_id=706095517]
+position = Vector2(1.5, 0.5)
+shape = SubResource("RectangleShape2D_2ato1")
+
+[node name="Texture" parent="InvIcon" parent_id_path=PackedInt32Array(1125700512) index="0" unique_id=1007563994]
+scale = Vector2(0.65, 0.65)
+
+[connection signal="clicked" from="." to="." method="_on_clicked"]

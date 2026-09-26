@@ -45,6 +45,15 @@ size = Vector2(343, 351)
 
 [node name="TalkingBox" unique_id=1367849640 instance=ExtResource("1_q58hj")]
 
+[node name="Label" type="Label" parent="Texture" parent_id_path=PackedInt32Array(288946275) index="0" unique_id=1290829441]
+offset_left = -56.0
+offset_top = 32.0
+offset_right = 58.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(1, 0.2901961, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "Say hi"
+
 [node name="ColorRect" type="ColorRect" parent="." index="1" unique_id=799146501]
 modulate = Color(1, 1, 1, 0)
 offset_left = 232.0

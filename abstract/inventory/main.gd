@@ -23,6 +23,10 @@ func _process(delta: float) -> void:
 		trigger_reload = false
 		reload()
 
+func add(item_resource: Resource):
+	data.push_back(item_resource)
+	reload()
+
 func reload():
 	for c in inv:
 		c.free()
