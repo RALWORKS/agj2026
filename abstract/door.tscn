@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bhtcnbuysmp54"]
+
+[ext_resource type="Texture2D" uid="uid://dn3dyjwfrawui" path="res://assets/door-arrow.png" id="1_5wjsj"]
+[ext_resource type="Script" uid="uid://deoiu5pfyg22m" path="res://abstract/door.gd" id="1_sryqj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sryqj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sdspu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_an8le"]
+
+[node name="Door" type="Button" unique_id=863558398]
+z_index = 100
+offset_left = -75.0
+offset_top = -75.0
+offset_right = 75.0
+offset_bottom = 75.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sryqj")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_sdspu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_an8le")
+script = ExtResource("1_sryqj")
+
+[node name="Arrow" type="Sprite2D" parent="." unique_id=1351757877]
+position = Vector2(75, 75)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_5wjsj")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -2,17 +2,21 @@
 
 [ext_resource type="PackedScene" uid="uid://dyhokgsp7v7w1" path="res://abstract/room.tscn" id="1_fnk3y"]
 [ext_resource type="PackedScene" uid="uid://xag8grlj64nl" path="res://room_1/talking_box.tscn" id="2_6oc1a"]
+[ext_resource type="PackedScene" uid="uid://ykbunqep4ksj" path="res://room_1/door.tscn" id="2_qf3ue"]
 [ext_resource type="PackedScene" uid="uid://b3omyt6wexpmn" path="res://room_1/crowbar.tscn" id="3_xid5c"]
 [ext_resource type="PackedScene" uid="uid://cmf4kqmij5bga" path="res://room_1/lock.tscn" id="4_qf3ue"]
 
 [node name="Room" unique_id=1002500821 instance=ExtResource("1_fnk3y")]
 
+[node name="Door" parent="Background" parent_id_path=PackedInt32Array(931085633) index="0" unique_id=140587019 instance=ExtResource("2_qf3ue")]
+position = Vector2(1118, 485)
+
 [node name="TalkingBox" parent="." index="1" unique_id=1367849640 instance=ExtResource("2_6oc1a")]
-position = Vector2(1011, 481)
+position = Vector2(846, 487)
 takeable = null
 
-[node name="Crowbar" parent="." index="3" unique_id=140587019 instance=ExtResource("3_xid5c")]
+[node name="Crowbar" parent="." index="3" unique_id=1043152515 instance=ExtResource("3_xid5c")]
 position = Vector2(1489, 665)
 
 [node name="Lock" parent="." index="4" unique_id=1628269606 instance=ExtResource("4_qf3ue")]
-position = Vector2(1319, 457)
+position = Vector2(1253, 554)

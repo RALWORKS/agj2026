@@ -4,3 +4,6 @@
 
 [node name="STATUS" type="Node" unique_id=1756917919]
 script = ExtResource("1_3itfv")
+locks = Dictionary[String, bool]({
+"room-1": true
+})

@@ -4,6 +4,8 @@ extends Node
 
 @export var lock: Item
 
+@export var lock_id: String
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	lock.connect("clicked", clicked)
@@ -14,6 +16,7 @@ func _process(delta: float) -> void:
 	pass
 
 func unlock():
+	Status.locks[lock_id] = false
 	lock.queue_free()
 	
 func clicked():

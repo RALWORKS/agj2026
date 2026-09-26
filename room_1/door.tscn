@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ykbunqep4ksj"]
+
+[ext_resource type="PackedScene" uid="uid://c20qgr7jnmjwg" path="res://abstract/clickable.tscn" id="1_mbmb5"]
+[ext_resource type="Texture2D" uid="uid://doy0750mql4k2" path="res://assets/tmp/tmp-door.png" id="2_forh8"]
+[ext_resource type="PackedScene" uid="uid://bhtcnbuysmp54" path="res://abstract/door.tscn" id="3_forh8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ato1"]
+size = Vector2(306, 692)
+
+[node name="Door" unique_id=140587019 instance=ExtResource("1_mbmb5")]
+
+[node name="Texture" parent="." index="0" unique_id=288946275]
+texture = ExtResource("2_forh8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2" unique_id=322402055]
+position = Vector2(-10, 12)
+shape = SubResource("RectangleShape2D_2ato1")
+
+[node name="Door" parent="." index="3" unique_id=863558398 instance=ExtResource("3_forh8")]
+offset_top = 365.0
+offset_bottom = 515.0
+destination = "uid://dy2t6s2jl2g5a"
+lock_id = "room-1"
+
+[connection signal="clicked" from="." to="Door" method="go"]
