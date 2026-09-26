@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://bh6xfpkoclj6n"]
+
+[ext_resource type="Script" uid="uid://qsno2atlsvvt" path="res://status_bar.gd" id="1_fbxjq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g2tnx"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dljiy"]
+bg_color = Color(0.28627452, 0, 0.8627451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m37av"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4pqwi"]
+bg_color = Color(0.6504577, 0.6504576, 1.92523e-07, 1)
+
+[node name="StatusBar" type="Control" unique_id=837627880]
+z_index = 50
+layout_mode = 3
+anchor_right = 0.16700001
+anchor_bottom = 0.45700002
+offset_left = 1624.0
+offset_top = 779.0
+offset_right = 1623.616
+offset_bottom = 588.43994
+script = ExtResource("1_fbxjq")
+soul_percent = 70.55
+vitality_percent = 91.0
+wealth_percent = 66.0
+status_debug = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1310995465]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.47843137, 0.47843137, 0.47843137, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1033751883]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 296.0
+alignment = 1
+
+[node name="SoulProgressBar" type="ProgressBar" parent="VBoxContainer" unique_id=2012268132]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/background = SubResource("StyleBoxFlat_g2tnx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_dljiy")
+value = 70.55
+fill_mode = 3
+
+[node name="SoulLabel" type="Label" parent="VBoxContainer" unique_id=1253505007]
+layout_mode = 2
+text = "Soul"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=812572311]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.333
+anchor_right = 0.333
+offset_left = 0.063999176
+offset_right = 64.063995
+offset_bottom = 296.0
+alignment = 1
+
+[node name="VitalityProgressBar" type="ProgressBar" parent="VBoxContainer2" unique_id=333490027]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/background = SubResource("StyleBoxFlat_g2tnx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_m37av")
+value = 91.0
+rounded = true
+fill_mode = 3
+
+[node name="VitalityLabel" type="Label" parent="VBoxContainer2" unique_id=1333416056]
+layout_mode = 2
+text = "Vitality"
+horizontal_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="." unique_id=1271108063]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.66700006
+anchor_right = 0.66700006
+offset_left = -0.06401062
+offset_right = 63.93599
+offset_bottom = 296.0
+alignment = 1
+
+[node name="WealthProgressBar" type="ProgressBar" parent="VBoxContainer3" unique_id=831567395]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/background = SubResource("StyleBoxFlat_g2tnx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_4pqwi")
+value = 66.0
+rounded = true
+fill_mode = 3
+
+[node name="WealthLabel" type="Label" parent="VBoxContainer3" unique_id=508986298]
+layout_mode = 2
+text = "Money"
+horizontal_alignment = 1

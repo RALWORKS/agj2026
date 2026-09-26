@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 MyInventory="*uid://c3bne2hugege2"
 Status="*uid://dx4hhppnnd8mp"
+StatusBar="*uid://bh6xfpkoclj6n"
 
 [display]
 
