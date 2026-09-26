@@ -1,0 +1,183 @@
+[gd_scene format=3 uid="uid://bm0p55tqfn4p7"]
+
+[ext_resource type="Script" uid="uid://cw3e4i0s4fdf3" path="res://abstract/market_ui_1.gd" id="2_53afw"]
+
+[node name="Control" type="Control" unique_id=441652235]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 55.0
+offset_top = -4.0
+offset_right = 55.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_53afw")
+
+[node name="market_box" type="VBoxContainer" parent="." unique_id=2009041322]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -200.0
+offset_right = 300.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="top" type="ColorRect" parent="market_box" unique_id=456622356]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_vertical = 0
+color = Color(0.47087026, 0.25499192, 0.3395956, 1)
+
+[node name="market_label" type="Label" parent="market_box/top" unique_id=290328956]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -32.0
+offset_right = 32.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "MARKET"
+
+[node name="background" type="ColorRect" parent="market_box" unique_id=1256322645]
+custom_minimum_size = Vector2(200, 225)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.2708806, 0.69650716, 0.7136497, 1)
+
+[node name="item_container" type="HBoxContainer" parent="market_box/background" unique_id=2116295921]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -21.0
+offset_right = 300.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="item1" type="Button" parent="market_box/background/item_container" unique_id=301609393]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Crowbar"
+script = ExtResource("2_53afw")
+
+[node name="item2" type="Button" parent="market_box/background/item_container" unique_id=2093984740]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Item 2"
+script = ExtResource("2_53afw")
+
+[node name="item3" type="Button" parent="market_box/background/item_container" unique_id=1414014901]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Item 3"
+script = ExtResource("2_53afw")
+
+[node name="price_label" type="Label" parent="market_box/background" unique_id=1653854883]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -34.0
+offset_right = 132.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Price: "
+script = ExtResource("2_53afw")
+
+[node name="souls_label" type="Label" parent="market_box/background" unique_id=1210763025]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -166.0
+offset_top = -34.0
+offset_right = -5.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "0 Souls"
+horizontal_alignment = 2
+script = ExtResource("2_53afw")
+
+[node name="bottom" type="ColorRect" parent="market_box" unique_id=43340455]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+color = Color(0.80446786, 0.64302176, 0.3611922, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="market_box/bottom" unique_id=1398007810]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.5
+offset_top = -12.0
+offset_right = 272.5
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 135
+
+[node name="close" type="Button" parent="market_box/bottom/HBoxContainer" unique_id=1343261913]
+custom_maximum_size = Vector2(-1, 24)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "CLOSE"
+
+[node name="sell" type="Button" parent="market_box/bottom/HBoxContainer" unique_id=213795650]
+custom_maximum_size = Vector2(-1, 24)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "SELL"
+icon_alignment = 1
+
+[node name="purchase" type="Button" parent="market_box/bottom/HBoxContainer" unique_id=572753679]
+custom_maximum_size = Vector2(-1, 24)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+disabled = true
+text = "PURCHASE"
+
+[node name="expensive" type="Label" parent="market_box/bottom" unique_id=634180272]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -9.5
+offset_right = -5.0
+offset_bottom = 13.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8231201, 0, 0.13460618, 1)
+theme_override_font_sizes/font_size = 13
+text = "Not Enough Souls!"
+
+[connection signal="pressed" from="market_box/background/item_container/item1" to="." method="_on_item_1_pressed"]
+[connection signal="pressed" from="market_box/background/item_container/item2" to="." method="_on_item_2_pressed"]
+[connection signal="pressed" from="market_box/background/item_container/item3" to="." method="_on_item_3_pressed"]
+[connection signal="pressed" from="market_box/bottom/HBoxContainer/close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="market_box/bottom/HBoxContainer/purchase" to="." method="_on_purchase_pressed"]
