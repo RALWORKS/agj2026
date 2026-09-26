@@ -42,6 +42,7 @@ _data = {
 }
 
 [node name="MyInventory" unique_id=2103803913 instance=ExtResource("1_ubdqs")]
+z_index = 150
 offset_left = -810.0
 offset_right = -10.0
 active = false
