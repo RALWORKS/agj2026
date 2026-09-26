@@ -14,6 +14,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d37ts"]
 
 [node name="Dialogue" type="Button" unique_id=123258623]
+z_index = 500
 offset_right = 1920.0
 offset_bottom = 1080.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_laler")
