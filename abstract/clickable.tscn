@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c20qgr7jnmjwg"]
+
+[ext_resource type="Script" uid="uid://utiwsph0gyen" path="res://abstract/clickable.gd" id="1_io3l6"]
+[ext_resource type="Texture2D" uid="uid://b3l7epr68iqnq" path="res://assets/tmp/item.png" id="1_mjfbb"]
+
+[node name="Clickable" type="Area2D" unique_id=140587019]
+script = ExtResource("1_io3l6")
+
+[node name="Texture" type="Sprite2D" parent="." unique_id=288946275]
+texture = ExtResource("1_mjfbb")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

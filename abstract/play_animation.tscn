@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bbi5m5pef446a"]
+
+[ext_resource type="Script" uid="uid://d1irnjmydm4ku" path="res://abstract/play_animation.gd" id="1_dwifi"]
+
+[node name="PlayAnimation" type="Node" unique_id=869030643]
+script = ExtResource("1_dwifi")

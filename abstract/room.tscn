@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dyhokgsp7v7w1"]
+
+[ext_resource type="Script" uid="uid://ib48dwfyyk64" path="res://room.gd" id="1_lkk1d"]
+[ext_resource type="Texture2D" uid="uid://c65rh0ktnb6ke" path="res://assets/tmp/bg.png" id="2_b7qqt"]
+
+[node name="Room" type="Node2D" unique_id=1002500821]
+script = ExtResource("1_lkk1d")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=931085633]
+texture = ExtResource("2_b7qqt")
+centered = false

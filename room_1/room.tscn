@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://daj4qh1tyktri"]
+
+[ext_resource type="PackedScene" uid="uid://dyhokgsp7v7w1" path="res://abstract/room.tscn" id="1_fnk3y"]
+[ext_resource type="PackedScene" uid="uid://xag8grlj64nl" path="res://room_1/talking_box.tscn" id="2_6oc1a"]
+
+[node name="Room" unique_id=1002500821 instance=ExtResource("1_fnk3y")]
+
+[node name="TalkingBox" parent="." index="1" unique_id=1367849640 instance=ExtResource("2_6oc1a")]
+position = Vector2(870, 594)
