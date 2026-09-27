@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://bbi5m5pef446a" path="res://abstract/play_animation.tscn" id="7_xeqrf"]
 [ext_resource type="Script" uid="uid://bxi6h27k6to77" path="res://room_1/set_fallen.gd" id="8_c15kk"]
 [ext_resource type="PackedScene" uid="uid://pv13w0ljpnlr" path="res://abstract/dialogue/dialogue_listener.tscn" id="10_jnvty"]
+[ext_resource type="PackedScene" uid="uid://cdgq38ovodtbk" path="res://room_1/fish_market.tscn" id="10_olqv1"]
 [ext_resource type="PackedScene" uid="uid://cdkx3nl83qgdm" path="res://abstract/market_starter.tscn" id="11_1xegl"]
-[ext_resource type="PackedScene" uid="uid://bm0p55tqfn4p7" path="res://abstract/market_ui_1.tscn" id="12_vwhxo"]
 
 [sub_resource type="Animation" id="Animation_qf3ue"]
 length = 0.001
@@ -213,6 +213,6 @@ script = ExtResource("8_c15kk")
 dialogue_id = "tmp-hello"
 
 [node name="MarketStarter" parent="." index="5" unique_id=1462773004 instance=ExtResource("11_1xegl")]
-market = ExtResource("12_vwhxo")
+market = ExtResource("10_olqv1")
 
 [connection signal="found" from="DialogueListener" to="MarketStarter" method="start"]

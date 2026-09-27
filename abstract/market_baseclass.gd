@@ -7,6 +7,10 @@ extends Control
 
 enum {CROWBAR = 10, ITEM2 = 20, ITEM3 = 30}
 
+var PRICES = {
+	"crowbar": 10
+}
+
 var market_called = false
 var soul_amount = 0
 #var crowbar = 100
