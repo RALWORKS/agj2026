@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://hjcrlwp148mr"]
+
+[ext_resource type="PackedScene" uid="uid://c20qgr7jnmjwg" path="res://abstract/clickable.tscn" id="1_3iun7"]
+[ext_resource type="PackedScene" uid="uid://c4ik0oh8dwqet" path="res://room_1/puzzle_box.tscn" id="2_c2fn2"]
+[ext_resource type="Script" uid="uid://b6movbe5vh017" path="res://room_1/puzzle_box_item.gd" id="2_kqcg5"]
+
+[node name="PuzzleBox" unique_id=140587019 instance=ExtResource("1_3iun7")]
+script = ExtResource("2_kqcg5")
+item_id = "puzzle-box"
+
+[node name="Texture" parent="." index="0" unique_id=288946275]
+texture = null
+
+[node name="PuzzleBox" parent="Texture" index="0" unique_id=159025461 instance=ExtResource("2_c2fn2")]
+z_index = 0
+scale = Vector2(0.15, 0.15)
+hide_bg = true
+icon = true
+
+[node name="BlockAction" type="ColorRect" parent="Texture/PuzzleBox" index="2" unique_id=1218846980]
+offset_right = 1266.6666
+offset_bottom = 960.0
+color = Color(1, 1, 1, 0)
+
+[node name="Texture" parent="InvIcon" parent_id_path=PackedInt32Array(1125700512) index="0" unique_id=1007563994]
+texture = null
+
+[node name="BlockAction" type="ColorRect" parent="InvIcon/Texture" index="0" unique_id=2023693120]
+offset_left = 8.000001
+offset_top = 51.000004
+offset_right = 1274.6666
+offset_bottom = 1011.0
+color = Color(1, 1, 1, 0)
+
+[node name="PuzzleBox" parent="InvIcon/Texture" index="1" unique_id=950056807 instance=ExtResource("2_c2fn2")]
+z_index = 0
+position = Vector2(8.000001, 51.000004)
+scale = Vector2(0.1, 0.1)
+hide_bg = true
+icon = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2" unique_id=1706566399]
+position = Vector2(31.999996, 51)
+scale = Vector2(0.1, 0.1)
+polygon = PackedVector2Array(-389.99994, -559.99994, -409.99994, 1009.99994, 1629.9998, 1019.99994, 1679.9998, -599.99994)

@@ -85,7 +85,6 @@ func _on_mouse_entered() -> void:
 func _on_mouse_exited() -> void:
 	if is_icon:
 		return
-	_hovering = false
 
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:

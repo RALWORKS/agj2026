@@ -11,6 +11,7 @@ var PRICES = {
 	"crowbar": 10,
 	"flush-handle": 10,
 	"bad-key": 100,
+	"puzzle-box": 10,
 }
 
 var market_called = false

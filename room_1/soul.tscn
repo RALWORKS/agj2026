@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://cbxtm2rtc084f"]
+
+[ext_resource type="PackedScene" uid="uid://c20qgr7jnmjwg" path="res://abstract/clickable.tscn" id="1_mccdu"]
+[ext_resource type="Texture2D" uid="uid://dh50pb5os3rws" path="res://assets/soul_sprite_sheet.png" id="2_36wi0"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_mccdu"]
+viewport_path = NodePath("Texture2")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_36wi0"]
+viewport_path = NodePath("Texture2")
+
+[sub_resource type="Animation" id="Animation_36wi0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture2/Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_mccdu"]
+resource_name = "flicker"
+loop_mode = 1
+step = 0.0416
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture2/Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0416, 0.0832, 0.1248, 0.1664, 0.208, 0.2496, 0.2912, 0.3328, 0.3744, 0.416, 0.4576, 0.4992, 0.5408, 0.5824, 0.624, 0.6656, 0.7072, 0.7488, 0.7904, 0.832, 0.8736, 0.9152, 0.9568),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_36wi0"]
+_data = {
+&"RESET": SubResource("Animation_36wi0"),
+&"flicker": SubResource("Animation_mccdu")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ato1"]
+radius = 123.0
+height = 466.0
+
+[node name="Soul" unique_id=140587019 instance=ExtResource("1_mccdu")]
+item_id = "young-soul"
+takeable = true
+
+[node name="Texture" parent="." index="0" unique_id=288946275]
+texture = SubResource("ViewportTexture_mccdu")
+
+[node name="Texture" parent="InvIcon" parent_id_path=PackedInt32Array(1125700512) index="0" unique_id=1007563994]
+position = Vector2(56.999996, -26.999998)
+scale = Vector2(0.4, 0.4)
+texture = SubResource("ViewportTexture_36wi0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2" unique_id=1560477049]
+libraries/ = SubResource("AnimationLibrary_36wi0")
+autoplay = &"flicker"
+
+[node name="Texture2" type="SubViewport" parent="." index="3" unique_id=136771654]
+transparent_bg = true
+size = Vector2i(275, 600)
+
+[node name="Texture" type="Sprite2D" parent="Texture2" index="0" unique_id=154053272]
+texture = ExtResource("2_36wi0")
+centered = false
+hframes = 24
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="4" unique_id=326466705]
+position = Vector2(-27, 16)
+shape = SubResource("CapsuleShape2D_2ato1")

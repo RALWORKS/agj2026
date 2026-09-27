@@ -1,38 +1,83 @@
 [gd_scene format=3 uid="uid://c4ik0oh8dwqet"]
 
 [ext_resource type="Script" uid="uid://dmv6ujxd2ypqv" path="res://room_1/puzzle_box.gd" id="1_6rs4w"]
-[ext_resource type="Texture2D" uid="uid://bxslsnkfow6wy" path="res://assets/tmp/puzzle_box_open.png" id="1_wwfpr"]
-[ext_resource type="Texture2D" uid="uid://c2ggq21wovne2" path="res://assets/tmp/puzzle_box_closed.png" id="2_6rs4w"]
-[ext_resource type="Texture2D" uid="uid://c54dhs2tsx186" path="res://assets/tmp/symbol1.png" id="3_06qlw"]
-[ext_resource type="Texture2D" uid="uid://cs8f3w3yhrn7i" path="res://assets/tmp/symbol2.png" id="4_yjuc2"]
-[ext_resource type="Texture2D" uid="uid://cvnygocnnrpek" path="res://assets/tmp/symbol3.png" id="5_jf0i3"]
+[ext_resource type="Texture2D" uid="uid://hnxit0eglapf" path="res://assets/puzzlebox/puzzlebox_open.png" id="2_6rs4w"]
+[ext_resource type="PackedScene" uid="uid://cbxtm2rtc084f" path="res://room_1/soul.tscn" id="3_jf0i3"]
+[ext_resource type="Texture2D" uid="uid://bn22s38exp4mo" path="res://assets/puzzlebox/puzzlebox_closed.png" id="3_yjuc2"]
+[ext_resource type="Texture2D" uid="uid://bag3a38ft7yus" path="res://assets/puzzlebox/puzzlebox_button.png" id="4_wwfpr"]
+[ext_resource type="Texture2D" uid="uid://c76yivxlewkyx" path="res://assets/puzzlebox/puzzlebox_triangle.png" id="5_6rs4w"]
+[ext_resource type="Texture2D" uid="uid://bmbjfwc8bkyxa" path="res://assets/puzzlebox/puzzlebox_circle.png" id="6_6rs4w"]
+[ext_resource type="Texture2D" uid="uid://l5b18kd77vvx" path="res://assets/puzzlebox/puzzlebox_star.png" id="7_06qlw"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6n7i0"]
-bg_color = Color(0.5686275, 0.63529414, 1, 0.18431373)
-border_width_left = 6
-border_width_top = 6
-border_color = Color(0.8, 0.8, 0.8, 0.41568628)
-shadow_color = Color(0, 0, 0, 1)
-shadow_size = 6
-shadow_offset = Vector2(6, 6)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jf0i3"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8476o"]
-bg_color = Color(0.18359044, 0.18359047, 0.18359032, 1)
-border_width_right = 6
-border_width_bottom = 6
-border_color = Color(1, 1, 1, 0.3019608)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_epoju"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_munh8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vkqdo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ahgml"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ato1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v2nuu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4dc86"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qkk6y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_migsv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yjuc2"]
 
 [node name="PuzzleBox" type="Node2D" unique_id=159025461]
+z_index = 500
 script = ExtResource("1_6rs4w")
 found_color = Color(0.6284661, 0.62846595, 0, 1)
 
-[node name="Open" type="Sprite2D" parent="." unique_id=1486223301]
-texture = ExtResource("1_wwfpr")
-centered = false
+[node name="bg" type="ColorRect" parent="." unique_id=510961515]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.49803922)
 
-[node name="Shut" type="Sprite2D" parent="." unique_id=19132282]
+[node name="X" type="Button" parent="bg" unique_id=896762935]
+layout_mode = 0
+offset_left = 1608.0
+offset_top = 62.0
+offset_right = 1696.0
+offset_bottom = 139.0
+theme_override_font_sizes/font_size = 50
+text = "X"
+
+[node name="Open" type="Sprite2D" parent="." unique_id=1486223301]
+position = Vector2(312, 48)
 texture = ExtResource("2_6rs4w")
 centered = false
+
+[node name="Clickable" parent="Open" unique_id=140587019 instance=ExtResource("3_jf0i3")]
+position = Vector2(643, 498)
+
+[node name="Button" type="Button" parent="Open/Clickable" unique_id=1967426704]
+offset_left = -179.0
+offset_top = -254.0
+offset_right = 120.0
+offset_bottom = 282.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jf0i3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_epoju")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_munh8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vkqdo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ahgml")
+
+[node name="Shut" type="Sprite2D" parent="." unique_id=19132282]
+position = Vector2(312, 48)
+texture = ExtResource("3_yjuc2")
+centered = false
+
+[node name="Blocker" type="ColorRect" parent="Shut" unique_id=1722878362]
+offset_right = 1277.0
+offset_bottom = 932.0
+color = Color(1, 1, 1, 0)
 
 [node name="Keys" type="GridContainer" parent="Shut" unique_id=121990804]
 anchors_preset = 8
@@ -40,10 +85,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -351.99994
-offset_top = 56.0
-offset_right = 339.0
-offset_bottom = 256.0
+offset_left = -72.0
+offset_top = 160.00006
+offset_right = 619.0
+offset_bottom = 360.00006
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.8, 0.8)
@@ -53,70 +98,118 @@ columns = 3
 [node name="1" type="Button" parent="Shut/Keys" unique_id=710926509]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_6n7i0")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2ato1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_v2nuu")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4dc86")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_qkk6y")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_migsv")
+
+[node name="bg" type="Sprite2D" parent="Shut/Keys/1" unique_id=1052370825]
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("4_wwfpr")
+centered = false
 
 [node name="Icon" type="Sprite2D" parent="Shut/Keys/1" unique_id=1196360973]
-texture = ExtResource("3_06qlw")
+modulate = Color(0.37036446, 0.3703645, 0.37036446, 1)
+position = Vector2(40, 13.124924)
+texture = ExtResource("5_6rs4w")
 centered = false
 
-[node name="2" type="Button" parent="Shut/Keys" unique_id=804579829]
+[node name="2" type="Button" parent="Shut/Keys" unique_id=526349639]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_6n7i0")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2ato1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_v2nuu")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4dc86")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_qkk6y")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_migsv")
 
-[node name="Icon" type="Sprite2D" parent="Shut/Keys/2" unique_id=1567628223]
-texture = ExtResource("4_yjuc2")
+[node name="bg" type="Sprite2D" parent="Shut/Keys/2" unique_id=137651633]
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("4_wwfpr")
 centered = false
 
-[node name="3" type="Button" parent="Shut/Keys" unique_id=784566303]
+[node name="Icon" type="Sprite2D" parent="Shut/Keys/2" unique_id=1571007860]
+modulate = Color(0.37036446, 0.3703645, 0.37036446, 1)
+position = Vector2(30, 13.124924)
+texture = ExtResource("6_6rs4w")
+centered = false
+
+[node name="3" type="Button" parent="Shut/Keys" unique_id=1598006929]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_6n7i0")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2ato1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_v2nuu")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4dc86")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_qkk6y")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_migsv")
 
-[node name="Icon" type="Sprite2D" parent="Shut/Keys/3" unique_id=197968122]
-texture = ExtResource("5_jf0i3")
+[node name="bg" type="Sprite2D" parent="Shut/Keys/3" unique_id=1652025757]
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("4_wwfpr")
 centered = false
 
-[node name="Code" type="GridContainer" parent="Shut" unique_id=143348958]
-offset_left = 632.0
-offset_top = 408.0
-offset_right = 1132.0
-offset_bottom = 508.0
-theme_override_constants/h_separation = 25
-columns = 4
+[node name="Icon" type="Sprite2D" parent="Shut/Keys/3" unique_id=549846243]
+modulate = Color(0.37036446, 0.3703645, 0.37036446, 1)
+position = Vector2(42.5, 13.124924)
+texture = ExtResource("7_06qlw")
+centered = false
+
+[node name="Code" type="Control" parent="Shut" unique_id=1565310025]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 615.0
+offset_top = 390.0
+offset_right = 1115.0
+offset_bottom = 490.0
 
 [node name="1" type="Panel" parent="Shut/Code" unique_id=671192041]
 custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_8476o")
+layout_mode = 0
+offset_left = -336.0
+offset_top = -80.0
+offset_right = -236.0
+offset_bottom = 20.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_yjuc2")
 
 [node name="symbol" type="Sprite2D" parent="Shut/Code/1" unique_id=1902107252]
-scale = Vector2(0.5, 0.5)
 centered = false
 
-[node name="2" type="Panel" parent="Shut/Code" unique_id=1112765360]
+[node name="2" type="Panel" parent="Shut/Code" unique_id=1105870075]
 custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_8476o")
+layout_mode = 0
+offset_left = -136.0
+offset_top = -86.0
+offset_right = -36.0
+offset_bottom = 14.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_yjuc2")
 
-[node name="symbol" type="Sprite2D" parent="Shut/Code/2" unique_id=1773027715]
-scale = Vector2(0.5, 0.5)
+[node name="symbol" type="Sprite2D" parent="Shut/Code/2" unique_id=1953770261]
 centered = false
 
-[node name="3" type="Panel" parent="Shut/Code" unique_id=50317728]
+[node name="3" type="Panel" parent="Shut/Code" unique_id=483141686]
 custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_8476o")
+layout_mode = 0
+offset_left = 56.0
+offset_top = -97.0
+offset_right = 156.0
+offset_bottom = 3.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_yjuc2")
 
-[node name="symbol" type="Sprite2D" parent="Shut/Code/3" unique_id=1093858818]
-scale = Vector2(0.5, 0.5)
+[node name="symbol" type="Sprite2D" parent="Shut/Code/3" unique_id=1825351759]
 centered = false
 
-[node name="4" type="Panel" parent="Shut/Code" unique_id=1104735552]
+[node name="4" type="Panel" parent="Shut/Code" unique_id=1110451468]
 custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_8476o")
+layout_mode = 0
+offset_left = 272.0
+offset_top = -96.0
+offset_right = 372.0
+offset_bottom = 4.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_yjuc2")
 
-[node name="symbol" type="Sprite2D" parent="Shut/Code/4" unique_id=1610985528]
-scale = Vector2(0.5, 0.5)
+[node name="symbol" type="Sprite2D" parent="Shut/Code/4" unique_id=109091735]
 centered = false
+
+[connection signal="pressed" from="bg/X" to="." method="close"]
+[connection signal="pressed" from="Open/Clickable/Button" to="Open/Clickable" method="take"]

@@ -2,10 +2,13 @@ extends Node2D
 
 @export var found_color: Color
 
+@export var hide_bg = false
+@export var icon = false
+
 var symbols = [
-	preload("res://assets/tmp/symbol1.png"),
-	preload("res://assets/tmp/symbol2.png"),
-	preload("res://assets/tmp/symbol3.png")
+	preload("res://assets/puzzlebox/puzzlebox_triangle.png"),
+	preload("res://assets/puzzlebox/puzzlebox_circle.png"),
+	preload("res://assets/puzzlebox/puzzlebox_star.png")
 ]
 
 var trace = 0
@@ -15,6 +18,9 @@ var code = []
 var display = [null, null, null, null]
 
 var found = [null, null, null, null]
+
+func close():
+	queue_free()
 
 func refresh_input():
 	if not Status.locks["puzzle-box"]:
@@ -56,12 +62,14 @@ func submit():
 	refresh_input()
 
 func type_symbol(i):
+	if trace > 3:
+		return
 	display[trace] = i
 	refresh_input()
 	trace += 1
 	jump_trace_if_needed()
 	
-	if trace >= 3:
+	if trace > 3:
 		submit()
 
 func randomize_code():
@@ -74,6 +82,15 @@ func randomize_code():
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if hide_bg:
+		$bg.visible = false
+	if icon:
+		$Shut/Blocker.mouse_filter = 1
+		$bg.mouse_filter = 1
+		$Shut.process_mode = Node.PROCESS_MODE_DISABLED
+		$Open.process_mode = Node.PROCESS_MODE_DISABLED
+		$bg.process_mode = Node.PROCESS_MODE_DISABLED
+
 	if not Status.locks["puzzle-box"]:
 		unlock()
 	randomize_code()

@@ -21,6 +21,9 @@ func _process(delta: float) -> void:
 
 
 func _on_yes_pressed() -> void:
+	if item.has_method("use"):
+		item.use()
+		return
 	Cursor.use(item)
 	Input.action_press("hide_inv")
 	await get_tree().create_timer(0.1).timeout

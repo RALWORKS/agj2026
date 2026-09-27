@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://eisxn6r3xnu7" path="res://abstract/abstract_market.tscn" id="1_2hxja"]
 [ext_resource type="PackedScene" uid="uid://b3omyt6wexpmn" path="res://room_1/crowbar.tscn" id="2_o1dm5"]
+[ext_resource type="PackedScene" uid="uid://hjcrlwp148mr" path="res://room_1/puzzle_box_item.tscn" id="3_ei683"]
 
 [node name="FishMarket" unique_id=441652235 instance=ExtResource("1_2hxja")]
 
@@ -9,4 +10,9 @@
 text = "The Fish offers you ..."
 
 [node name="Crowbar" parent="market_box/background/item_container" parent_id_path=PackedInt32Array(2116295921) index="0" unique_id=140587019 instance=ExtResource("2_o1dm5")]
+position = Vector2(50, 3)
+shop_item = true
+
+[node name="PuzzleBox" parent="market_box/background/item_container" parent_id_path=PackedInt32Array(2116295921) index="1" unique_id=1440578859 instance=ExtResource("3_ei683")]
+position = Vector2(298, 3)
 shop_item = true
