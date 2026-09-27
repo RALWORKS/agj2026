@@ -11,11 +11,10 @@ visible = false
 texture = ExtResource("2_forh8")
 
 [node name="Door" parent="." index="2" unique_id=863558398 instance=ExtResource("3_forh8")]
-offset_left = 2.9999924
-offset_top = 297.0
-offset_right = 153.0
-offset_bottom = 447.0
-rotation = -0.7853982
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
 destination = "uid://dy2t6s2jl2g5a"
 lock_id = "room-1"
 

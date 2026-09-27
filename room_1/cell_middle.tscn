@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://car1hrdaxk3qg"]
+
+[ext_resource type="PackedScene" uid="uid://dyhokgsp7v7w1" path="res://abstract/room.tscn" id="1_0x0eg"]
+[ext_resource type="PackedScene" uid="uid://dloqxvwt0a1el" path="res://room_1/cell_full.tscn" id="2_ouo2g"]
+[ext_resource type="PackedScene" uid="uid://dtrx6kdiw1xyo" path="res://room_1/son.tscn" id="3_ouo2g"]
+[ext_resource type="PackedScene" uid="uid://bhtcnbuysmp54" path="res://abstract/door.tscn" id="4_s73ki"]
+
+[node name="CellMiddle" unique_id=1002500821 instance=ExtResource("1_0x0eg")]
+
+[node name="Cell" parent="Background" parent_id_path=PackedInt32Array(931085633) index="0" unique_id=2013562304 instance=ExtResource("2_ouo2g")]
+position = Vector2(-1283.0001, -296.00006)
+scale = Vector2(1.3, 1.3)
+
+[node name="Son" parent="." index="2" unique_id=140587019 instance=ExtResource("3_ouo2g")]
+position = Vector2(1382.0001, 757)
+scale = Vector2(-1.25, 1.25)
+
+[node name="DoorLeft" parent="." index="3" unique_id=863558398 instance=ExtResource("4_s73ki")]
+offset_left = 111.999985
+offset_top = 441.0
+offset_right = 262.0
+offset_bottom = 591.0
+rotation = 0.5358161
+destination = "uid://fy26ppryw17k"
+
+[node name="Door" parent="." index="4" unique_id=640680584 instance=ExtResource("4_s73ki")]
+offset_left = 1677.0
+offset_top = 621.0
+offset_right = 1827.0
+offset_bottom = 771.0
+rotation = -0.07679449
+destination = "uid://bqf5jy1cby483"

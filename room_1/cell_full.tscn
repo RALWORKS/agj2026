@@ -1,0 +1,213 @@
+[gd_scene format=3 uid="uid://dloqxvwt0a1el"]
+
+[ext_resource type="PackedScene" uid="uid://dyhokgsp7v7w1" path="res://abstract/room.tscn" id="1_nb842"]
+[ext_resource type="Texture2D" uid="uid://dj2fi46xclsyo" path="res://assets/backgrounds/cell/cell_2_TopLeftCorner.png" id="2_td86v"]
+[ext_resource type="Texture2D" uid="uid://b64cbn3c38wwb" path="res://assets/backgrounds/cell/cell_1.png" id="3_a47km"]
+[ext_resource type="PackedScene" uid="uid://ykbunqep4ksj" path="res://room_1/door.tscn" id="4_so1gm"]
+[ext_resource type="PackedScene" uid="uid://cmf4kqmij5bga" path="res://room_1/lock.tscn" id="5_een7a"]
+[ext_resource type="PackedScene" uid="uid://bbi5m5pef446a" path="res://abstract/play_animation.tscn" id="7_xeqrf"]
+[ext_resource type="Script" uid="uid://bxi6h27k6to77" path="res://room_1/set_fallen.gd" id="8_c15kk"]
+[ext_resource type="PackedScene" uid="uid://pv13w0ljpnlr" path="res://abstract/dialogue/dialogue_listener.tscn" id="10_jnvty"]
+[ext_resource type="PackedScene" uid="uid://cdkx3nl83qgdm" path="res://abstract/market_starter.tscn" id="11_1xegl"]
+[ext_resource type="PackedScene" uid="uid://bm0p55tqfn4p7" path="res://abstract/market_ui_1.tscn" id="12_vwhxo"]
+
+[sub_resource type="Animation" id="Animation_qf3ue"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlay:process_mode")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Overlay:mouse_filter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Overlay:offset_transform_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Overlay:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-23, -1188)]
+}
+
+[sub_resource type="Animation" id="Animation_s38v5"]
+resource_name = "Wake"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlay:process_mode")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.9333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5583333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SetFallen")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"do"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Overlay:mouse_filter")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.5333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Overlay:offset_transform_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Overlay:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iebxs"]
+_data = {
+&"RESET": SubResource("Animation_qf3ue"),
+&"Wake": SubResource("Animation_s38v5")
+}
+
+[node name="Cell" unique_id=1002500821 instance=ExtResource("1_nb842")]
+script = null
+
+[node name="Background" parent="." index="0" unique_id=931085633]
+texture = ExtResource("2_td86v")
+
+[node name="Cell" type="Sprite2D" parent="Background" index="0" unique_id=1841064139]
+texture = ExtResource("3_a47km")
+centered = false
+
+[node name="Door" parent="Background" index="1" unique_id=140587019 instance=ExtResource("4_so1gm")]
+position = Vector2(228.65662, 787.4925)
+rotation = 0.59166664
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Background/Door" index="3" unique_id=825364796]
+polygon = PackedVector2Array(-296.89337, 113.36981, -569.4503, -697.4407, -130.92932, -765.61194, 314.24603, 149.6825, 63.870056, 548.04517, -43.26758, 601.9668)
+
+[node name="_conceal_base" parent="." index="1" unique_id=430115067]
+visible = false
+
+[node name="Lock" parent="." index="2" unique_id=1628269606 instance=ExtResource("5_een7a")]
+position = Vector2(251, 456)
+scale = Vector2(0.3, 0.3)
+
+[node name="Discover" type="Node2D" parent="." index="3" unique_id=562376656]
+z_index = 50
+
+[node name="Overlay" type="ColorRect" parent="Discover" index="0" unique_id=1105498124]
+process_mode = 4
+offset_left = -23.0
+offset_top = -1188.0
+offset_right = 1986.0
+offset_bottom = -44.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Discover" index="1" unique_id=325670746]
+libraries/ = SubResource("AnimationLibrary_iebxs")
+
+[node name="PlayAnimation" parent="Discover" index="2" unique_id=869030643 node_paths=PackedStringArray("player") instance=ExtResource("7_xeqrf")]
+animation = "Wake"
+player = NodePath("../AnimationPlayer")
+
+[node name="SetFallen" type="Node" parent="Discover" index="3" unique_id=1270733927]
+script = ExtResource("8_c15kk")
+
+[node name="DialogueListener" parent="." index="4" unique_id=1743827519 instance=ExtResource("10_jnvty")]
+dialogue_id = "tmp-hello"
+
+[node name="MarketStarter" parent="." index="5" unique_id=1462773004 instance=ExtResource("11_1xegl")]
+market = ExtResource("12_vwhxo")
+
+[connection signal="found" from="DialogueListener" to="MarketStarter" method="start"]

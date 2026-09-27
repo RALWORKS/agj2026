@@ -8,7 +8,7 @@
 dialogue_id = "room-1-kiddo"
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0" unique_id=279933526]
-position = Vector2(1354, 646)
+position = Vector2(1369, 755)
 scale = Vector2(-1.6, 1.6)
 texture = ExtResource("2_10j1i")
 
