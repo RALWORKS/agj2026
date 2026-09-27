@@ -6,9 +6,9 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hehty"]
 bg_color = Color(0.015686275, 0.015686275, 0.023529412, 1)
 border_width_left = 10
-border_width_top = 11
+border_width_top = 10
 border_width_right = 10
-border_width_bottom = 13
+border_width_bottom = 10
 border_color = Color(0.47843137, 0.47843137, 0.47843137, 1)
 border_blend = true
 
@@ -19,41 +19,74 @@ bg_color = Color(0, 0, 0, 1)
 bg_color = Color(0.050980393, 0.21176471, 0.63529414, 1)
 border_width_left = 7
 border_width_right = 7
+border_width_bottom = 3
 border_color = Color(0.015686275, 0.015686275, 0.023529412, 1)
 border_blend = true
+corner_detail = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4pqwi"]
 bg_color = Color(0.8901961, 0.52156866, 0.043137256, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
+border_width_left = 7
+border_width_right = 7
+border_width_bottom = 3
 border_blend = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m37av"]
 bg_color = Color(0.9647059, 0.92941177, 0.8627451, 1)
-border_width_left = 4
-border_width_right = 4
+border_width_left = 7
+border_width_right = 7
+border_width_bottom = 3
 border_color = Color(0.050980393, 0.21176471, 0.63529414, 1)
 border_blend = true
 shadow_offset = Vector2(0.075, 0)
 
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_g2tnx"]
+color = Color(1, 1, 1, 1)
+
 [node name="StatusBar" type="PanelContainer" unique_id=1733161956]
-visible = false
 z_index = 50
 custom_minimum_size = Vector2(155, 200)
 offset_right = 180.0
-offset_bottom = 200.0
+offset_bottom = 263.0
 theme = ExtResource("1_m37av")
 theme_override_styles/panel = SubResource("StyleBoxFlat_hehty")
 script = ExtResource("1_fbxjq")
 
 [node name="StatusContainer" type="VBoxContainer" parent="." unique_id=10987026]
 layout_mode = 2
+alignment = 1
+
+[node name="TurnsContainer" type="HBoxContainer" parent="StatusContainer" unique_id=1450694528]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="StatusContainer/TurnsContainer" unique_id=991603839]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+text = "Turn:"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="TurnCounter" type="Label" parent="StatusContainer/TurnsContainer" unique_id=284228162]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label Spacer" type="HSeparator" parent="StatusContainer" unique_id=1085822884]
+layout_mode = 2
 
 [node name="ProgressBarContainer" type="HBoxContainer" parent="StatusContainer" unique_id=257173279]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 6.655)
+offset_transform_scale = Vector2(0.9, 0.9)
+theme_override_constants/separation = 0
 
 [node name="SoulProgressBar" type="ProgressBar" parent="StatusContainer/ProgressBarContainer" unique_id=2012268132]
 custom_minimum_size = Vector2(20, 0)
@@ -63,23 +96,20 @@ size_flags_vertical = 3
 theme_override_styles/background = SubResource("StyleBoxFlat_g2tnx")
 theme_override_styles/fill = SubResource("StyleBoxFlat_dljiy")
 value = 100.0
-fill_mode = 3
+fill_mode = 2
 show_percentage = false
 
 [node name="SoulLabel" type="Label" parent="StatusContainer/ProgressBarContainer/SoulProgressBar" unique_id=1253505007]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -17.0
-offset_top = -23.0
-offset_right = 17.0
+offset_left = -18.5
+offset_right = 18.5
+offset_bottom = 20.0
 grow_horizontal = 2
-grow_vertical = 0
 offset_transform_enabled = true
-offset_transform_position_ratio = Vector2(0, 1)
+offset_transform_position_ratio = Vector2(0, -0.89)
 theme_override_font_sizes/font_size = 14
 text = "Soul"
 horizontal_alignment = 1
@@ -93,25 +123,21 @@ size_flags_vertical = 3
 theme_override_styles/background = SubResource("StyleBoxFlat_g2tnx")
 theme_override_styles/fill = SubResource("StyleBoxFlat_4pqwi")
 value = 100.0
-rounded = true
 allow_greater = true
-fill_mode = 3
+fill_mode = 2
 show_percentage = false
 
 [node name="WealthLabel" type="Label" parent="StatusContainer/ProgressBarContainer/WealthProgressBar" unique_id=508986298]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 1.0
 offset_left = -26.5
-offset_top = -23.0
 offset_right = 26.5
+offset_bottom = 17.0
 grow_horizontal = 2
-grow_vertical = 0
 offset_transform_enabled = true
-offset_transform_position_ratio = Vector2(0, 1)
+offset_transform_position_ratio = Vector2(0, -1)
 theme_override_font_sizes/font_size = 12
 text = "Money"
 horizontal_alignment = 1
@@ -122,53 +148,34 @@ custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_styles/background = SubResource("StyleBoxFlat_g2tnx")
 theme_override_styles/fill = SubResource("StyleBoxFlat_m37av")
 value = 100.0
-rounded = true
-fill_mode = 3
+fill_mode = 2
 show_percentage = false
 
 [node name="VitalityLabel" type="Label" parent="StatusContainer/ProgressBarContainer/VitalityProgressBar" unique_id=1333416056]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 1.0
 offset_left = -27.0
-offset_top = -23.0
 offset_right = 27.0
+offset_bottom = 17.0
 grow_horizontal = 2
-grow_vertical = 0
 offset_transform_enabled = true
-offset_transform_position_ratio = Vector2(0, 1)
+offset_transform_position_ratio = Vector2(0, -1)
 theme_override_font_sizes/font_size = 12
 text = "Vitality"
 horizontal_alignment = 1
 uppercase = true
 
-[node name="Label Spacer" type="ColorRect" parent="StatusContainer" unique_id=32725724]
-custom_minimum_size = Vector2(0, 14)
+[node name="Button" type="Button" parent="StatusContainer" unique_id=1630709110 node_paths=PackedStringArray("shortcut_context")]
 layout_mode = 2
-size_flags_stretch_ratio = 0.0
-color = Color(1, 1, 1, 0)
+shortcut_context = NodePath("../..")
+theme_override_styles/normal = SubResource("StyleBoxLine_g2tnx")
+text = "Inventory"
 
-[node name="TurnsContainer" type="HBoxContainer" parent="StatusContainer" unique_id=1450694528]
-custom_minimum_size = Vector2(0, 27.555)
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="TableLabel" type="Label" parent="StatusContainer/TurnsContainer" unique_id=991603839]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Turns:"
-uppercase = true
-
-[node name="TurnCounter" type="Label" parent="StatusContainer/TurnsContainer" unique_id=284228162]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 1.59
-text = "0"
-horizontal_alignment = 2
-vertical_alignment = 2
+[connection signal="pressed" from="StatusContainer/Button" to="." method="_on_button_pressed"]
