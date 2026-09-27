@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d18jl1u7fljpp" path="res://assets/tmp/tmp-lock.png" id="2_ddn0o"]
 [ext_resource type="PackedScene" uid="uid://bru238crpmmjl" path="res://abstract/unlock_with_item.tscn" id="3_iol1d"]
 [ext_resource type="AudioStream" uid="uid://h5fgw3x2krxh" path="res://abstract/audio/crowbar_sound.wav" id="4_1y727"]
+[ext_resource type="Script" uid="uid://cxd1mw63quqwa" path="res://room_1/unlock_sound.gd" id="5_vcnhg"]
 
 [node name="Lock" unique_id=140587019 instance=ExtResource("1_6y3so")]
 item_id = "room-1-lock"
@@ -23,5 +24,7 @@ lock_id = "room-1"
 
 [node name="unlock_sound" type="AudioStreamPlayer2D" parent="." index="3" unique_id=97416692]
 stream = ExtResource("4_1y727")
+script = ExtResource("5_vcnhg")
 
 [connection signal="clicked" from="." to="UnlockWithItem" method="clicked"]
+[connection signal="unlocked" from="UnlockWithItem" to="unlock_sound" method="_on_unlock_with_item_unlocked"]
