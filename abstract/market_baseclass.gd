@@ -1,11 +1,14 @@
-extends "res://abstract/market_ui_1.gd"
+# Baseclass for Market
+class_name market_base
+extends Control
+	
 
+#signal cast_signal(soul_amount, price, crowbar, item2, item3)
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+enum {CROWBAR = 100, ITEM2 = 200, ITEM3 = 300}
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+var market_called = false
+var soul_amount = 0
+#var crowbar = 100
+#var item2 = 200
+#var item3 = 300

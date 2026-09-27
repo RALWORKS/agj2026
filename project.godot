@@ -21,6 +21,8 @@ MyInventory="*uid://c3bne2hugege2"
 Status="*uid://dx4hhppnnd8mp"
 StatusBar="*uid://bh6xfpkoclj6n"
 Cursor="*uid://c002h7qqnct36"
+MarketUi1="*uid://bm0p55tqfn4p7"
+MarketBaseclass="*uid://xdju8kjqdmd5"
 
 [display]
 
