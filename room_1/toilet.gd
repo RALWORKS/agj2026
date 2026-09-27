@@ -19,6 +19,6 @@ func on_unlock():
 
 func _on_toilet_clicked() -> void:
 	if fish_active == true:
-		$"../toilet_flush".play(0.5)
+		$"../toilet_flush".play()
 		await get_tree().create_timer(5.5).timeout
 		$"../toilet_flush".stop()

@@ -11,6 +11,6 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_unlock_with_item_unlocked() -> void:	
-	self.play(0.75)
-	await get_tree().create_timer(1.04).timeout
+#func _on_unlock_with_item_unlocked() -> void:	
+	#self.play(0.75)
+	#await get_tree().create_timer(1.04).timeout
