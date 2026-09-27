@@ -116,20 +116,21 @@ alignment = 1
 [node name="item1" parent="market_box/background/item_container" unique_id=140587019 instance=ExtResource("2_hpjhy")]
 position = Vector2(25, -50)
 scale = Vector2(0.7, 0.7)
+item_id = "crowbar"
 takeable = false
 shop_item = true
 
 [node name="item2" parent="market_box/background/item_container" unique_id=869137023 instance=ExtResource("3_hd0o0")]
 position = Vector2(227.99998, -54.499996)
 scale = Vector2(0.7, 0.7)
-item_id = "test_item2"
+item_id = "crowbar"
 takeable = false
 shop_item = true
 
 [node name="item3" parent="market_box/background/item_container" unique_id=186600851 instance=ExtResource("4_m7jrh")]
 position = Vector2(422, -55.5)
 scale = Vector2(0.7, 0.7)
-item_id = "test_item3"
+item_id = "crowbar"
 takeable = false
 shop_item = true
 

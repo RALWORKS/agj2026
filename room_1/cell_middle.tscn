@@ -157,7 +157,10 @@ _data = {
 [node name="CellMiddle" unique_id=1002500821 instance=ExtResource("1_0x0eg")]
 room_id = "cell_middle"
 
-[node name="Cell" parent="Background" parent_id_path=PackedInt32Array(931085633) index="0" unique_id=2013562304 instance=ExtResource("2_ouo2g")]
+[node name="Background" parent="." index="0" unique_id=931085633]
+texture = null
+
+[node name="Cell" parent="Background" index="0" unique_id=2013562304 instance=ExtResource("2_ouo2g")]
 position = Vector2(-1283.0001, -296.00006)
 scale = Vector2(1.3, 1.3)
 

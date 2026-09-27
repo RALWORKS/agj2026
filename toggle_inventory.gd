@@ -16,12 +16,18 @@ func _process(delta: float) -> void:
 		await get_tree().create_timer(debounce).timeout
 		_toggling = false
 	
+	if Input.is_action_just_pressed("hide_inv") and $"..".active:
+		hide_inv()
+		
+func hide_inv():
+	$"../AnimationPlayer".play_backwards("SlideIn")
+	$"..".active = false
+
 func toggle():
 	if Status.paused:
 		return
 	if $"..".active:
-		$"../AnimationPlayer".play_backwards("SlideIn")
-		$"..".active = false
+		hide_inv()
 		return
 	$"../AnimationPlayer".play("SlideIn")
 	$"..".active = true
