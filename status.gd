@@ -7,6 +7,8 @@ var paused = true
 
 var cur_dialogue: Dialogue
 
+var son_following = false
+
 @export var locks: Dictionary[String, bool]
 
 @export var gone: Array[String]
