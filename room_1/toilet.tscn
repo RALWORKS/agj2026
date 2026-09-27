@@ -52,6 +52,7 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("8_rtlku")
 
 [node name="Hide" type="Polygon2D" parent="." index="8" unique_id=2061704844]
+visible = false
 position = Vector2(-484, -249)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_mhwg6")
