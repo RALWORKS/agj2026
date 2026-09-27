@@ -13,6 +13,7 @@
 
 [node name="Rat" unique_id=140587019 instance=ExtResource("1_rmtfy")]
 item_id = "rat"
+hide_for_dialogue_id = Array[String](["rat-says"])
 disabled = null
 dialogue = ExtResource("2_e5341")
 
