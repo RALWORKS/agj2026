@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://beeskxgrqqktv"]
+
+[ext_resource type="PackedScene" uid="uid://c20qgr7jnmjwg" path="res://abstract/clickable.tscn" id="1_rmtfy"]
+[ext_resource type="PackedScene" uid="uid://ctqbfo53q31qw" path="res://room_1/rat_says.tscn" id="2_e5341"]
+[ext_resource type="Texture2D" uid="uid://bur8oi15hfwc0" path="res://assets/tmp/rat.png" id="2_xgdcl"]
+
+[node name="Rat" unique_id=140587019 instance=ExtResource("1_rmtfy")]
+disabled = null
+dialogue = ExtResource("2_e5341")
+
+[node name="Texture" parent="." index="0" unique_id=288946275]
+texture = ExtResource("2_xgdcl")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2" unique_id=1645983553]
+polygon = PackedVector2Array(-187, 43, -102, 85, 29, 95, 87, 35, 93, -32, 17, -88, -83, -63, -147, -108, -167, -98)

@@ -13,6 +13,8 @@ var cur_dialogue: Dialogue
 
 @export var discovered_rooms: Array[String]
 
+@export var purchased_items: Array[Resource]
+
 var fallen = false
 
 var _fallen = false
@@ -41,3 +43,9 @@ func start_dialogue(dialogue: Resource):
 	cur_dialogue = dialogue.instantiate()
 	get_tree().get_root().add_child(cur_dialogue)
 	cur_dialogue.connect("done", end_dialogue)
+	
+func puchased(bought: Resource):
+	# Add items to array
+	purchased_items.append(bought)
+	
+	

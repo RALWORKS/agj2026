@@ -12,6 +12,8 @@ var _hovering: bool = false
 
 @export var hide_for_dialogue_id: String
 
+@export var disabled = false
+
 var is_icon = false
 
 @export var takeable = false
@@ -90,6 +92,8 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 
 
 func _on_clicked() -> void:
+	if disabled:
+		return
 	if item_id in Status.locks and Status.locks[item_id]:
 		return
 	if takeable:

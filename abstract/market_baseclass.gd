@@ -5,7 +5,7 @@ extends Control
 
 #signal cast_signal(soul_amount, price, crowbar, item2, item3)
 
-enum {CROWBAR = 100, ITEM2 = 200, ITEM3 = 300}
+enum {CROWBAR = 10, ITEM2 = 20, ITEM3 = 30}
 
 var market_called = false
 var soul_amount = 0

@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://bm0p55tqfn4p7"]
 
 [ext_resource type="Script" uid="uid://cw3e4i0s4fdf3" path="res://abstract/market_ui_1.gd" id="2_53afw"]
+[ext_resource type="PackedScene" uid="uid://dwu2jt34kdjad" path="res://abstract/test_inventory.tscn" id="2_hpjhy"]
+[ext_resource type="PackedScene" uid="uid://djg0c31qwuwyq" path="res://abstract/test_inventory2.tscn" id="3_hd0o0"]
+[ext_resource type="PackedScene" uid="uid://kmhxu6pm33kc" path="res://abstract/test_inventory3.tscn" id="4_m7jrh"]
 
 [sub_resource type="Animation" id="Animation_5dch4"]
 length = 0.001
@@ -38,7 +41,7 @@ _data = {
 &"slide_down": SubResource("Animation_53afw")
 }
 
-[node name="Control" type="Control" unique_id=441652235 node_paths=PackedStringArray("anims")]
+[node name="Control" type="Control" unique_id=441652235 node_paths=PackedStringArray("anims", "first_item", "second_item", "third_item")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -51,6 +54,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_53afw")
 anims = NodePath("market_slide")
+first_item = NodePath("market_box/background/item_container/item1")
+second_item = NodePath("market_box/background/item_container/item2")
+third_item = NodePath("market_box/background/item_container/item3")
 
 [node name="market_box" type="VBoxContainer" parent="." unique_id=2009041322]
 layout_mode = 1
@@ -107,23 +113,25 @@ grow_vertical = 2
 theme_override_constants/separation = 100
 alignment = 1
 
-[node name="item1" type="Button" parent="market_box/background/item_container" unique_id=301609393]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Crowbar"
-script = ExtResource("2_53afw")
+[node name="item1" parent="market_box/background/item_container" unique_id=140587019 instance=ExtResource("2_hpjhy")]
+position = Vector2(25, -50)
+scale = Vector2(0.7, 0.7)
+takeable = false
+shop_item = true
 
-[node name="item2" type="Button" parent="market_box/background/item_container" unique_id=2093984740]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Item 2"
-script = ExtResource("2_53afw")
+[node name="item2" parent="market_box/background/item_container" unique_id=869137023 instance=ExtResource("3_hd0o0")]
+position = Vector2(227.99998, -54.499996)
+scale = Vector2(0.7, 0.7)
+item_id = "test_item2"
+takeable = false
+shop_item = true
 
-[node name="item3" type="Button" parent="market_box/background/item_container" unique_id=1414014901]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Item 3"
-script = ExtResource("2_53afw")
+[node name="item3" parent="market_box/background/item_container" unique_id=186600851 instance=ExtResource("4_m7jrh")]
+position = Vector2(422, -55.5)
+scale = Vector2(0.7, 0.7)
+item_id = "test_item3"
+takeable = false
+shop_item = true
 
 [node name="price_label" type="Label" parent="market_box/background" unique_id=1653854883]
 layout_mode = 1
@@ -173,20 +181,13 @@ offset_right = 272.5
 offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 135
+theme_override_constants/separation = 270
 
 [node name="close" type="Button" parent="market_box/bottom/HBoxContainer" unique_id=1343261913]
 custom_maximum_size = Vector2(-1, 24)
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "CLOSE"
-
-[node name="sell" type="Button" parent="market_box/bottom/HBoxContainer" unique_id=213795650]
-custom_maximum_size = Vector2(-1, 24)
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "SELL"
-icon_alignment = 1
 
 [node name="purchase" type="Button" parent="market_box/bottom/HBoxContainer" unique_id=572753679]
 custom_maximum_size = Vector2(-1, 24)
@@ -216,9 +217,9 @@ text = "Not Enough Souls!"
 [node name="market_slide" type="AnimationPlayer" parent="." unique_id=993758232]
 libraries/ = SubResource("AnimationLibrary_hpjhy")
 
-[connection signal="pressed" from="market_box/background/item_container/item1" to="." method="_on_item_1_pressed"]
-[connection signal="pressed" from="market_box/background/item_container/item2" to="." method="_on_item_2_pressed"]
-[connection signal="pressed" from="market_box/background/item_container/item3" to="." method="_on_item_3_pressed"]
+[connection signal="tree_entered" from="." to="." method="_mounted"]
+[connection signal="icon_pressed" from="market_box/background/item_container/item1" to="." method="_on_item_1_icon_pressed"]
+[connection signal="icon_pressed" from="market_box/background/item_container/item2" to="." method="_on_test_item_2_icon_pressed"]
+[connection signal="icon_pressed" from="market_box/background/item_container/item3" to="." method="_on_test_item_3_icon_pressed"]
 [connection signal="pressed" from="market_box/bottom/HBoxContainer/close" to="." method="_on_close_pressed"]
-[connection signal="pressed" from="market_box/bottom/HBoxContainer/sell" to="." method="_on_sell_pressed"]
 [connection signal="pressed" from="market_box/bottom/HBoxContainer/purchase" to="." method="_on_purchase_pressed"]
