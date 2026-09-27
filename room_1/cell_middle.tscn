@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://bxi6h27k6to77" path="res://room_1/set_fallen.gd" id="6_11gk5"]
 [ext_resource type="PackedScene" uid="uid://eq7fysmrmi2s" path="res://abstract/dialogue/dialogue_starter.tscn" id="7_11gk5"]
 [ext_resource type="PackedScene" uid="uid://djefcsskp48hj" path="res://room_1/arrive_dialogue.tscn" id="8_mxd1d"]
+[ext_resource type="Script" uid="uid://cqi31a52m7urb" path="res://room_1/background_listener.gd" id="9_bfoxd"]
 
 [sub_resource type="Animation" id="Animation_qf3ue"]
 length = 0.001
@@ -224,5 +225,8 @@ script = ExtResource("6_11gk5")
 
 [node name="ArrivalRemarks" parent="." index="6" unique_id=1045975685 instance=ExtResource("7_11gk5")]
 dialogue = ExtResource("8_mxd1d")
+
+[node name="background_listener" type="Node" parent="." index="7" unique_id=942976480]
+script = ExtResource("9_bfoxd")
 
 [connection signal="discover" from="." to="Discover/PlayAnimation" method="play"]

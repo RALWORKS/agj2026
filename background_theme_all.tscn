@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bk42vypw2lxpp"]
+
+[ext_resource type="Script" uid="uid://di6ldn66kojxj" path="res://background_theme_all.gd" id="1_0tcuw"]
+[ext_resource type="AudioStream" uid="uid://cbgu1spfw406o" path="res://abstract/audio/dungeon_background_track.wav" id="1_13ilv"]
+
+[node name="BackgroundThemeAll" type="Control" unique_id=713747388]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0tcuw")
+
+[node name="background_theme" type="AudioStreamPlayer2D" parent="." unique_id=656725503]
+stream = ExtResource("1_13ilv")
+volume_db = -5.0
+autoplay = true
+
+[connection signal="finished" from="background_theme" to="." method="_on_background_theme_finished"]

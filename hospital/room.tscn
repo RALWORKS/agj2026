@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bhtcnbuysmp54" path="res://abstract/door.tscn" id="9_o223p"]
 [ext_resource type="AudioStream" uid="uid://bgp4axxmmlakh" path="res://abstract/audio/hospital_beeps.wav" id="10_ukxmg"]
 [ext_resource type="Script" uid="uid://dpvnjck7lq60k" path="res://hospital/hospital_beeps.gd" id="11_xm6yw"]
+[ext_resource type="Script" uid="uid://da2krigjpsqyc" path="res://hospital/background_music_listener.gd" id="12_xm6yw"]
 
 [sub_resource type="Animation" id="Animation_fa8ga"]
 length = 0.001
@@ -204,6 +205,9 @@ dialogue_id = "grim-reaper-1"
 stream = ExtResource("10_ukxmg")
 volume_db = 20.0
 script = ExtResource("11_xm6yw")
+
+[node name="background_music_listener" type="Node" parent="." index="10" unique_id=653089421]
+script = ExtResource("12_xm6yw")
 
 [connection signal="discover" from="." to="StartThinking" method="start"]
 [connection signal="found" from="DialogueListener" to="PlayAnimation" method="play"]

@@ -79,7 +79,6 @@ text = "No"
 
 [node name="main_theme" type="AudioStreamPlayer2D" parent="." unique_id=680016651]
 stream = ExtResource("3_feb5d")
-autoplay = true
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

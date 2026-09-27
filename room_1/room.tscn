@@ -161,6 +161,20 @@ _data = {
 &"Wake": SubResource("Animation_s38v5")
 }
 
+[sub_resource type="GDScript" id="GDScript_vdlfm"]
+script/source = "extends Node
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	BackgroundThemeAll.play_music()
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
 [node name="Cell" unique_id=1002500821 instance=ExtResource("1_fnk3y")]
 room_id = "jail-cell"
 
@@ -222,6 +236,9 @@ market = ExtResource("11_562uy")
 [node name="Son" parent="." index="8" unique_id=267778034 instance=ExtResource("13_vdlfm")]
 position = Vector2(1349, 509)
 scale = Vector2(-0.6, 0.6)
+
+[node name="background_music_listener" type="Node" parent="." index="9" unique_id=727044610]
+script = SubResource("GDScript_vdlfm")
 
 [connection signal="discover" from="." to="Discover/PlayAnimation" method="play"]
 [connection signal="found" from="DialogueListener" to="MarketStarter" method="start"]
