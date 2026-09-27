@@ -7,6 +7,7 @@
 [node name="Door" unique_id=140587019 instance=ExtResource("1_mbmb5")]
 
 [node name="Texture" parent="." index="0" unique_id=288946275]
+visible = false
 texture = ExtResource("2_forh8")
 
 [node name="Door" parent="." index="2" unique_id=863558398 instance=ExtResource("3_forh8")]
@@ -17,8 +18,5 @@ offset_bottom = 447.0
 rotation = -0.7853982
 destination = "uid://dy2t6s2jl2g5a"
 lock_id = "room-1"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="3" unique_id=1278308971]
-polygon = PackedVector2Array(-140, -350, 148, -365, 158, 146, -117, 325)
 
 [connection signal="clicked" from="." to="Door" method="go"]

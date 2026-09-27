@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://daj4qh1tyktri"]
 
 [ext_resource type="PackedScene" uid="uid://dyhokgsp7v7w1" path="res://abstract/room.tscn" id="1_fnk3y"]
-[ext_resource type="Texture2D" uid="uid://b2x1prfw2m163" path="res://assets/tmp/tmp-bars.png" id="2_gbf7g"]
+[ext_resource type="Texture2D" uid="uid://dj2fi46xclsyo" path="res://assets/backgrounds/cell/cell_2_TopLeftCorner.png" id="2_1563y"]
 [ext_resource type="PackedScene" uid="uid://ykbunqep4ksj" path="res://room_1/door.tscn" id="2_qf3ue"]
+[ext_resource type="Texture2D" uid="uid://b64cbn3c38wwb" path="res://assets/backgrounds/cell/cell_1.png" id="3_vdlfm"]
 [ext_resource type="PackedScene" uid="uid://cmf4kqmij5bga" path="res://room_1/lock.tscn" id="4_qf3ue"]
 [ext_resource type="PackedScene" uid="uid://bbi5m5pef446a" path="res://abstract/play_animation.tscn" id="6_s38v5"]
 [ext_resource type="PackedScene" uid="uid://klbubn2erxhq" path="res://room_1/toilet.tscn" id="7_gbf7g"]
@@ -11,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://pv13w0ljpnlr" path="res://abstract/dialogue/dialogue_listener.tscn" id="9_usblr"]
 [ext_resource type="PackedScene" uid="uid://cdkx3nl83qgdm" path="res://abstract/market_starter.tscn" id="10_0riu8"]
 [ext_resource type="PackedScene" uid="uid://bm0p55tqfn4p7" path="res://abstract/market_ui_1.tscn" id="11_562uy"]
+[ext_resource type="PackedScene" uid="uid://dtrx6kdiw1xyo" path="res://room_1/son.tscn" id="13_vdlfm"]
 
 [sub_resource type="Animation" id="Animation_qf3ue"]
 length = 0.001
@@ -159,29 +161,30 @@ _data = {
 &"Wake": SubResource("Animation_s38v5")
 }
 
-[node name="Room" unique_id=1002500821 instance=ExtResource("1_fnk3y")]
+[node name="Cell" unique_id=1002500821 instance=ExtResource("1_fnk3y")]
 room_id = "jail-cell"
 
-[node name="ColorRect" type="ColorRect" parent="Background" parent_id_path=PackedInt32Array(931085633) index="0" unique_id=146234394]
-offset_top = -10.0
-offset_right = 1928.0
-offset_bottom = 1085.0
-mouse_filter = 2
-color = Color(0, 0, 0, 1)
+[node name="Background" parent="." index="0" unique_id=931085633]
+scale = Vector2(0.67, 0.67)
+texture = ExtResource("2_1563y")
 
-[node name="Polygon2D" type="Polygon2D" parent="Background" parent_id_path=PackedInt32Array(931085633) index="1" unique_id=25196555]
-texture_repeat = 2
-texture = ExtResource("2_gbf7g")
-polygon = PackedVector2Array(574, -128, 584, 490, -275, 1037, -241, -190)
+[node name="Cell" type="Sprite2D" parent="Background" index="0" unique_id=1841064139]
+texture = ExtResource("3_vdlfm")
+centered = false
 
-[node name="Door" parent="Background/Polygon2D" index="0" unique_id=140587019 instance=ExtResource("2_qf3ue")]
-position = Vector2(280, 470)
+[node name="Door" parent="Background" index="1" unique_id=140587019 instance=ExtResource("2_qf3ue")]
+position = Vector2(148.65662, 971.49255)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Background/Door" index="3" unique_id=825364796]
+polygon = PackedVector2Array(-233.73123, 177.76111, 2.0896454, -1032.6865, 394.62695, -922.23883, 231.9404, 137.46265, -148.65662, 331.49243, -282.985, 389.70142)
 
 [node name="Lock" parent="." index="2" unique_id=1628269606 instance=ExtResource("4_qf3ue")]
-position = Vector2(428, 450)
+position = Vector2(251, 456)
+scale = Vector2(0.3, 0.3)
 
 [node name="Toilet" parent="." index="3" unique_id=729293470 instance=ExtResource("7_gbf7g")]
-position = Vector2(1131, 436)
+position = Vector2(1706, 806)
+scale = Vector2(0.8, 0.8)
 
 [node name="Discover" type="Node2D" parent="." index="4" unique_id=562376656]
 z_index = 50
@@ -206,14 +209,19 @@ player = NodePath("../AnimationPlayer")
 script = ExtResource("7_iebxs")
 
 [node name="Handle" parent="." index="5" unique_id=362842250 instance=ExtResource("8_gbf7g")]
-position = Vector2(1398, 637)
+position = Vector2(781.99994, 612.00006)
 rotation = -1.3421582
+scale = Vector2(0.3, 0.3)
 
 [node name="DialogueListener" parent="." index="6" unique_id=1743827519 instance=ExtResource("9_usblr")]
 dialogue_id = "tmp-hello"
 
 [node name="MarketStarter" parent="." index="7" unique_id=1462773004 instance=ExtResource("10_0riu8")]
 market = ExtResource("11_562uy")
+
+[node name="Son" parent="." index="8" unique_id=267778034 instance=ExtResource("13_vdlfm")]
+position = Vector2(1349, 509)
+scale = Vector2(-0.6, 0.6)
 
 [connection signal="discover" from="." to="Discover/PlayAnimation" method="play"]
 [connection signal="found" from="DialogueListener" to="MarketStarter" method="start"]

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dtrx6kdiw1xyo"]
+
+[ext_resource type="PackedScene" uid="uid://c20qgr7jnmjwg" path="res://abstract/clickable.tscn" id="1_214xb"]
+[ext_resource type="PackedScene" uid="uid://dpgw3kndxhmel" path="res://room_1/son_says.tscn" id="2_5hc04"]
+[ext_resource type="Texture2D" uid="uid://b4u5fqike47oh" path="res://assets/son.png" id="2_i67hq"]
+
+[node name="Son" unique_id=140587019 instance=ExtResource("1_214xb")]
+item_id = "kiddo"
+dialogue = ExtResource("2_5hc04")
+
+[node name="Texture" parent="." index="0" unique_id=288946275]
+texture = ExtResource("2_i67hq")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2" unique_id=1806995110]
+polygon = PackedVector2Array(-76, -25, -156, 110, -90, 149, -74, 244, 65, 208, 59, 126, 110, 92, 65, -9, 51, -21, 78, -56, 73, -150, -9, -189, -62, -244, -114, -205, -98, -156, -103, -125, -94, -53)
