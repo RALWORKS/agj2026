@@ -6,6 +6,7 @@
 script = ExtResource("1_3itfv")
 locks = Dictionary[String, bool]({
 "hospital": true,
+"puzzle-box": true,
 "rat": true,
 "room-1": true,
 "toilet": true

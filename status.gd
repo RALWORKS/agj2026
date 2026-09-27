@@ -19,6 +19,8 @@ var cur_dialogue: Dialogue
 
 @export var item_ids_given: Array[String]
 
+var puzzle_box_code = []
+
 var death_path = "res://death.tscn"
 
 var fallen = false:
