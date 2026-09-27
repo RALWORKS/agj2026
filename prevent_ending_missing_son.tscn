@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bmubgtkfdaik"]
+
+[ext_resource type="PackedScene" uid="uid://bhtcnbuysmp54" path="res://abstract/door.tscn" id="1_yfj44"]
+
+[node name="PreventEndingMissingSon" type="Node2D" unique_id=519835214]
+
+[node name="bg" type="ColorRect" parent="." unique_id=431420894]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="bg" unique_id=484020189]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 339.0
+offset_right = 1243.0
+offset_bottom = 552.0
+theme_override_font_sizes/font_size = 50
+text = "Wait. Kiddo didn't follow.
+   You have to go back."
+
+[node name="Door" parent="." unique_id=863558398 instance=ExtResource("1_yfj44")]
+offset_left = 1004.0
+offset_top = 793.0
+offset_right = 1154.0
+offset_bottom = 943.0
+rotation = 3.1415927
+destination = "uid://fy26ppryw17k"

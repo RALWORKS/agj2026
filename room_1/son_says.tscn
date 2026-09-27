@@ -14,8 +14,12 @@ texture = ExtResource("2_10j1i")
 
 [node name="1" parent="DATA" parent_id_path=PackedInt32Array(1453915955) index="0" unique_id=1287482103 instance=ExtResource("3_3kblh")]
 tag = "Kiddo"
-line = "Papa? Is it really you?"
+line = "Papa?"
 
 [node name="2" parent="DATA" parent_id_path=PackedInt32Array(1453915955) index="1" unique_id=462206685 instance=ExtResource("3_3kblh")]
 tag = "Kiddo"
-line = "When are we going home?"
+line = "Papa?! Help me."
+
+[node name="3" parent="DATA" parent_id_path=PackedInt32Array(1453915955) index="2" unique_id=1843146894 instance=ExtResource("3_3kblh")]
+tag = "Kiddo"
+line = "I can't move ..."

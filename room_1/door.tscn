@@ -18,7 +18,7 @@ offset_left = 0.0
 offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
-destination = "uid://dy2t6s2jl2g5a"
+destination = "uid://4nr0o75gnd3f"
 lock_id = "room-1"
 
 [connection signal="clicked" from="." to="Door" method="go"]
