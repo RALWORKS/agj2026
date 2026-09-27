@@ -8,7 +8,8 @@ extends Control
 enum {CROWBAR = 10, ITEM2 = 20, ITEM3 = 30}
 
 var PRICES = {
-	"crowbar": 10
+	"crowbar": 10,
+	"flush-handle": 10,
 }
 
 var market_called = false

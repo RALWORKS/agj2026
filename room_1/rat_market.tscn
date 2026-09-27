@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cag860hlgkn4s"]
+
+[ext_resource type="PackedScene" uid="uid://eisxn6r3xnu7" path="res://abstract/abstract_market.tscn" id="1_sa15v"]
+[ext_resource type="PackedScene" uid="uid://d68ai8bjolw7" path="res://room_1/handle.tscn" id="2_3022r"]
+
+[node name="RatMarket" unique_id=441652235 instance=ExtResource("1_sa15v")]
+
+[node name="market_label" parent="market_box/top" parent_id_path=PackedInt32Array(456622356) index="0" unique_id=290328956]
+text = "The Rat offers ..."
+
+[node name="Handle" parent="market_box/background/item_container" parent_id_path=PackedInt32Array(2116295921) index="0" unique_id=140587019 instance=ExtResource("2_3022r")]
+shop_item = true

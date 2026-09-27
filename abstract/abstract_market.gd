@@ -2,7 +2,7 @@ extends Control
 
 # variables
 var price #
-var data #
+var data: Resource #
 var current_item # indicates what item is pressed
 var player_souls #= MarketBaseclass.soul_amount
 var item_position # position of item
@@ -47,7 +47,9 @@ func on_item_pressed(item: Item, item_id: String):
 	$market_box/background/price_label.text = "Price: " + str(price)
 	current_item = 1
 	item_position = item
-	data = load("res://abstract/test_inventory.tscn")
+	var d = item.scene_file_path
+	data = load(d)
+	
 	$market_box/bottom/expensive.hide() # hide label
 
 #purchase

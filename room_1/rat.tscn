@@ -4,6 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://ctqbfo53q31qw" path="res://room_1/rat_says.tscn" id="2_e5341"]
 [ext_resource type="Texture2D" uid="uid://bnbyhlus1vcyw" path="res://assets/rat_hiding.png" id="3_xgdcl"]
 [ext_resource type="PackedScene" uid="uid://bru238crpmmjl" path="res://abstract/unlock_with_item.tscn" id="4_e5341"]
+[ext_resource type="PackedScene" uid="uid://dygx8eqolyeaa" path="res://room_1/cheese.tscn" id="5_c1v8t"]
+[ext_resource type="PackedScene" uid="uid://pv13w0ljpnlr" path="res://abstract/dialogue/dialogue_listener.tscn" id="5_ebi0e"]
+[ext_resource type="PackedScene" uid="uid://cdkx3nl83qgdm" path="res://abstract/market_starter.tscn" id="6_0cwms"]
+[ext_resource type="PackedScene" uid="uid://cag860hlgkn4s" path="res://room_1/rat_market.tscn" id="7_c1v8t"]
 
 [node name="Rat" unique_id=140587019 instance=ExtResource("1_rmtfy")]
 item_id = "rat"
@@ -21,5 +25,13 @@ polygon = PackedVector2Array(-250, 21, -108, 110, -5, 52, 70, 86, 139, 31, -5, -
 [node name="UnlockWithItem" parent="." index="3" unique_id=736216224 instance=ExtResource("4_e5341")]
 required_item_id = "cheese"
 lock_id = "rat"
+remove_key_resource = ExtResource("5_c1v8t")
+
+[node name="AwaitDoneTalking" parent="." index="4" unique_id=1743827519 instance=ExtResource("5_ebi0e")]
+dialogue_id = "rat-says"
+
+[node name="MarketStarter" parent="." index="5" unique_id=1462773004 instance=ExtResource("6_0cwms")]
+market = ExtResource("7_c1v8t")
 
 [connection signal="clicked" from="." to="UnlockWithItem" method="clicked"]
+[connection signal="found" from="AwaitDoneTalking" to="MarketStarter" method="start"]

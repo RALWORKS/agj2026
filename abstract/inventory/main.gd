@@ -42,6 +42,9 @@ func reload():
 		$GridContainer.add_child(s)
 	var i = 0
 	while i < data.size():
+		if not data[i]:
+			i += 1
+			continue
 		var c = data[i].instantiate()
 		c.as_icon()
 		c.inv_item = true
