@@ -14,3 +14,7 @@ func _process(delta: float) -> void:
 
 func on_unlock():
 	MyInventory.remove(handle)
+	#play toilet flush sound
+	$"../toilet_flush".play()
+	await get_tree().create_timer(6.0).timeout
+	$"../toilet_flush".stop()

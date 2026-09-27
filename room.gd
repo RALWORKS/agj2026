@@ -26,3 +26,7 @@ func load_player():
 	player = P.instantiate()
 	Status.player = player
 	add_child(player)
+
+
+func _on_toilet_flush_flush() -> void:
+	$Toilet/toilet_flush.play()
