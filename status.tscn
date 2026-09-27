@@ -9,6 +9,7 @@ locks = Dictionary[String, bool]({
 "puzzle-box": true,
 "rat": true,
 "room-1": true,
+"son": true,
 "toilet": true
 })
 char_colors = Dictionary[String, Color]({

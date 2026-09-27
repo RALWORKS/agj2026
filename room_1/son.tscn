@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://c20qgr7jnmjwg" path="res://abstract/clickable.tscn" id="1_214xb"]
 [ext_resource type="PackedScene" uid="uid://dpgw3kndxhmel" path="res://room_1/son_says.tscn" id="2_5hc04"]
 [ext_resource type="Texture2D" uid="uid://b4u5fqike47oh" path="res://assets/son.png" id="2_i67hq"]
+[ext_resource type="Script" uid="uid://hgj5ypyyy77" path="res://room_1/son.gd" id="4_5hc04"]
+[ext_resource type="PackedScene" uid="uid://bru238crpmmjl" path="res://abstract/unlock_with_item.tscn" id="5_wpe6l"]
 
 [node name="Son" unique_id=140587019 instance=ExtResource("1_214xb")]
 item_id = "kiddo"
@@ -13,3 +15,12 @@ texture = ExtResource("2_i67hq")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2" unique_id=1806995110]
 polygon = PackedVector2Array(-76, -25, -156, 110, -90, 149, -74, 244, 65, 208, 59, 126, 110, 92, 65, -9, 51, -21, 78, -56, 73, -150, -9, -189, -62, -244, -114, -205, -98, -156, -103, -125, -94, -53)
+
+[node name="Son" type="Node" parent="." index="3" unique_id=1631644470]
+script = ExtResource("4_5hc04")
+
+[node name="UnlockWithItem" parent="." index="4" unique_id=736216224 instance=ExtResource("5_wpe6l")]
+required_item_id = "young-soul"
+lock_id = "son"
+
+[connection signal="unlocked" from="UnlockWithItem" to="Son" method="unlock"]
