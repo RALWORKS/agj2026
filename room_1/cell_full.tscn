@@ -179,7 +179,7 @@ polygon = PackedVector2Array(-296.89337, 113.36981, -569.4503, -697.4407, -130.9
 visible = false
 
 [node name="Lock" parent="." index="2" unique_id=1628269606 instance=ExtResource("5_een7a")]
-position = Vector2(251, 456)
+position = Vector2(355, 632)
 scale = Vector2(0.3, 0.3)
 
 [node name="Discover" type="Node2D" parent="." index="3" unique_id=562376656]

@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dloqxvwt0a1el" path="res://room_1/cell_full.tscn" id="2_g4yfg"]
 [ext_resource type="PackedScene" uid="uid://bhtcnbuysmp54" path="res://abstract/door.tscn" id="3_5rmra"]
 [ext_resource type="PackedScene" uid="uid://d68ai8bjolw7" path="res://room_1/handle.tscn" id="4_g4yfg"]
+[ext_resource type="PackedScene" uid="uid://dbkippq16d3jw" path="res://abstract/set_player_position.tscn" id="5_07g27"]
 
 [node name="CellRight" unique_id=1002500821 instance=ExtResource("1_5rmra")]
 room_id = "cell_left"
@@ -23,3 +24,7 @@ destination = "uid://car1hrdaxk3qg"
 position = Vector2(1227, 922.00006)
 rotation = -1.43117
 scale = Vector2(0.8, 0.8)
+
+[node name="SetPlayerPosition" parent="." index="4" unique_id=421699032 instance=ExtResource("5_07g27")]
+new_position = Vector2(800, 700)
+new_scale = Vector2(-0.8, 0.8)
