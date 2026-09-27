@@ -3,6 +3,8 @@ extends Node
 
 var paused = true
 
+@export var death_message = "Your soul was totally depleted."
+
 var cur_dialogue: Dialogue
 
 @export var locks: Dictionary[String, bool]

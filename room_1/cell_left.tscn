@@ -81,10 +81,10 @@ tracks/2/path = NodePath("Background/Cell/Door:safe")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.17, 3.99),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.17, 0.33333334, 3.7333333, 3.99, 5.4333334, 5.7, 9.5, 9.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [true, false, true]
+"values": [true, false, false, false, true, true, false, false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7pmgu"]

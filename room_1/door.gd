@@ -14,4 +14,5 @@ func _process(delta: float) -> void:
 func on_go():
 	if not safe:
 		$Door.abort()
+		Status.death_message = "The guard caught you."
 		Status.die()

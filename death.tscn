@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dx1n2leqwhr6w"]
 
+[ext_resource type="Script" uid="uid://dehyjk3irwmvv" path="res://death.gd" id="1_531me"]
 [ext_resource type="Shader" uid="uid://dswgnexqfs4bt" path="res://assets/greyscale.gdshader" id="1_lf77f"]
 [ext_resource type="Texture2D" uid="uid://v3errbdabu0t" path="res://assets/father.png" id="1_qemge"]
 
@@ -397,6 +398,7 @@ _data = {
 
 [node name="Death" type="Node2D" unique_id=284517267]
 z_index = 2000
+script = ExtResource("1_531me")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1065248473]
 offset_right = 1920.0
