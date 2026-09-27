@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cqb6ykwvkaahx"]
+
+[node name="MediumEnding" type="Node2D" unique_id=519835214]
+
+[node name="bg" type="ColorRect" parent="." unique_id=431420894]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="bg" unique_id=484020189]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 339.0
+offset_right = 1243.0
+offset_bottom = 552.0
+theme_override_font_sizes/font_size = 50
+text = "You and your son escape together!
+Yay!"
