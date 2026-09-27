@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://cbgu1spfw406o" path="res://abstract/audio/dungeon_background_track.wav" id="1_13ilv"]
 
 [node name="BackgroundThemeAll" type="Control" unique_id=713747388]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
