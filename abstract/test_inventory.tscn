@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dwu2jt34kdjad"]
+
+[ext_resource type="PackedScene" uid="uid://c20qgr7jnmjwg" path="res://abstract/clickable.tscn" id="1_1p2wh"]
+[ext_resource type="Texture2D" uid="uid://cg8oas6ot6w15" path="res://assets/tmp/tmp-crowbar.png" id="2_uf2o1"]
+
+[node name="test_item1" unique_id=140587019 instance=ExtResource("1_1p2wh")]
+item_id = "test_item1"
+takeable = true
+
+[node name="Texture" parent="." index="0" unique_id=288946275]
+texture = ExtResource("2_uf2o1")
+
+[node name="Texture" parent="InvIcon" parent_id_path=PackedInt32Array(1125700512) index="0" unique_id=1007563994]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_uf2o1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2" unique_id=41910090]
+polygon = PackedVector2Array(-144, 114, -59, 6, 59, -90, 49, -171, 98, -147, 95, -72, -98, 101, -42, 98, -52, 154, -121, 128)

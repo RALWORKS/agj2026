@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bxgu8bb3a50sa"]
+
+[ext_resource type="Script" uid="uid://bl6gw6kb06e0m" path="res://test_scene.gd" id="1_uhqqe"]
+
+[node name="TestScene" type="Node2D" unique_id=482367047]
+script = ExtResource("1_uhqqe")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=921869494]
+offset_right = 2113.0
+offset_bottom = 1134.0
+
+[node name="Button" type="Button" parent="ColorRect" unique_id=1483412932]
+layout_mode = 0
+offset_left = 315.0
+offset_top = 340.0
+offset_right = 1791.0
+offset_bottom = 950.0
+
+[connection signal="pressed" from="ColorRect/Button" to="." method="_on_button_pressed"]
