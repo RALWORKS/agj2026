@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dn78dib6gqodf" path="res://abstract/abstract_market.gd" id="1_aekd0"]
 [ext_resource type="Script" uid="uid://cw3e4i0s4fdf3" path="res://abstract/market_ui_1.gd" id="1_ktt8r"]
-[ext_resource type="AudioStream" uid="uid://dn4nhg8cdi0sg" path="res://abstract/audio/open_marker_sound.mp3" id="3_ktt8r"]
+[ext_resource type="AudioStream" uid="uid://l3hmgy0iy7r" path="res://abstract/audio/market_closed_sound2.mp3" id="3_ktt8r"]
 [ext_resource type="AudioStream" uid="uid://dkf42yjg66lm" path="res://abstract/audio/market_purchase_sound.wav" id="4_3lylw"]
 
 [sub_resource type="Animation" id="Animation_5dch4"]
@@ -53,11 +53,11 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "clips": [{
-"end_offset": 0.0,
-"start_offset": 0.01,
+"end_offset": 1.4305,
+"start_offset": 1.3252,
 "stream": ExtResource("3_ktt8r")
 }],
-"times": PackedFloat32Array(0.01)
+"times": PackedFloat32Array(0)
 }
 tracks/1/use_blend = true
 
@@ -267,6 +267,7 @@ volume_db = 20.0
 
 [node name="purchase_sound" type="AudioStreamPlayer2D" parent="." unique_id=1217042562]
 stream = ExtResource("4_3lylw")
+volume_db = 20.0
 
 [connection signal="tree_entered" from="." to="." method="_mounted"]
 [connection signal="pressed" from="market_box/bottom/HBoxContainer/close" to="." method="_on_close_pressed"]

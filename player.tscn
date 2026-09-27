@@ -3,6 +3,7 @@
 [ext_resource type="Shader" uid="uid://dswgnexqfs4bt" path="res://assets/greyscale.gdshader" id="1_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://v3errbdabu0t" path="res://assets/father.png" id="2_i3pqv"]
 [ext_resource type="Script" uid="uid://16mg0evuorcg" path="res://player.gd" id="2_onrkg"]
+[ext_resource type="AudioStream" uid="uid://ccrfvuv305jje" path="res://abstract/audio/player_walk_sound2.wav" id="4_hqtel"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hqtel"]
 shader = ExtResource("1_i3pqv")
@@ -192,3 +193,8 @@ texture = ExtResource("2_i3pqv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player/Ghost" unique_id=504005330]
 libraries/ = SubResource("AnimationLibrary_hqtel")
+
+[node name="player_walk_sound" type="AudioStreamPlayer2D" parent="." unique_id=700918742]
+stream = ExtResource("4_hqtel")
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bm1cbky8r7h47" path="res://assets/backgrounds/hospital.png" id="2_fa8ga"]
 [ext_resource type="PackedScene" uid="uid://eq7fysmrmi2s" path="res://abstract/dialogue/dialogue_starter.tscn" id="3_ftqrv"]
 [ext_resource type="PackedScene" uid="uid://brym5fvw30dn2" path="res://hospital/thoughts.tscn" id="4_ftqrv"]
+[ext_resource type="AudioStream" uid="uid://mu7il8vpewep" path="res://abstract/audio/transport_sound.wav" id="4_xm6yw"]
 [ext_resource type="PackedScene" uid="uid://pv13w0ljpnlr" path="res://abstract/dialogue/dialogue_listener.tscn" id="5_tg4jt"]
 [ext_resource type="PackedScene" uid="uid://bbi5m5pef446a" path="res://abstract/play_animation.tscn" id="6_40g67"]
 [ext_resource type="PackedScene" uid="uid://dbkippq16d3jw" path="res://abstract/set_player_position.tscn" id="7_gren5"]
@@ -204,6 +205,9 @@ dialogue_id = "grim-reaper-1"
 stream = ExtResource("10_ukxmg")
 volume_db = 20.0
 script = ExtResource("11_xm6yw")
+
+[node name="transport_sound" type="AudioStreamPlayer2D" parent="." index="10" unique_id=1065317530]
+stream = ExtResource("4_xm6yw")
 
 [connection signal="discover" from="." to="StartThinking" method="start"]
 [connection signal="found" from="DialogueListener" to="PlayAnimation" method="play"]
