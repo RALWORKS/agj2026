@@ -1,6 +1,18 @@
 [gd_scene format=3 uid="uid://4nr0o75gnd3f"]
 
 [ext_resource type="Script" uid="uid://bmoc1lp6fgas4" path="res://ending.gd" id="1_fsb5k"]
+[ext_resource type="Texture2D" uid="uid://bisxffbu0bq7t" path="res://assets/backgrounds/badend.png" id="2_dmh3q"]
+[ext_resource type="Texture2D" uid="uid://bpaatv3u70mjs" path="res://assets/backgrounds/winend.png" id="3_iggq8"]
 
 [node name="Ending" type="Node2D" unique_id=959267700]
 script = ExtResource("1_fsb5k")
+
+[node name="bad_end" type="Sprite2D" parent="." unique_id=639052209]
+visible = false
+position = Vector2(957, 538)
+texture = ExtResource("2_dmh3q")
+
+[node name="good_end" type="Sprite2D" parent="." unique_id=1481105979]
+visible = false
+position = Vector2(957, 538)
+texture = ExtResource("3_iggq8")

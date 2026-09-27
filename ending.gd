@@ -9,13 +9,18 @@ func _ready() -> void:
 	if not Status.son_following:
 		var c = kiddo_not_following.instantiate()
 		add_child(c)
+		#BackgroundThemeAll.change_music()
 		return
 	if StatusBar.soul_percent < 50:
 		var c = medium.instantiate()
 		add_child(c)
+		BackgroundThemeAll.change_music("res://abstract/audio/bad_end_wind.mp3")
+		#BackgroundThemeAll.volume
 		return
 	var c = good.instantiate()
 	add_child(c)
+	BackgroundThemeAll.change_music("res://assets/win_waves.wav")
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

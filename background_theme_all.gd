@@ -22,6 +22,7 @@ func _on_background_theme_finished() -> void:
 
 func change_music(path):
 	$background_theme.stream = load(path)
+	$background_theme.volume_db = 24.0
 	$background_theme.play()
 	
 	
