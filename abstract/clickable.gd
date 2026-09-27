@@ -15,7 +15,14 @@ var is_icon = false
 @export var takeable = false
 var taken = false
 var inv_item = false
+@export var shop_item = false:
+	set(new_value):
+		shop_item  = new_value
+		if new_value:
+			as_icon()
 @export var dialogue: Resource
+
+signal icon_pressed
 
 var debounce = 0.2
 var _click = false
@@ -23,6 +30,8 @@ var _click = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	check_gone()
+	if shop_item:
+		as_icon()
 
 func check_gone():
 	if inv_item:
@@ -83,3 +92,7 @@ func _on_clicked() -> void:
 		return
 	if dialogue:
 		Status.start_dialogue(dialogue)
+
+
+func _on_inv_icon_pressed() -> void:
+	emit_signal("icon_pressed", item_id)
