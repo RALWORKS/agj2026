@@ -1,36 +1,51 @@
 [gd_scene format=3 uid="uid://bh6xfpkoclj6n"]
 
 [ext_resource type="Script" uid="uid://qsno2atlsvvt" path="res://status_bar.gd" id="1_fbxjq"]
+[ext_resource type="Theme" uid="uid://ds8omh5jqcyhq" path="res://assets/Roscoe.tres" id="1_m37av"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hehty"]
-bg_color = Color(0.478, 0.478, 0.478, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
+bg_color = Color(0.015686275, 0.015686275, 0.023529412, 1)
+border_width_left = 10
+border_width_top = 11
+border_width_right = 10
+border_width_bottom = 13
+border_color = Color(0.47843137, 0.47843137, 0.47843137, 1)
 border_blend = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g2tnx"]
 bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dljiy"]
-bg_color = Color(0.28627452, 0, 0.8627451, 1)
+bg_color = Color(0.050980393, 0.21176471, 0.63529414, 1)
+border_width_left = 7
+border_width_right = 7
+border_color = Color(0.015686275, 0.015686275, 0.023529412, 1)
+border_blend = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4pqwi"]
-bg_color = Color(0.6504577, 0.6504576, 1.92523e-07, 1)
+bg_color = Color(0.8901961, 0.52156866, 0.043137256, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_blend = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m37av"]
-bg_color = Color(1, 0, 0, 1)
+bg_color = Color(0.9647059, 0.92941177, 0.8627451, 1)
+border_width_left = 4
+border_width_right = 4
+border_color = Color(0.050980393, 0.21176471, 0.63529414, 1)
+border_blend = true
+shadow_offset = Vector2(0.075, 0)
 
 [node name="StatusBar" type="PanelContainer" unique_id=1733161956]
+visible = false
 z_index = 50
 custom_minimum_size = Vector2(155, 200)
-offset_right = 155.0
-offset_bottom = 59.0
+offset_right = 180.0
+offset_bottom = 200.0
+theme = ExtResource("1_m37av")
 theme_override_styles/panel = SubResource("StyleBoxFlat_hehty")
 script = ExtResource("1_fbxjq")
-soul_percent = 65.8
-vitality_percent = 41.0
 
 [node name="StatusContainer" type="VBoxContainer" parent="." unique_id=10987026]
 layout_mode = 2
@@ -47,7 +62,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/background = SubResource("StyleBoxFlat_g2tnx")
 theme_override_styles/fill = SubResource("StyleBoxFlat_dljiy")
-value = 65.8
+value = 100.0
 fill_mode = 3
 show_percentage = false
 
@@ -68,6 +83,7 @@ offset_transform_position_ratio = Vector2(0, 1)
 theme_override_font_sizes/font_size = 14
 text = "Soul"
 horizontal_alignment = 1
+uppercase = true
 
 [node name="WealthProgressBar" type="ProgressBar" parent="StatusContainer/ProgressBarContainer" unique_id=831567395]
 custom_minimum_size = Vector2(20, 0)
@@ -96,9 +112,10 @@ grow_horizontal = 2
 grow_vertical = 0
 offset_transform_enabled = true
 offset_transform_position_ratio = Vector2(0, 1)
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 12
 text = "Money"
 horizontal_alignment = 1
+uppercase = true
 
 [node name="VitalityProgressBar" type="ProgressBar" parent="StatusContainer/ProgressBarContainer" unique_id=333490027]
 custom_minimum_size = Vector2(20, 0)
@@ -107,7 +124,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/background = SubResource("StyleBoxFlat_g2tnx")
 theme_override_styles/fill = SubResource("StyleBoxFlat_m37av")
-value = 41.0
+value = 100.0
 rounded = true
 fill_mode = 3
 show_percentage = false
@@ -126,9 +143,10 @@ grow_horizontal = 2
 grow_vertical = 0
 offset_transform_enabled = true
 offset_transform_position_ratio = Vector2(0, 1)
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 12
 text = "Vitality"
 horizontal_alignment = 1
+uppercase = true
 
 [node name="Label Spacer" type="ColorRect" parent="StatusContainer" unique_id=32725724]
 custom_minimum_size = Vector2(0, 14)
@@ -139,16 +157,18 @@ color = Color(1, 1, 1, 0)
 [node name="TurnsContainer" type="HBoxContainer" parent="StatusContainer" unique_id=1450694528]
 custom_minimum_size = Vector2(0, 27.555)
 layout_mode = 2
+size_flags_horizontal = 4
 
 [node name="TableLabel" type="Label" parent="StatusContainer/TurnsContainer" unique_id=991603839]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Turns:"
+uppercase = true
 
 [node name="TurnCounter" type="Label" parent="StatusContainer/TurnsContainer" unique_id=284228162]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 1.59
-text = "40"
+text = "0"
 horizontal_alignment = 2
 vertical_alignment = 2

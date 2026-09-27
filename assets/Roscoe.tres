@@ -1,0 +1,14 @@
+[gd_resource type="Theme" format=3 uid="uid://ds8omh5jqcyhq"]
+
+[sub_resource type="SystemFont" id="SystemFont_6hhid"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lr0uq"]
+
+[resource]
+Roscoe/base_type = &"Panel"
+Roscoe/colors/Roscoe1 = Color(0.050980393, 0.21176471, 0.63529414, 1)
+Roscoe/colors/Roscoe2 = Color(0.9647059, 0.92941177, 0.8627451, 1)
+Roscoe/colors/Roscoe3 = Color(0.8901961, 0.52156866, 0.043137256, 1)
+Roscoe/colors/Roscoe4 = Color(0.015686275, 0.015686275, 0.023529412, 1)
+Roscoe/fonts/Text = SubResource("SystemFont_6hhid")
+Roscoe/styles/Style1 = SubResource("StyleBoxFlat_lr0uq")
