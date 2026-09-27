@@ -22,7 +22,7 @@ line = "Scratch my back and I'll scratch yours."
 
 [node name="3" parent="DATA" parent_id_path=PackedInt32Array(1453915955) index="2" unique_id=976599388 instance=ExtResource("3_bknti")]
 tag = "Rat"
-line = "I gots the good stuff. Ratty will take take of the nice prisoner."
+line = "I gots the good stuff. Ratty will take care of the nice prisoner."
 
 [node name="4" parent="DATA" parent_id_path=PackedInt32Array(1453915955) index="3" unique_id=186220824 instance=ExtResource("3_bknti")]
 tag = "Rat"
