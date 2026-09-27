@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dloqxvwt0a1el" path="res://room_1/cell_full.tscn" id="2_g4yfg"]
 [ext_resource type="PackedScene" uid="uid://ykbunqep4ksj" path="res://room_1/door.tscn" id="3_5bcv4"]
 [ext_resource type="PackedScene" uid="uid://bhtcnbuysmp54" path="res://abstract/door.tscn" id="3_5rmra"]
+[ext_resource type="AudioStream" uid="uid://02irns5ha67i" path="res://abstract/audio/guard_walk_sound.wav" id="4_5bcv4"]
 [ext_resource type="PackedScene" uid="uid://dbkippq16d3jw" path="res://abstract/set_player_position.tscn" id="5_07g27"]
 [ext_resource type="PackedScene" uid="uid://dm25h8q4ek7n5" path="res://room_1/guard.tscn" id="6_5bcv4"]
 
@@ -74,6 +75,7 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(1, 1), Vector2(0.4, 0.4), Vector2(-0.4, 0.4), Vector2(-1, 1)]
 }
+<<<<<<< Updated upstream
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
@@ -86,6 +88,43 @@ tracks/2/keys = {
 "update": 1,
 "values": [true, false, false, false, true, true, false, false, true]
 }
+=======
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Background/Guard/guard_walk_sound")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 2.0004,
+"start_offset": 0.0,
+"stream": ExtResource("4_5bcv4")
+}, {
+"end_offset": 2.5812,
+"start_offset": 0.9032,
+"stream": ExtResource("4_5bcv4")
+}, {
+"end_offset": 2.5812,
+"start_offset": 1.9034,
+"stream": ExtResource("4_5bcv4")
+}, {
+"end_offset": 2.5812,
+"start_offset": 1.7744,
+"stream": ExtResource("4_5bcv4")
+}, {
+"end_offset": 2.5812,
+"start_offset": 1.7744,
+"stream": ExtResource("4_5bcv4")
+}, {
+"end_offset": 0.0,
+"start_offset": 2.4842,
+"stream": ExtResource("4_5bcv4")
+}],
+"times": PackedFloat32Array(0, 4.5, 7.733333, 9.866667, 12.066667, 14.5)
+}
+tracks/2/use_blend = true
+>>>>>>> Stashed changes
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7pmgu"]
 _data = {
@@ -117,6 +156,8 @@ position = Vector2(-183, 680)
 root_node = NodePath("../../..")
 libraries/ = SubResource("AnimationLibrary_7pmgu")
 autoplay = &"patrol"
+
+[node name="guard_walk_sound" type="AudioStreamPlayer2D" parent="Background/Guard" index="7" unique_id=1600856882]
 
 [node name="DoorRight" parent="." index="2" unique_id=863558398 instance=ExtResource("3_5rmra")]
 offset_left = 1673.0
