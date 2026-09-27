@@ -25,6 +25,10 @@ func _mounted():
 
 func onload():
 	for c: Item in $market_box/background/item_container.get_children():
+		var r = load(c.scene_file_path)
+		if r in Status.purchased_items:
+			c.queue_free()
+			continue
 		c.connect("icon_pressed", func (item_id): on_item_pressed(c, item_id))
 
 # Called when the node enters the scene tree for the first time.
