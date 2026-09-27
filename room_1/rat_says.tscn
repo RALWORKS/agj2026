@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://1x7xitwaoi7u" path="res://abstract/dialogue/data.tscn" id="3_bknti"]
 
 [node name="Dialogue" unique_id=123258623 instance=ExtResource("1_bvg4u")]
+dialogue_id = "rat-says"
 
 [node name="Mouse" type="Sprite2D" parent="." index="0" unique_id=127650339]
 position = Vector2(1847, 609.00006)

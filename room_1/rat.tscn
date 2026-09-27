@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bur8oi15hfwc0" path="res://assets/tmp/rat.png" id="2_xgdcl"]
 
 [node name="Rat" unique_id=140587019 instance=ExtResource("1_rmtfy")]
+item_id = "rat"
 disabled = null
 dialogue = ExtResource("2_e5341")
 
