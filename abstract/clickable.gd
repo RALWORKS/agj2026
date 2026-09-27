@@ -80,7 +80,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event.is_action("click") and not _click:
 		emit_signal("clicked")
 		_click = true
-		await get_tree().create_timer(debounce).timeout
+		#await get_tree().create_timer(debounce).timeout
 		_click = false
 
 

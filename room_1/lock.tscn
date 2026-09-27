@@ -3,23 +3,19 @@
 [ext_resource type="PackedScene" uid="uid://c20qgr7jnmjwg" path="res://abstract/clickable.tscn" id="1_6y3so"]
 [ext_resource type="Texture2D" uid="uid://d18jl1u7fljpp" path="res://assets/tmp/tmp-lock.png" id="2_ddn0o"]
 [ext_resource type="PackedScene" uid="uid://bru238crpmmjl" path="res://abstract/unlock_with_item.tscn" id="3_iol1d"]
-[ext_resource type="Script" uid="uid://2ghi3fmde307" path="res://abstract/unlock_with_item.gd" id="4_1y727"]
 
 [node name="Lock" unique_id=140587019 instance=ExtResource("1_6y3so")]
 item_id = "room-1-lock"
 
 [node name="Texture" parent="." index="0" unique_id=288946275]
+visible = false
 texture = ExtResource("2_ddn0o")
 
 [node name="Texture" parent="InvIcon" parent_id_path=PackedInt32Array(1125700512) index="0" unique_id=1007563994]
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_ddn0o")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2" unique_id=365449596]
-polygon = PackedVector2Array(-104, 11, -87, 133, 50, 125, 53, 8, 23, 4, 22, -89, -16, -118, -60, -94, -75, -32, -76, 9)
-
-[node name="UnlockWithItem" parent="." index="3" unique_id=736216224 node_paths=PackedStringArray("lock") instance=ExtResource("3_iol1d")]
-script = ExtResource("4_1y727")
+[node name="UnlockWithItem" parent="." index="2" unique_id=736216224 node_paths=PackedStringArray("lock") instance=ExtResource("3_iol1d")]
 required_item_id = "crowbar"
 lock = NodePath("..")
 lock_id = "room-1"

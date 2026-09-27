@@ -182,6 +182,9 @@ visible = false
 position = Vector2(355, 632)
 scale = Vector2(0.3, 0.3)
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Lock" index="3" unique_id=2035678954]
+polygon = PackedVector2Array(-699.99994, -2479.9998, 660, -1863.3331, 86.66675, 1516.6667, -1286.6666, 2216.6665, -1263.3333, -753.33325)
+
 [node name="Discover" type="Node2D" parent="." index="3" unique_id=562376656]
 z_index = 50
 
