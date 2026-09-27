@@ -5,6 +5,8 @@ signal done
 
 @export var dialogue_id: String
 
+@export var anims: AnimationPlayer
+
 @onready var lines: Array[Node] = $DATA.get_children()
 
 var i = 0
@@ -29,6 +31,10 @@ func play():
 	$Text.char_color = "#ffffff"
 	if l.tag in Status.char_colors:
 		$Text.char_color = Status.char_colors[l.tag]
+	if not anims:
+		return
+	if anims.has_animation(l.name):
+		anims.play(l.name)
 	
 	
 func next():

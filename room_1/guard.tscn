@@ -3,10 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://c20qgr7jnmjwg" path="res://abstract/clickable.tscn" id="1_vu5dk"]
 [ext_resource type="Texture2D" uid="uid://c87dns1co3y6b" path="res://assets/tmp/guard.png" id="2_k5bfr"]
 [ext_resource type="PackedScene" uid="uid://b4bdsbe67ggvi" path="res://room_1/guard_says.tscn" id="2_pwl4x"]
+[ext_resource type="PackedScene" uid="uid://pv13w0ljpnlr" path="res://abstract/dialogue/dialogue_listener.tscn" id="4_pwl4x"]
+[ext_resource type="Script" uid="uid://n76f46hchpsg" path="res://room_1/guard.gd" id="5_4vj7j"]
+[ext_resource type="PackedScene" uid="uid://b88kmt00k0xfc" path="res://room_1/guard_gives_cheese.tscn" id="6_dgrqc"]
 
 [node name="Guard" unique_id=140587019 instance=ExtResource("1_vu5dk")]
 item_id = "guard"
-hide_for_dialogue_id = "guard-1"
+hide_for_dialogue_id = Array[String](["guard-1", "guard-2"])
 dialogue = ExtResource("2_pwl4x")
 
 [node name="Texture" parent="." index="0" unique_id=288946275]
@@ -14,3 +17,16 @@ texture = ExtResource("2_k5bfr")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2" unique_id=748079165]
 polygon = PackedVector2Array(-278, 440, -209, 42, -51, -265, -76, -449, 129, -524, 170, -406, 164, -286, 125, -260, 185, -158, 179, 303, 236, 423, 166, 520, -192, 509)
+
+[node name="AwaitIntro" parent="." index="3" unique_id=1743827519 instance=ExtResource("4_pwl4x")]
+dialogue_id = "guard-1"
+
+[node name="Guard" type="Node" parent="." index="4" unique_id=958965580]
+script = ExtResource("5_4vj7j")
+give_cheese_scene = ExtResource("6_dgrqc")
+
+[node name="AwaitThrowCheese" parent="." index="5" unique_id=989242647 instance=ExtResource("4_pwl4x")]
+dialogue_id = "guard-2"
+
+[connection signal="found" from="AwaitIntro" to="Guard" method="check_if_cheese_given"]
+[connection signal="found" from="AwaitThrowCheese" to="Guard" method="give_cheese"]

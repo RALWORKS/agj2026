@@ -15,6 +15,8 @@ var cur_dialogue: Dialogue
 
 @export var purchased_items: Array[Resource]
 
+@export var item_ids_given: Array[String]
+
 var fallen = false:
 	set(new_value):
 		fallen = new_value
@@ -39,11 +41,11 @@ func _process(delta: float) -> void:
 	pass
 
 func end_dialogue():
-	emit_signal("dialogue_ended", cur_dialogue.dialogue_id)
 	cur_dialogue.queue_free()
+	emit_signal("dialogue_ended", cur_dialogue.dialogue_id)
 
 func start_dialogue(dialogue: Resource):
-	if cur_dialogue:
+	if cur_dialogue and not cur_dialogue.is_queued_for_deletion():
 		return
 	cur_dialogue = dialogue.instantiate()
 	get_tree().get_root().add_child(cur_dialogue)

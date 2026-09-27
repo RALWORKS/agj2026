@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dygx8eqolyeaa"]
+
+[ext_resource type="PackedScene" uid="uid://c20qgr7jnmjwg" path="res://abstract/clickable.tscn" id="1_yhugf"]
+[ext_resource type="Texture2D" uid="uid://i1rwt30g23up" path="res://assets/gross_cheese.png" id="2_d1eg2"]
+
+[node name="Cheese" unique_id=140587019 instance=ExtResource("1_yhugf")]
+item_id = "cheese"
+takeable = true
+
+[node name="Texture" parent="." index="0" unique_id=288946275]
+texture = ExtResource("2_d1eg2")
+
+[node name="Texture" parent="InvIcon" parent_id_path=PackedInt32Array(1125700512) index="0" unique_id=1007563994]
+position = Vector2(18, 19)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_d1eg2")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2" unique_id=41910090]
+polygon = PackedVector2Array(-258, -15, -206, 230, 210, 132, 270, -98, 52, -236)
