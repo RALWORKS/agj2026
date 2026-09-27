@@ -14,6 +14,8 @@ process_mode = 4
 visible = false
 custom_minimum_size = Vector2(200, 200)
 clip_contents = true
+offset_right = 200.0
+offset_bottom = 200.0
 disabled = true
 
 [node name="Texture" type="Sprite2D" parent="InvIcon" unique_id=1007563994]

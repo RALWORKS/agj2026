@@ -17,6 +17,8 @@ var taken = false
 var inv_item = false
 @export var dialogue: Resource
 
+var debounce = 0.2
+var _click = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -66,11 +68,16 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		return
 	if not _hovering:
 		return
-	if event.is_action("click"):
+	if event.is_action("click") and not _click:
 		emit_signal("clicked")
+		_click = true
+		await get_tree().create_timer(debounce).timeout
+		_click = false
 
 
 func _on_clicked() -> void:
+	if item_id in Status.locks and Status.locks[item_id]:
+		return
 	if takeable:
 		take()
 		return

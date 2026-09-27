@@ -8,7 +8,8 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	lock.connect("clicked", clicked)
+	if lock:
+		lock.connect("clicked", clicked)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -17,9 +18,14 @@ func _process(delta: float) -> void:
 
 func unlock():
 	Status.locks[lock_id] = false
-	lock.queue_free()
-	Status.gone.push_back(lock.item_id)
+	if lock:
+		lock.queue_free()
+		Status.gone.push_back(lock.item_id)
 	
 func clicked():
 	if Cursor.item_id() == required_item_id:
 		unlock()
+
+
+func _on_toilet_clicked() -> void:
+	pass # Replace with function body.

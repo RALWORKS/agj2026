@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://d68ai8bjolw7"]
+
+[ext_resource type="PackedScene" uid="uid://c20qgr7jnmjwg" path="res://abstract/clickable.tscn" id="1_upodv"]
+[ext_resource type="Texture2D" uid="uid://cqcllo7ltoa1t" path="res://assets/toilet_handle.png" id="2_glrpg"]
+
+[node name="Handle" unique_id=140587019 instance=ExtResource("1_upodv")]
+item_id = "flush-handle"
+takeable = true
+
+[node name="Texture" parent="." index="0" unique_id=288946275]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_glrpg")
+
+[node name="Texture" parent="InvIcon" parent_id_path=PackedInt32Array(1125700512) index="0" unique_id=1007563994]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_glrpg")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2" unique_id=41910090]
+polygon = PackedVector2Array(-49, -56, -1, 62, 68, 48, 4, -99)

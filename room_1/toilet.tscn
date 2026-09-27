@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://klbubn2erxhq"]
+
+[ext_resource type="PackedScene" uid="uid://c20qgr7jnmjwg" path="res://abstract/clickable.tscn" id="1_mhwg6"]
+[ext_resource type="PackedScene" uid="uid://gtq5brxlc773" path="res://room_1/tmp_dialogue.tscn" id="2_73hm1"]
+[ext_resource type="Texture2D" uid="uid://c64e02kflnwjk" path="res://assets/prison_toilet_with_handle.png" id="2_mhwg6"]
+[ext_resource type="Texture2D" uid="uid://jfys1ipb2i0c" path="res://assets/prison_toilet_tank.png" id="3_73hm1"]
+[ext_resource type="PackedScene" uid="uid://bru238crpmmjl" path="res://abstract/unlock_with_item.tscn" id="5_jss3a"]
+[ext_resource type="Script" uid="uid://c43depj8bkghq" path="res://room_1/toilet.gd" id="6_vqilu"]
+
+[node name="Toilet" unique_id=140587019 instance=ExtResource("1_mhwg6")]
+item_id = "toilet"
+dialogue = ExtResource("2_73hm1")
+
+[node name="Texture" parent="." index="0" unique_id=288946275]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_73hm1")
+
+[node name="Unlocked" type="Sprite2D" parent="." index="1" unique_id=565602336]
+visible = false
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_mhwg6")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="3" unique_id=1563654470]
+polygon = PackedVector2Array(-82, -69, -210, 29, -173, 154, -57, 233, 66, 201, 63, 154, 113, 60, 185, -91, 188, -222, -28, -266, -85, -204)
+
+[node name="UnlockWithItem" parent="." index="4" unique_id=736216224 instance=ExtResource("5_jss3a")]
+required_item_id = "flush-handle"
+lock_id = "toilet"
+
+[node name="Toilet" type="Node" parent="." index="5" unique_id=368829014]
+script = ExtResource("6_vqilu")
+
+[connection signal="clicked" from="." to="UnlockWithItem" method="clicked"]
