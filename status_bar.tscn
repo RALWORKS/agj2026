@@ -46,7 +46,6 @@ vertical = true
 bg_color = Color(1, 1, 1, 1)
 
 [node name="StatusBar" type="PanelContainer" unique_id=1733161956]
-visible = false
 z_index = 50
 custom_minimum_size = Vector2(155, 200)
 offset_right = 160.0
@@ -54,14 +53,13 @@ offset_bottom = 200.0
 theme = ExtResource("1_m37av")
 theme_override_styles/panel = SubResource("StyleBoxFlat_hehty")
 script = ExtResource("1_fbxjq")
-soul_percent = 82.8
-vitality_percent = 9.2
 
 [node name="StatusContainer" type="VBoxContainer" parent="." unique_id=10987026]
 layout_mode = 2
 alignment = 1
 
 [node name="TurnsContainer" type="HBoxContainer" parent="StatusContainer" unique_id=1450694528]
+visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="StatusContainer/TurnsContainer" unique_id=991603839]
@@ -156,7 +154,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_styles/background = SubResource("StyleBoxFlat_g2tnx")
 theme_override_styles/fill = SubResource("StyleBoxFlat_m37av")
-value = 9.2
+value = 71.16
 fill_mode = 2
 show_percentage = false
 
