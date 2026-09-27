@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bm1cbky8r7h47" path="res://assets/backgrounds/hospital.png" id="1_fbb81"]
 [ext_resource type="Script" uid="uid://c4tdxsjw0eacd" path="res://hospital/fly_away.gd" id="1_kmx8h"]
 [ext_resource type="Texture2D" uid="uid://v3errbdabu0t" path="res://assets/father.png" id="2_kmx8h"]
+[ext_resource type="AudioStream" uid="uid://mu7il8vpewep" path="res://abstract/audio/transport_sound.wav" id="4_bsg3j"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_bsg3j"]
 viewport_path = NodePath("Texture")
@@ -74,6 +75,21 @@ tracks/2/keys = {
 "method": &"go"
 }]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("fly_away_sound")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.615,
+"start_offset": 0.5172,
+"stream": ExtResource("4_bsg3j")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bsg3j"]
 _data = {
@@ -115,3 +131,6 @@ centered = false
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1727632671]
 libraries/ = SubResource("AnimationLibrary_bsg3j")
 autoplay = &"fly"
+
+[node name="fly_away_sound" type="AudioStreamPlayer2D" parent="." unique_id=593433090]
+volume_db = 15.241

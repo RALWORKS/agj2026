@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ckirl20ot5kg6" path="res://assets/guard_bust.png" id="2_mbfvy"]
 [ext_resource type="Texture2D" uid="uid://i1rwt30g23up" path="res://assets/gross_cheese.png" id="3_j3lmo"]
 [ext_resource type="PackedScene" uid="uid://1x7xitwaoi7u" path="res://abstract/dialogue/data.tscn" id="3_mbfvy"]
-[ext_resource type="AudioStream" uid="uid://djtus2iilr6xq" path="res://abstract/audio/give_cheese.wav" id="5_mbfvy"]
+[ext_resource type="AudioStream" uid="uid://bg44ihys43h81" path="res://abstract/audio/splat_sound2.wav" id="5_mbfvy"]
 
 [sub_resource type="Animation" id="Animation_j3lmo"]
 resource_name = "throw"
