@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c87dns1co3y6b" path="res://assets/tmp/guard.png" id="2_j3lmo"]
 [ext_resource type="Texture2D" uid="uid://i1rwt30g23up" path="res://assets/gross_cheese.png" id="3_j3lmo"]
 [ext_resource type="PackedScene" uid="uid://1x7xitwaoi7u" path="res://abstract/dialogue/data.tscn" id="3_mbfvy"]
+[ext_resource type="AudioStream" uid="uid://djtus2iilr6xq" path="res://abstract/audio/give_cheese.wav" id="5_mbfvy"]
 
 [sub_resource type="Animation" id="Animation_j3lmo"]
 resource_name = "throw"
@@ -43,6 +44,21 @@ tracks/2/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("throw_cheese_sound")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_mbfvy")
+}],
+"times": PackedFloat32Array(0.1)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_mbfvy"]
 length = 0.001
@@ -112,3 +128,6 @@ line = "Here."
 
 [node name="ThrowCheese" type="AnimationPlayer" parent="." index="5" unique_id=1129317477]
 libraries/ = SubResource("AnimationLibrary_mbfvy")
+
+[node name="throw_cheese_sound" type="AudioStreamPlayer2D" parent="." index="6" unique_id=930689912]
+volume_db = 10.0

@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dn78dib6gqodf" path="res://abstract/abstract_market.gd" id="1_aekd0"]
 [ext_resource type="Script" uid="uid://cw3e4i0s4fdf3" path="res://abstract/market_ui_1.gd" id="1_ktt8r"]
+[ext_resource type="AudioStream" uid="uid://dn4nhg8cdi0sg" path="res://abstract/audio/open_marker_sound.mp3" id="3_ktt8r"]
+[ext_resource type="AudioStream" uid="uid://dkf42yjg66lm" path="res://abstract/audio/market_purchase_sound.wav" id="4_3lylw"]
 
 [sub_resource type="Animation" id="Animation_5dch4"]
 length = 0.001
@@ -17,6 +19,17 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(660, -400)]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("close_open_sound")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [],
+"times": PackedFloat32Array()
+}
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_53afw"]
 resource_name = "slide_down"
@@ -32,6 +45,21 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(660, 339.9995), Vector2(660, -400)]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("close_open_sound")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.01,
+"stream": ExtResource("3_ktt8r")
+}],
+"times": PackedFloat32Array(0.01)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hpjhy"]
 _data = {
@@ -64,7 +92,7 @@ anchor_bottom = 0.5
 offset_left = -300.0
 offset_top = -940.0
 offset_right = 300.0
-offset_bottom = -479.99997
+offset_bottom = -479.99994
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
@@ -233,6 +261,12 @@ text = "Not Enough Souls!"
 
 [node name="market_slide" type="AnimationPlayer" parent="." unique_id=993758232]
 libraries/ = SubResource("AnimationLibrary_hpjhy")
+
+[node name="close_open_sound" type="AudioStreamPlayer2D" parent="." unique_id=1589212450]
+volume_db = 20.0
+
+[node name="purchase_sound" type="AudioStreamPlayer2D" parent="." unique_id=1217042562]
+stream = ExtResource("4_3lylw")
 
 [connection signal="tree_entered" from="." to="." method="_mounted"]
 [connection signal="pressed" from="market_box/bottom/HBoxContainer/close" to="." method="_on_close_pressed"]

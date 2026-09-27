@@ -1,6 +1,7 @@
 extends Node
 
 var handle = preload("res://room_1/handle.tscn")
+var fish_active = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,7 +15,10 @@ func _process(delta: float) -> void:
 
 func on_unlock():
 	MyInventory.remove(handle)
-	#play toilet flush sound
-	$"../toilet_flush".play()
-	await get_tree().create_timer(6.0).timeout
-	$"../toilet_flush".stop()
+	fish_active = true
+
+func _on_toilet_clicked() -> void:
+	if fish_active == true:
+		$"../toilet_flush".play()
+		await get_tree().create_timer(6.0).timeout
+		$"../toilet_flush".stop()

@@ -45,4 +45,5 @@ stream = SubResource("AudioStreamWAV_rtlku")
 script = ExtResource("7_c2eqk")
 
 [connection signal="clicked" from="." to="UnlockWithItem" method="clicked"]
+[connection signal="clicked" from="." to="Toilet" method="_on_toilet_clicked"]
 [connection signal="unlocked" from="UnlockWithItem" to="Toilet" method="on_unlock"]

@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://dbkippq16d3jw" path="res://abstract/set_player_position.tscn" id="7_gren5"]
 [ext_resource type="PackedScene" uid="uid://c1vhhnm7kel0" path="res://hospital/grim_reaper_says.tscn" id="8_kdqg3"]
 [ext_resource type="PackedScene" uid="uid://bhtcnbuysmp54" path="res://abstract/door.tscn" id="9_o223p"]
+[ext_resource type="AudioStream" uid="uid://bgp4axxmmlakh" path="res://abstract/audio/hospital_beeps.wav" id="10_ukxmg"]
+[ext_resource type="Script" uid="uid://dpvnjck7lq60k" path="res://hospital/hospital_beeps.gd" id="11_xm6yw"]
 
 [sub_resource type="Animation" id="Animation_fa8ga"]
 length = 0.001
@@ -198,6 +200,13 @@ dialogue = ExtResource("8_kdqg3")
 [node name="WaitDoneTalking" parent="." index="8" unique_id=660764354 instance=ExtResource("5_tg4jt")]
 dialogue_id = "grim-reaper-1"
 
+[node name="hospital_beeps" type="AudioStreamPlayer2D" parent="." index="9" unique_id=2122199960]
+stream = ExtResource("10_ukxmg")
+volume_db = 20.0
+script = ExtResource("11_xm6yw")
+
 [connection signal="discover" from="." to="StartThinking" method="start"]
 [connection signal="found" from="DialogueListener" to="PlayAnimation" method="play"]
 [connection signal="found" from="WaitDoneTalking" to="Background/Door" method="unlock"]
+[connection signal="child_exiting_tree" from="hospital_beeps" to="hospital_beeps" method="_on_child_exiting_tree"]
+[connection signal="finished" from="hospital_beeps" to="hospital_beeps" method="_on_finished"]

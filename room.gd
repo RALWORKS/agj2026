@@ -15,6 +15,7 @@ func _ready() -> void:
 	if room_id and not room_id in Status.discovered_rooms:
 		Status.discovered_rooms.push_back(room_id)
 		emit_signal("discover")
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,7 +27,3 @@ func load_player():
 	player = P.instantiate()
 	Status.player = player
 	add_child(player)
-
-
-func _on_toilet_flush_flush() -> void:
-	$Toilet/toilet_flush.play()

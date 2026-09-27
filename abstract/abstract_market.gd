@@ -76,6 +76,7 @@ func _on_purchase_pressed() -> void:
 #add item to inventory
 func add_item(item):
 	MyInventory.add(item) # Add purchased item to inventory
+	$purchase_sound.play()
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
