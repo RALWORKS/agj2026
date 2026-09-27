@@ -145,9 +145,10 @@ rotation = 0.59166664
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Background/Cell/Door" index="3" unique_id=2073674132]
 polygon = PackedVector2Array(-296.89337, 113.36981, -569.4503, -697.4407, -130.92932, -765.61194, 314.24603, 149.6825, 63.870056, 548.04517, -43.26758, 601.9668)
 
-[node name="Guard" parent="Background" index="1" unique_id=1767729031 instance=ExtResource("6_5bcv4")]
+[node name="Guard" parent="Background" index="1" unique_id=1767729031 node_paths=PackedStringArray("disable_for_dialogue") instance=ExtResource("6_5bcv4")]
 z_index = -1
 position = Vector2(-183, 680)
+disable_for_dialogue = [NodePath("Anims"), NodePath("guard_walk_sound")]
 
 [node name="Anims" type="AnimationPlayer" parent="Background/Guard" index="3" unique_id=804451327]
 root_node = NodePath("../../..")

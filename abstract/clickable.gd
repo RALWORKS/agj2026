@@ -11,6 +11,7 @@ var _hovering: bool = false
 @export var item_id: String
 
 @export var hide_for_dialogue_id: Array[String]
+@export var disable_for_dialogue: Array[Node]
 
 @export var disabled = false
 
@@ -53,9 +54,17 @@ func as_icon():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Status.cur_dialogue and Status.cur_dialogue.dialogue_id in hide_for_dialogue_id:
+		for n in disable_for_dialogue:
+			if not n:
+				continue
+			n.process_mode = Node.PROCESS_MODE_DISABLED
 		visible = false
 	elif hide_for_dialogue_id:
 		visible = true
+		for n in disable_for_dialogue:
+			if not n:
+				continue
+			n.process_mode = Node.PROCESS_MODE_INHERIT
 
 func take():
 	if taken:
