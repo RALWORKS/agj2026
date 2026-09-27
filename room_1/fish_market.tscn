@@ -6,7 +6,7 @@
 [node name="FishMarket" unique_id=441652235 instance=ExtResource("1_2hxja")]
 
 [node name="market_label" parent="market_box/top" parent_id_path=PackedInt32Array(456622356) index="0" unique_id=290328956]
-text = "\"Fish\" offers you ..."
+text = "The Fish offers you ..."
 
 [node name="Crowbar" parent="market_box/background/item_container" parent_id_path=PackedInt32Array(2116295921) index="0" unique_id=140587019 instance=ExtResource("2_o1dm5")]
 shop_item = true
