@@ -7,8 +7,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if MarketUi1.market_called == true:
-		activate_market()
+	#if MarketUi1.market_called == true:
+		#activate_market()
 	#var condition
 	#if condition = true:
 	#	$"../AnimationPlayer".playbackwards("slide down")
