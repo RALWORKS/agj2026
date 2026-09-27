@@ -1,39 +1,79 @@
 [gd_scene format=3 uid="uid://dm14jd1vfxvd5"]
 
 [ext_resource type="Script" uid="uid://dl4ltgynmg21h" path="res://game.gd" id="1_80nbo"]
+[ext_resource type="FontFile" uid="uid://c12531h63kvp0" path="res://assets/fonts/Text_Grenze.ttf" id="2_e2o6t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vlfb"]
+bg_color = Color(0, 0.003921569, 0.011764706, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.98039216, 0.96862745, 0.9411765, 1)
 
 [node name="Game" type="Node2D" unique_id=1341571682]
 script = ExtResource("1_80nbo")
 starting_room = "res://hospital/room.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1909929779]
-offset_right = 1960.0
-offset_bottom = 1116.0
+offset_right = 1934.0
+offset_bottom = 1097.0
+color = Color(0.043137256, 0.07450981, 0.11764706, 1)
 
 [node name="Label" type="Label" parent="ColorRect" unique_id=1611988476]
 layout_mode = 0
-offset_left = 716.0
-offset_top = 388.0
-offset_right = 1300.0
-offset_bottom = 601.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
+offset_left = 512.0
+offset_top = 320.0
+offset_right = 1408.0
+offset_bottom = 512.0
+theme_override_colors/font_color = Color(0.98039216, 0.96862745, 0.9411765, 1)
+theme_override_fonts/font = ExtResource("2_e2o6t")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/normal = SubResource("StyleBoxFlat_5vlfb")
 text = "Sell your soul?"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Play" type="Button" parent="." unique_id=848263410]
-offset_left = 681.0
-offset_top = 491.0
-offset_right = 1120.0
-offset_bottom = 553.0
-theme_override_font_sizes/font_size = 50
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 512.0
+offset_top = 576.0
+offset_right = 896.0
+offset_bottom = 768.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.98039216, 0.96862745, 0.9411765, 1)
+theme_override_colors/font_pressed_color = Color(0.98039216, 0.96862745, 0.9411765, 1)
+theme_override_colors/font_hover_color = Color(0.98039216, 0.96862745, 0.9411765, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.98039216, 0.96862745, 0.9411765, 1)
+theme_override_fonts/font = ExtResource("2_e2o6t")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/normal = SubResource("StyleBoxFlat_5vlfb")
 text = "Yes"
 
 [node name="Quit" type="Button" parent="." unique_id=1920146074]
-offset_left = 681.0
-offset_top = 587.0
-offset_right = 1120.0
-offset_bottom = 664.0
-theme_override_font_sizes/font_size = 50
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1024.0
+offset_top = 576.0
+offset_right = 1408.0
+offset_bottom = 768.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.98039216, 0.96862745, 0.9411765, 1)
+theme_override_colors/font_pressed_color = Color(0.98039216, 0.96862745, 0.9411765, 1)
+theme_override_colors/font_hover_color = Color(0.98039216, 0.96862745, 0.9411765, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.98039216, 0.96862745, 0.9411765, 1)
+theme_override_fonts/font = ExtResource("2_e2o6t")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/normal = SubResource("StyleBoxFlat_5vlfb")
 text = "No"
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
