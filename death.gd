@@ -3,8 +3,9 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	BackgroundThemeAll.stop_music()
+	BackgroundThemeAll.playing = false
 	$Subtitle.text = Status.death_message
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

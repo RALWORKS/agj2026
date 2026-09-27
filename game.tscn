@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dl4ltgynmg21h" path="res://game.gd" id="1_80nbo"]
 [ext_resource type="FontFile" uid="uid://c12531h63kvp0" path="res://assets/fonts/Text_Grenze.ttf" id="2_e2o6t"]
-[ext_resource type="AudioStream" uid="uid://cbgu1spfw406o" path="res://abstract/audio/dungeon_background_track.wav" id="3_feb5d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vlfb"]
 bg_color = Color(0, 0.003921569, 0.011764706, 1)
@@ -76,9 +75,6 @@ theme_override_fonts/font = ExtResource("2_e2o6t")
 theme_override_font_sizes/font_size = 75
 theme_override_styles/normal = SubResource("StyleBoxFlat_5vlfb")
 text = "No"
-
-[node name="main_theme" type="AudioStreamPlayer2D" parent="." unique_id=680016651]
-stream = ExtResource("3_feb5d")
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
