@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://pv13w0ljpnlr" path="res://abstract/dialogue/dialogue_listener.tscn" id="5_ebi0e"]
 [ext_resource type="PackedScene" uid="uid://cdkx3nl83qgdm" path="res://abstract/market_starter.tscn" id="6_0cwms"]
 [ext_resource type="PackedScene" uid="uid://cag860hlgkn4s" path="res://room_1/rat_market.tscn" id="7_c1v8t"]
+[ext_resource type="AudioStream" uid="uid://bf5o48mf5rjc6" path="res://abstract/audio/rar_squeak.wav" id="9_0pd5r"]
+[ext_resource type="Script" uid="uid://eiajpf44dxve" path="res://room_1/rat_squeak_sound.gd" id="9_tqrq2"]
 
 [node name="Rat" unique_id=140587019 instance=ExtResource("1_rmtfy")]
 item_id = "rat"
@@ -33,5 +35,11 @@ dialogue_id = "rat-says"
 [node name="MarketStarter" parent="." index="5" unique_id=1462773004 instance=ExtResource("6_0cwms")]
 market = ExtResource("7_c1v8t")
 
+[node name="rat_squeak_sound" type="AudioStreamPlayer2D" parent="." index="6" unique_id=2102771110]
+stream = ExtResource("9_0pd5r")
+script = ExtResource("9_tqrq2")
+
 [connection signal="clicked" from="." to="UnlockWithItem" method="clicked"]
+[connection signal="clicked" from="." to="rat_squeak_sound" method="_on_rat_clicked"]
+[connection signal="unlocked" from="UnlockWithItem" to="rat_squeak_sound" method="_on_unlock_with_item_unlocked"]
 [connection signal="found" from="AwaitDoneTalking" to="MarketStarter" method="start"]
