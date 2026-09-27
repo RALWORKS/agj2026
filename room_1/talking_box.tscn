@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://xag8grlj64nl"]
 
 [ext_resource type="PackedScene" uid="uid://c20qgr7jnmjwg" path="res://abstract/clickable.tscn" id="1_q58hj"]
-[ext_resource type="PackedScene" uid="uid://gtq5brxlc773" path="res://room_1/tmp_dialogue.tscn" id="2_0l406"]
+[ext_resource type="PackedScene" uid="uid://gtq5brxlc773" path="res://room_1/fish_says.tscn" id="2_0l406"]
 
 [sub_resource type="Animation" id="Animation_0l406"]
 length = 0.001

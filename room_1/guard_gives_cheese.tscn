@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b88kmt00k0xfc"]
 
 [ext_resource type="PackedScene" uid="uid://xa8bvru8gofx" path="res://abstract/dialogue/main.tscn" id="1_6w0ks"]
-[ext_resource type="Texture2D" uid="uid://c87dns1co3y6b" path="res://assets/tmp/guard.png" id="2_j3lmo"]
+[ext_resource type="Texture2D" uid="uid://ckirl20ot5kg6" path="res://assets/guard_bust.png" id="2_mbfvy"]
 [ext_resource type="Texture2D" uid="uid://i1rwt30g23up" path="res://assets/gross_cheese.png" id="3_j3lmo"]
 [ext_resource type="PackedScene" uid="uid://1x7xitwaoi7u" path="res://abstract/dialogue/data.tscn" id="3_mbfvy"]
 [ext_resource type="AudioStream" uid="uid://djtus2iilr6xq" path="res://abstract/audio/give_cheese.wav" id="5_mbfvy"]
@@ -18,7 +18,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.100000024, 0.43333334),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0.2, 0.2), Vector2(0.2, 0.2), Vector2(0.3, 0.3)]
+"values": [Vector2(0.3, 0.3), Vector2(0.3, 0.3), Vector2(1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -72,7 +72,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.2, 0.2)]
+"values": [Vector2(0.3, 0.3)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -96,7 +96,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mbfvy"]
@@ -111,20 +111,29 @@ anims = NodePath("ThrowCheese")
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0" unique_id=197586513]
 position = Vector2(190, 571)
-texture = ExtResource("2_j3lmo")
+texture = ExtResource("2_mbfvy")
 
 [node name="Cheese" type="Sprite2D" parent="." index="1" unique_id=1792419144]
+visible = false
 position = Vector2(360, 583)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_j3lmo")
 
 [node name="1" parent="DATA" parent_id_path=PackedInt32Array(1453915955) index="0" unique_id=1287482103 instance=ExtResource("3_mbfvy")]
 tag = "Guard"
-line = "Oh. You want this."
+line = "Lunch?! You think I'm a WAITER?!"
 
-[node name="2" parent="DATA" parent_id_path=PackedInt32Array(1453915955) index="1" unique_id=1699280881 instance=ExtResource("3_mbfvy")]
+[node name="1_5" parent="DATA" parent_id_path=PackedInt32Array(1453915955) index="1" unique_id=1654685804 instance=ExtResource("3_mbfvy")]
 tag = "Guard"
-line = "Here."
+line = "Fine then."
+
+[node name="2" parent="DATA" parent_id_path=PackedInt32Array(1453915955) index="2" unique_id=1699280881 instance=ExtResource("3_mbfvy")]
+tag = "Guard"
+line = "Catch!"
+
+[node name="3" parent="DATA" parent_id_path=PackedInt32Array(1453915955) index="3" unique_id=397814482 instance=ExtResource("3_mbfvy")]
+tag = "Guard"
+line = "Or eat it off the floor. See if I care."
 
 [node name="ThrowCheese" type="AnimationPlayer" parent="." index="5" unique_id=1129317477]
 libraries/ = SubResource("AnimationLibrary_mbfvy")

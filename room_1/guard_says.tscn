@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b4bdsbe67ggvi"]
 
 [ext_resource type="PackedScene" uid="uid://xa8bvru8gofx" path="res://abstract/dialogue/main.tscn" id="1_i5x8d"]
-[ext_resource type="Texture2D" uid="uid://c87dns1co3y6b" path="res://assets/tmp/guard.png" id="2_weiem"]
+[ext_resource type="Texture2D" uid="uid://ckirl20ot5kg6" path="res://assets/guard_bust.png" id="2_weiem"]
 [ext_resource type="PackedScene" uid="uid://1x7xitwaoi7u" path="res://abstract/dialogue/data.tscn" id="3_weiem"]
 
 [node name="GuardSays" unique_id=123258623 instance=ExtResource("1_i5x8d")]
@@ -13,4 +13,4 @@ texture = ExtResource("2_weiem")
 
 [node name="1" parent="DATA" parent_id_path=PackedInt32Array(1453915955) index="0" unique_id=1287482103 instance=ExtResource("3_weiem")]
 tag = "Guard"
-line = "Got a problem, buddy?"
+line = "What NOW? Spit it out. I'm busy."

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://2e6eeamseosu" path="res://assets/fish_bust.png" id="2_7wp1g"]
 [ext_resource type="PackedScene" uid="uid://1x7xitwaoi7u" path="res://abstract/dialogue/data.tscn" id="2_tgpgy"]
 
-[node name="TMPDialogue" unique_id=123258623 instance=ExtResource("1_43oin")]
+[node name="FishSays" unique_id=123258623 instance=ExtResource("1_43oin")]
 dialogue_id = "tmp-hello"
 
 [node name="Fish" type="Sprite2D" parent="." index="0" unique_id=614728437]

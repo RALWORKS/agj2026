@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://klbubn2erxhq"]
 
 [ext_resource type="PackedScene" uid="uid://c20qgr7jnmjwg" path="res://abstract/clickable.tscn" id="1_mhwg6"]
-[ext_resource type="PackedScene" uid="uid://gtq5brxlc773" path="res://room_1/tmp_dialogue.tscn" id="2_73hm1"]
+[ext_resource type="PackedScene" uid="uid://gtq5brxlc773" path="res://room_1/fish_says.tscn" id="2_73hm1"]
 [ext_resource type="Texture2D" uid="uid://c64e02kflnwjk" path="res://assets/prison_toilet_with_handle.png" id="2_mhwg6"]
 [ext_resource type="Texture2D" uid="uid://jfys1ipb2i0c" path="res://assets/prison_toilet_tank.png" id="3_vqilu"]
 [ext_resource type="PackedScene" uid="uid://bru238crpmmjl" path="res://abstract/unlock_with_item.tscn" id="5_jss3a"]

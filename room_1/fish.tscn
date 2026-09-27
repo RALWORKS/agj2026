@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://chacpdt08ujs8"]
 
 [ext_resource type="PackedScene" uid="uid://c20qgr7jnmjwg" path="res://abstract/clickable.tscn" id="1_p20lt"]
-[ext_resource type="PackedScene" uid="uid://gtq5brxlc773" path="res://room_1/tmp_dialogue.tscn" id="2_8jv3l"]
+[ext_resource type="PackedScene" uid="uid://gtq5brxlc773" path="res://room_1/fish_says.tscn" id="2_8jv3l"]
 [ext_resource type="Texture2D" uid="uid://2e6eeamseosu" path="res://assets/fish_bust.png" id="3_8jv3l"]
 
 [sub_resource type="Animation" id="Animation_0l406"]
