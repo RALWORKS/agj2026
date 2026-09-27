@@ -19,7 +19,6 @@ offset_bottom = 200.0
 disabled = true
 
 [node name="Texture" type="Sprite2D" parent="InvIcon" unique_id=1007563994]
-visible = false
 texture = ExtResource("1_mjfbb")
 centered = false
 
