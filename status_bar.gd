@@ -74,7 +74,10 @@ func _init() -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	# visible = false # wait to be turned on
+	if get_tree().current_scene == self:
+		visible = true
+	else:
+		visible = false # wait to be turned on
 	Status.connect("show_health", turn_on)
 
 	for bar in find_children("*ProgressBar", "ProgressBar"):
