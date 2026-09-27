@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://urqu2iyn5fqs" path="res://abstract/inventory/main.tscn" id="1_ubdqs"]
 [ext_resource type="Script" uid="uid://q8tcudpohsec" path="res://toggle_inventory.gd" id="2_h0qpt"]
+[ext_resource type="AudioStream" uid="uid://c3qgpati1h4ii" path="res://abstract/audio/inventory_open_close_sound.wav" id="2_t5lbv"]
 
 [sub_resource type="Animation" id="Animation_ubdqs"]
 length = 0.001
@@ -34,6 +35,21 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(-810, 40), Vector2(48, 40)]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("inventory_open_close")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 1.1577,
+"start_offset": 0.0,
+"stream": ExtResource("2_t5lbv")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_t5lbv"]
 _data = {
@@ -50,6 +66,9 @@ active = false
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=798320745]
 libraries/ = SubResource("AnimationLibrary_t5lbv")
 
-[node name="Toggle" type="Control" parent="." index="2" unique_id=1423930302]
+[node name="inventory_open_close" type="AudioStreamPlayer2D" parent="." index="2" unique_id=758282050]
+volume_db = 24.0
+
+[node name="Toggle" type="Control" parent="." index="3" unique_id=1423930302]
 anchors_preset = 0
 script = ExtResource("2_h0qpt")

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dehyjk3irwmvv" path="res://death.gd" id="1_531me"]
 [ext_resource type="Shader" uid="uid://dswgnexqfs4bt" path="res://assets/greyscale.gdshader" id="1_lf77f"]
 [ext_resource type="Texture2D" uid="uid://v3errbdabu0t" path="res://assets/father.png" id="1_qemge"]
+[ext_resource type="AudioStream" uid="uid://0rcsbv76l1oh" path="res://abstract/audio/lose_oof.mp3" id="4_4868a"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lf77f"]
 shader = ExtResource("1_lf77f")
@@ -389,6 +390,21 @@ tracks/14/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/15/type = "audio"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("death_sound")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.3428,
+"stream": ExtResource("4_4868a")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/15/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4868a"]
 _data = {
@@ -474,3 +490,6 @@ offset_right = 1670.0
 offset_bottom = 692.0
 theme_override_font_sizes/font_size = 100
 text = "You died"
+
+[node name="death_sound" type="AudioStreamPlayer2D" parent="." unique_id=922152360]
+volume_db = 24.0
