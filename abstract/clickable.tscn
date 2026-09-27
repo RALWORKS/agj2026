@@ -3,6 +3,17 @@
 [ext_resource type="Script" uid="uid://utiwsph0gyen" path="res://abstract/clickable.gd" id="1_io3l6"]
 [ext_resource type="Texture2D" uid="uid://b3l7epr68iqnq" path="res://assets/tmp/item.png" id="1_mjfbb"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aekd0"]
+bg_color = Color(0.19434926, 0.19434929, 0.19434917, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.38170323, 0.3817033, 0.38170302, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3022r"]
+bg_color = Color(1.2032688e-06, 0.29661325, 0.4085603, 1)
+
 [node name="Clickable" type="Area2D" unique_id=140587019]
 script = ExtResource("1_io3l6")
 
@@ -16,6 +27,8 @@ custom_minimum_size = Vector2(200, 200)
 clip_contents = true
 offset_right = 200.0
 offset_bottom = 200.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_aekd0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3022r")
 disabled = true
 
 [node name="Texture" type="Sprite2D" parent="InvIcon" unique_id=1007563994]

@@ -44,7 +44,7 @@ func on_item_pressed(item: Item, item_id: String):
 	price = MarketBaseclass.PRICES[item_id]
 	$market_box/bottom/HBoxContainer/purchase.disabled = false # reset button
 	$market_box/background/souls_label.text = str(player_souls) + " Souls"
-	$market_box/background/price_label.text = "Price: " + str(price)
+	$market_box/background/price_label.text = "Price: " + str(price) + "% of your soul"
 	current_item = 1
 	item_position = item
 	var d = item.scene_file_path

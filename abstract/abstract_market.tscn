@@ -63,7 +63,7 @@ anchor_bottom = 0.5
 offset_left = -300.0
 offset_top = -940.0
 offset_right = 300.0
-offset_bottom = -539.99896
+offset_bottom = -479.99997
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
@@ -72,7 +72,7 @@ theme_override_constants/separation = 0
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 size_flags_vertical = 0
-color = Color(0.47087026, 0.25499192, 0.3395956, 1)
+color = Color(0.7607843, 0.35686275, 0, 1)
 
 [node name="market_label" type="Label" parent="market_box/top" unique_id=290328956]
 layout_mode = 1
@@ -86,11 +86,51 @@ grow_horizontal = 2
 theme_override_font_sizes/font_size = 40
 text = "MARKET"
 
+[node name="subheader" type="ColorRect" parent="market_box" unique_id=1093249176]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="market_label" type="Label" parent="market_box/subheader" unique_id=314519411]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -14.0
+offset_right = 40.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.6392157)
+theme_override_font_sizes/font_size = 20
+text = "\"Just let me have a little bit of your soul.\""
+
 [node name="background" type="ColorRect" parent="market_box" unique_id=1256322645]
 custom_minimum_size = Vector2(200, 300)
 layout_mode = 2
 size_flags_horizontal = 3
-color = Color(0.2708806, 0.69650716, 0.7136497, 1)
+color = Color(0.0026451456, 0.02115136, 0.16795957, 1)
+
+[node name="border_left" type="ColorRect" parent="market_box/background" unique_id=241838319]
+custom_minimum_size = Vector2(5, 300)
+layout_mode = 0
+offset_left = 595.0
+offset_right = 600.0
+offset_bottom = 300.0
+size_flags_horizontal = 3
+color = Color(0.055856667, 0.1617702, 0.6318278, 1)
+
+[node name="border_right" type="ColorRect" parent="market_box/background" unique_id=1120546034]
+custom_minimum_size = Vector2(5, 300)
+layout_mode = 0
+offset_right = 5.0
+offset_bottom = 300.0
+size_flags_horizontal = 3
+color = Color(0.055856667, 0.1617702, 0.6318278, 1)
 
 [node name="item_container" type="HBoxContainer" parent="market_box/background" unique_id=2116295921]
 layout_mode = 1
@@ -113,15 +153,16 @@ layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 5.0
+offset_left = 23.0
 offset_top = -34.0
-offset_right = 132.0
+offset_right = 150.0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 24
 text = "Price: "
 script = ExtResource("1_ktt8r")
 
 [node name="souls_label" type="Label" parent="market_box/background" unique_id=1210763025]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
@@ -134,14 +175,14 @@ offset_right = -5.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 24
-text = "0 Souls"
+text = "0% of your soul"
 horizontal_alignment = 2
 script = ExtResource("1_ktt8r")
 
 [node name="bottom" type="ColorRect" parent="market_box" unique_id=43340455]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-color = Color(0.80446786, 0.64302176, 0.3611922, 1)
+color = Color(0.10980392, 0.10980392, 0.11372549, 1)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="market_box/bottom" unique_id=1398007810]
 layout_mode = 1
