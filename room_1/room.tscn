@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://klbubn2erxhq" path="res://room_1/toilet.tscn" id="7_gbf7g"]
 [ext_resource type="Script" uid="uid://bxi6h27k6to77" path="res://room_1/set_fallen.gd" id="7_iebxs"]
 [ext_resource type="PackedScene" uid="uid://d68ai8bjolw7" path="res://room_1/handle.tscn" id="8_gbf7g"]
+[ext_resource type="PackedScene" uid="uid://pv13w0ljpnlr" path="res://abstract/dialogue/dialogue_listener.tscn" id="9_usblr"]
+[ext_resource type="PackedScene" uid="uid://cdkx3nl83qgdm" path="res://abstract/market_starter.tscn" id="10_0riu8"]
+[ext_resource type="PackedScene" uid="uid://bm0p55tqfn4p7" path="res://abstract/market_ui_1.tscn" id="11_562uy"]
 
 [sub_resource type="Animation" id="Animation_qf3ue"]
 length = 0.001
@@ -206,5 +209,11 @@ script = ExtResource("7_iebxs")
 position = Vector2(1398, 637)
 rotation = -1.3421582
 
+[node name="DialogueListener" parent="." index="6" unique_id=1743827519 instance=ExtResource("9_usblr")]
+dialogue_id = "tmp-hello"
+
+[node name="MarketStarter" parent="." index="7" unique_id=1462773004 instance=ExtResource("10_0riu8")]
+market = ExtResource("11_562uy")
+
 [connection signal="discover" from="." to="Discover/PlayAnimation" method="play"]
-[connection signal="clicked" from="Toilet" to="Toilet/UnlockWithItem" method="clicked"]
+[connection signal="found" from="DialogueListener" to="MarketStarter" method="start"]

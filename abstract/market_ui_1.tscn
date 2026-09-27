@@ -38,7 +38,7 @@ _data = {
 &"slide_down": SubResource("Animation_53afw")
 }
 
-[node name="Control" type="Control" unique_id=441652235]
+[node name="Control" type="Control" unique_id=441652235 node_paths=PackedStringArray("anims")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -50,6 +50,7 @@ offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_53afw")
+anims = NodePath("market_slide")
 
 [node name="market_box" type="VBoxContainer" parent="." unique_id=2009041322]
 layout_mode = 1
@@ -212,16 +213,8 @@ theme_override_colors/font_color = Color(0.8231201, 0, 0.13460618, 1)
 theme_override_font_sizes/font_size = 13
 text = "Not Enough Souls!"
 
-[node name="market_slide" type="AnimationPlayer" parent="market_box" unique_id=993758232]
-root_node = NodePath("../..")
+[node name="market_slide" type="AnimationPlayer" parent="." unique_id=993758232]
 libraries/ = SubResource("AnimationLibrary_hpjhy")
-
-[node name="Button" type="Button" parent="." unique_id=30885252]
-layout_mode = 0
-offset_left = 18.0
-offset_top = 556.0
-offset_right = 457.0
-offset_bottom = 707.0
 
 [connection signal="pressed" from="market_box/background/item_container/item1" to="." method="_on_item_1_pressed"]
 [connection signal="pressed" from="market_box/background/item_container/item2" to="." method="_on_item_2_pressed"]
@@ -229,4 +222,3 @@ offset_bottom = 707.0
 [connection signal="pressed" from="market_box/bottom/HBoxContainer/close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="market_box/bottom/HBoxContainer/sell" to="." method="_on_sell_pressed"]
 [connection signal="pressed" from="market_box/bottom/HBoxContainer/purchase" to="." method="_on_purchase_pressed"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

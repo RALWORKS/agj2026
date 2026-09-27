@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cdkx3nl83qgdm"]
+
+[ext_resource type="Script" uid="uid://dr54y7csjjg3c" path="res://abstract/market_starter.gd" id="1_b5qlu"]
+
+[node name="MarketStarter" type="Node" unique_id=1462773004]
+script = ExtResource("1_b5qlu")

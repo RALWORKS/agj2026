@@ -11,13 +11,16 @@ var data# = load("res://abstract/test_inventory.tscn")
 var current_item # indicates what item is pressed
 var player_souls #= MarketBaseclass.soul_amount
 #var market_called
+
+@export var anims: AnimationPlayer
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Want to get souls
 	#test
 	#load("res://toggle_inventory.gd")
-	player_souls = 500
+	if anims:
+		anims.play_backwards("slide_down")
 
 
 # When item 1
@@ -102,7 +105,9 @@ func _process(delta: float) -> void:
 	
 #Close
 func _on_close_pressed() -> void:
-	$"market_box/market_slide".play()	
+	anims.play("slide_down")
+	await get_tree().create_timer(1.0).timeout
+	queue_free()
 
 #test
 func _on_button_pressed() -> void: #test

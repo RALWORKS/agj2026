@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://c20qgr7jnmjwg" path="res://abstract/clickable.tscn" id="1_mhwg6"]
 [ext_resource type="PackedScene" uid="uid://gtq5brxlc773" path="res://room_1/tmp_dialogue.tscn" id="2_73hm1"]
 [ext_resource type="Texture2D" uid="uid://c64e02kflnwjk" path="res://assets/prison_toilet_with_handle.png" id="2_mhwg6"]
-[ext_resource type="Texture2D" uid="uid://jfys1ipb2i0c" path="res://assets/prison_toilet_tank.png" id="3_73hm1"]
 [ext_resource type="PackedScene" uid="uid://bru238crpmmjl" path="res://abstract/unlock_with_item.tscn" id="5_jss3a"]
 [ext_resource type="Script" uid="uid://c43depj8bkghq" path="res://room_1/toilet.gd" id="6_vqilu"]
 
@@ -13,7 +12,7 @@ dialogue = ExtResource("2_73hm1")
 
 [node name="Texture" parent="." index="0" unique_id=288946275]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_73hm1")
+texture = ExtResource("2_mhwg6")
 
 [node name="Unlocked" type="Sprite2D" parent="." index="1" unique_id=565602336]
 visible = false
