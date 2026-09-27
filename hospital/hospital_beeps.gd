@@ -12,4 +12,5 @@ func _on_child_exiting_tree(node: Node) -> void:
 	self.stop()
 
 func _on_finished() -> void:
+	await get_tree().create_timer(0.5).timeout
 	self.play() #loop audio
