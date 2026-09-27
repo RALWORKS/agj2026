@@ -4,7 +4,35 @@
 [ext_resource type="Texture2D" uid="uid://ckirl20ot5kg6" path="res://assets/guard_bust.png" id="2_mbfvy"]
 [ext_resource type="Texture2D" uid="uid://i1rwt30g23up" path="res://assets/gross_cheese.png" id="3_j3lmo"]
 [ext_resource type="PackedScene" uid="uid://1x7xitwaoi7u" path="res://abstract/dialogue/data.tscn" id="3_mbfvy"]
+[ext_resource type="Texture2D" uid="uid://b1lx06vsqlvib" path="res://assets/guard_bust_alternate.png" id="5_4fgof"]
 [ext_resource type="AudioStream" uid="uid://bg44ihys43h81" path="res://abstract/audio/splat_sound2.wav" id="5_mbfvy"]
+
+[sub_resource type="Animation" id="Animation_4fgof"]
+resource_name = "1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_4fgof")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cheese:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_j3lmo"]
 resource_name = "throw"
@@ -59,6 +87,45 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0.1)
 }
 tracks/3/use_blend = true
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_mbfvy")]
+}
+
+[sub_resource type="Animation" id="Animation_dw5g5"]
+resource_name = "3"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cheese:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_4fgof")]
+}
 
 [sub_resource type="Animation" id="Animation_mbfvy"]
 length = 0.001
@@ -98,16 +165,30 @@ tracks/2/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_mbfvy")]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mbfvy"]
 _data = {
+&"1": SubResource("Animation_4fgof"),
 &"2": SubResource("Animation_j3lmo"),
+&"3": SubResource("Animation_dw5g5"),
 &"RESET": SubResource("Animation_mbfvy")
 }
 
 [node name="GuardSays" unique_id=123258623 node_paths=PackedStringArray("anims") instance=ExtResource("1_6w0ks")]
 dialogue_id = "guard-2"
-anims = NodePath("ThrowCheese")
+anims = NodePath("Anims")
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0" unique_id=197586513]
 position = Vector2(190, 571)
@@ -135,7 +216,7 @@ line = "Catch!"
 tag = "Guard"
 line = "Or eat it off the floor. See if I care."
 
-[node name="ThrowCheese" type="AnimationPlayer" parent="." index="5" unique_id=1129317477]
+[node name="Anims" type="AnimationPlayer" parent="." index="5" unique_id=1129317477]
 libraries/ = SubResource("AnimationLibrary_mbfvy")
 
 [node name="throw_cheese_sound" type="AudioStreamPlayer2D" parent="." index="6" unique_id=930689912]

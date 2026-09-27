@@ -4,8 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://ckirl20ot5kg6" path="res://assets/guard_bust.png" id="2_weiem"]
 [ext_resource type="PackedScene" uid="uid://1x7xitwaoi7u" path="res://abstract/dialogue/data.tscn" id="3_weiem"]
 
-[node name="GuardSays" unique_id=123258623 instance=ExtResource("1_i5x8d")]
+[node name="GuardSays" unique_id=123258623 node_paths=PackedStringArray("anims") instance=ExtResource("1_i5x8d")]
 dialogue_id = "guard-1"
+anims = NodePath("")
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0" unique_id=197586513]
 position = Vector2(190, 571)
