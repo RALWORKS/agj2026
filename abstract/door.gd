@@ -4,7 +4,15 @@ extends Button
 
 @export var lock_id: String
 
+signal going
+
+var _abort = false
 var _locked = false
+
+func abort():
+	_abort = true
+	await get_tree().create_timer(0.2).timeout
+	_abort = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -48,6 +56,9 @@ func unlock():
 
 func go():
 	if disabled:
+		return
+	emit_signal("going")
+	if _abort:
 		return
 	get_tree().change_scene_to_file(destination)
 

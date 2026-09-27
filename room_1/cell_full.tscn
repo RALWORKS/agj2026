@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://dyhokgsp7v7w1" path="res://abstract/room.tscn" id="1_nb842"]
 [ext_resource type="Texture2D" uid="uid://dj2fi46xclsyo" path="res://assets/backgrounds/cell/cell_2_TopLeftCorner.png" id="2_td86v"]
 [ext_resource type="Texture2D" uid="uid://b64cbn3c38wwb" path="res://assets/backgrounds/cell/cell_1.png" id="3_a47km"]
-[ext_resource type="PackedScene" uid="uid://ykbunqep4ksj" path="res://room_1/door.tscn" id="4_so1gm"]
 [ext_resource type="PackedScene" uid="uid://cmf4kqmij5bga" path="res://room_1/lock.tscn" id="5_een7a"]
 [ext_resource type="PackedScene" uid="uid://bbi5m5pef446a" path="res://abstract/play_animation.tscn" id="7_xeqrf"]
 [ext_resource type="Script" uid="uid://bxi6h27k6to77" path="res://room_1/set_fallen.gd" id="8_c15kk"]
@@ -169,13 +168,6 @@ texture = ExtResource("2_td86v")
 z_index = 1
 texture = ExtResource("3_a47km")
 centered = false
-
-[node name="Door" parent="Background" index="1" unique_id=140587019 instance=ExtResource("4_so1gm")]
-position = Vector2(228.65662, 787.4925)
-rotation = 0.59166664
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Background/Door" index="3" unique_id=825364796]
-polygon = PackedVector2Array(-296.89337, 113.36981, -569.4503, -697.4407, -130.92932, -765.61194, 314.24603, 149.6825, 63.870056, 548.04517, -43.26758, 601.9668)
 
 [node name="_conceal_base" parent="." index="1" unique_id=430115067]
 visible = false

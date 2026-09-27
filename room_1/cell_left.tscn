@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dyhokgsp7v7w1" path="res://abstract/room.tscn" id="1_5rmra"]
 [ext_resource type="PackedScene" uid="uid://dloqxvwt0a1el" path="res://room_1/cell_full.tscn" id="2_g4yfg"]
+[ext_resource type="PackedScene" uid="uid://ykbunqep4ksj" path="res://room_1/door.tscn" id="3_5bcv4"]
 [ext_resource type="PackedScene" uid="uid://bhtcnbuysmp54" path="res://abstract/door.tscn" id="3_5rmra"]
 [ext_resource type="PackedScene" uid="uid://dbkippq16d3jw" path="res://abstract/set_player_position.tscn" id="5_07g27"]
 [ext_resource type="PackedScene" uid="uid://dm25h8q4ek7n5" path="res://room_1/guard.tscn" id="6_5bcv4"]
@@ -32,6 +33,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Background/Cell/Door:safe")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_5bcv4"]
 resource_name = "patrol"
@@ -61,6 +74,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(1, 1), Vector2(0.4, 0.4), Vector2(-0.4, 0.4), Vector2(-1, 1)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Background/Cell/Door:safe")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.17, 3.99),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7pmgu"]
 _data = {
@@ -76,6 +101,13 @@ texture = null
 
 [node name="Cell" parent="Background" index="0" unique_id=2013562304 instance=ExtResource("2_g4yfg")]
 position = Vector2(-14, -13)
+
+[node name="Door" parent="Background/Cell" index="6" unique_id=140587019 instance=ExtResource("3_5bcv4")]
+position = Vector2(228.65662, 787.4925)
+rotation = 0.59166664
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Background/Cell/Door" index="3" unique_id=2073674132]
+polygon = PackedVector2Array(-296.89337, 113.36981, -569.4503, -697.4407, -130.92932, -765.61194, 314.24603, 149.6825, 63.870056, 548.04517, -43.26758, 601.9668)
 
 [node name="Guard" parent="Background" index="1" unique_id=1767729031 instance=ExtResource("6_5bcv4")]
 z_index = -1
