@@ -110,6 +110,7 @@ func _on_clicked() -> void:
 		take()
 		return
 	if dialogue:
+		await get_tree().create_timer(0.2).timeout
 		Status.start_dialogue(dialogue)
 
 

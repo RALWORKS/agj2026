@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b4u5fqike47oh" path="res://assets/son.png" id="2_i67hq"]
 [ext_resource type="Script" uid="uid://hgj5ypyyy77" path="res://room_1/son.gd" id="4_5hc04"]
 [ext_resource type="PackedScene" uid="uid://bru238crpmmjl" path="res://abstract/unlock_with_item.tscn" id="5_wpe6l"]
+[ext_resource type="PackedScene" uid="uid://cbxtm2rtc084f" path="res://room_1/soul.tscn" id="6_gsyxj"]
 
 [node name="Son" unique_id=140587019 instance=ExtResource("1_214xb")]
 item_id = "kiddo"
@@ -22,5 +23,7 @@ script = ExtResource("4_5hc04")
 [node name="UnlockWithItem" parent="." index="4" unique_id=736216224 instance=ExtResource("5_wpe6l")]
 required_item_id = "young-soul"
 lock_id = "son"
+remove_key_resource = ExtResource("6_gsyxj")
 
+[connection signal="clicked" from="." to="UnlockWithItem" method="clicked"]
 [connection signal="unlocked" from="UnlockWithItem" to="Son" method="unlock"]
