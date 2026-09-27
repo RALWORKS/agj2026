@@ -84,6 +84,8 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		return
 	if not _hovering:
 		return
+	if disabled:
+		return
 	if event.is_action("click") and not _click:
 		emit_signal("clicked")
 		_click = true
