@@ -17,6 +17,8 @@ var cur_dialogue: Dialogue
 
 @export var item_ids_given: Array[String]
 
+var death_path = "res://death.tscn"
+
 var fallen = false:
 	set(new_value):
 		fallen = new_value
@@ -33,8 +35,10 @@ signal show_health
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	StatusBar.connect("no_soul", die)
 
+func die():
+	get_tree().change_scene_to_file(death_path)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

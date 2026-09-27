@@ -2,11 +2,20 @@
 
 [ext_resource type="PackedScene" uid="uid://eisxn6r3xnu7" path="res://abstract/abstract_market.tscn" id="1_sa15v"]
 [ext_resource type="PackedScene" uid="uid://d68ai8bjolw7" path="res://room_1/handle.tscn" id="2_3022r"]
+[ext_resource type="PackedScene" uid="uid://bpu8ukm0gwnv0" path="res://room_1/bad_key.tscn" id="3_ue45r"]
 
 [node name="RatMarket" unique_id=441652235 instance=ExtResource("1_sa15v")]
 
 [node name="market_label" parent="market_box/top" parent_id_path=PackedInt32Array(456622356) index="0" unique_id=290328956]
 text = "The Rat offers ..."
 
-[node name="Handle" parent="market_box/background/item_container" parent_id_path=PackedInt32Array(2116295921) index="0" unique_id=140587019 instance=ExtResource("2_3022r")]
+[node name="item_container" parent="market_box/background" parent_id_path=PackedInt32Array(1256322645) index="2" unique_id=2116295921]
+offset_left = -218.0
+offset_right = 342.0
+
+[node name="Handle" parent="market_box/background/item_container" index="0" unique_id=140587019 instance=ExtResource("2_3022r")]
+shop_item = true
+
+[node name="Key" parent="market_box/background/item_container" index="1" unique_id=999521049 instance=ExtResource("3_ue45r")]
+position = Vector2(224, 0)
 shop_item = true

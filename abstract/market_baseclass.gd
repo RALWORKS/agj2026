@@ -10,6 +10,7 @@ enum {CROWBAR = 10, ITEM2 = 20, ITEM3 = 30}
 var PRICES = {
 	"crowbar": 10,
 	"flush-handle": 10,
+	"bad-key": 100,
 }
 
 var market_called = false

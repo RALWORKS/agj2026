@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bpu8ukm0gwnv0"]
+
+[ext_resource type="PackedScene" uid="uid://c20qgr7jnmjwg" path="res://abstract/clickable.tscn" id="1_cu78f"]
+[ext_resource type="Texture2D" uid="uid://ck5si82e5g7nj" path="res://assets/key.png" id="2_8u4pf"]
+
+[node name="Key" unique_id=140587019 instance=ExtResource("1_cu78f")]
+item_id = "bad-key"
+takeable = true
+
+[node name="Texture" parent="." index="0" unique_id=288946275]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_8u4pf")
+
+[node name="Texture" parent="InvIcon" parent_id_path=PackedInt32Array(1125700512) index="0" unique_id=1007563994]
+position = Vector2(18.000004, 24)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_8u4pf")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2" unique_id=41910090]
+polygon = PackedVector2Array(15, -63, -75, 22, -11, 62, 70, -28)
