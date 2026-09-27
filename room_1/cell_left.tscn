@@ -6,9 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://d68ai8bjolw7" path="res://room_1/handle.tscn" id="4_g4yfg"]
 
 [node name="CellRight" unique_id=1002500821 instance=ExtResource("1_5rmra")]
+room_id = "cell_left"
 
 [node name="Cell" parent="Background" parent_id_path=PackedInt32Array(931085633) index="0" unique_id=2013562304 instance=ExtResource("2_g4yfg")]
-position = Vector2(9, -7)
+position = Vector2(-14, -13)
 
 [node name="DoorRight" parent="." index="2" unique_id=863558398 instance=ExtResource("3_5rmra")]
 offset_left = 1673.0

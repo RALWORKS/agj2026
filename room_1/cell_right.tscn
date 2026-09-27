@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bhtcnbuysmp54" path="res://abstract/door.tscn" id="4_0mq3g"]
 
 [node name="CellRight" unique_id=1002500821 instance=ExtResource("1_c4iv7")]
+room_id = "cell_right"
 
 [node name="Cell" parent="Background" parent_id_path=PackedInt32Array(931085633) index="0" unique_id=2013562304 instance=ExtResource("2_0mq3g")]
 position = Vector2(-1825.0001, -990.00006)
