@@ -42,13 +42,16 @@ shadow_offset = Vector2(0.075, 0)
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_g2tnx"]
 color = Color(1, 1, 1, 1)
+vertical = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xqmao"]
+bg_color = Color(1, 1, 1, 1)
 
 [node name="StatusBar" type="PanelContainer" unique_id=1733161956]
-visible = false
 z_index = 50
 custom_minimum_size = Vector2(155, 200)
-offset_right = 180.0
-offset_bottom = 263.0
+offset_right = 160.0
+offset_bottom = 200.0
 theme = ExtResource("1_m37av")
 theme_override_styles/panel = SubResource("StyleBoxFlat_hehty")
 script = ExtResource("1_fbxjq")
@@ -82,11 +85,10 @@ layout_mode = 2
 
 [node name="ProgressBarContainer" type="HBoxContainer" parent="StatusContainer" unique_id=257173279]
 layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 3
 offset_transform_enabled = true
 offset_transform_position = Vector2(0, 6.655)
-offset_transform_scale = Vector2(0.9, 0.9)
+offset_transform_scale = Vector2(1, 0.9)
 theme_override_constants/separation = 0
 
 [node name="SoulProgressBar" type="ProgressBar" parent="StatusContainer/ProgressBarContainer" unique_id=2012268132]
@@ -168,15 +170,17 @@ offset_bottom = 17.0
 grow_horizontal = 2
 offset_transform_enabled = true
 offset_transform_position_ratio = Vector2(0, -1)
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 11
 text = "Vitality"
 horizontal_alignment = 1
 uppercase = true
 
-[node name="Button" type="Button" parent="StatusContainer" unique_id=1630709110 node_paths=PackedStringArray("shortcut_context")]
+[node name="InventoryButton" type="Button" parent="StatusContainer" unique_id=1630709110 node_paths=PackedStringArray("shortcut_context")]
 layout_mode = 2
 shortcut_context = NodePath("../..")
 theme_override_styles/normal = SubResource("StyleBoxLine_g2tnx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xqmao")
 text = "Inventory"
 
-[connection signal="pressed" from="StatusContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="button_up" from="StatusContainer/InventoryButton" to="." method="_on_inventory_button_button_up"]
+[connection signal="pressed" from="StatusContainer/InventoryButton" to="." method="_on_button_pressed"]

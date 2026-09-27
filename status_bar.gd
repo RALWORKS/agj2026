@@ -97,4 +97,7 @@ func _process(_delta: float) -> void: pass
 
 func _on_button_pressed() -> void:
 	Input.action_press("inv")
+
+
+func _on_inventory_button_button_up() -> void:
 	Input.action_release("inv")
