@@ -20,7 +20,8 @@ func stop_music():
 func _on_background_theme_finished() -> void:
 	$background_theme.play()
 
-#func change_music(path):
-#	$background_theme.
+func change_music(path):
+	$background_theme.stream = load(path)
+	$background_theme.play()
 	
 	
