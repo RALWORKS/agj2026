@@ -19,3 +19,5 @@ texture = ExtResource("2_ddn0o")
 required_item_id = "crowbar"
 lock = NodePath("..")
 lock_id = "room-1"
+
+[connection signal="clicked" from="." to="UnlockWithItem" method="clicked"]

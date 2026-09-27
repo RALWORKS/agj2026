@@ -102,5 +102,3 @@ offset_top = 109.0
 offset_right = 843.0
 offset_bottom = 259.0
 destination = "uid://car1hrdaxk3qg"
-
-[connection signal="clicked" from="Toilet" to="Toilet/UnlockWithItem" method="clicked"]
