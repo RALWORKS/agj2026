@@ -5,12 +5,87 @@
 [ext_resource type="PackedScene" uid="uid://bhtcnbuysmp54" path="res://abstract/door.tscn" id="3_5rmra"]
 [ext_resource type="PackedScene" uid="uid://d68ai8bjolw7" path="res://room_1/handle.tscn" id="4_g4yfg"]
 [ext_resource type="PackedScene" uid="uid://dbkippq16d3jw" path="res://abstract/set_player_position.tscn" id="5_07g27"]
+[ext_resource type="PackedScene" uid="uid://dm25h8q4ek7n5" path="res://room_1/guard.tscn" id="6_5bcv4"]
+
+[sub_resource type="Animation" id="Animation_7pmgu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background/Guard:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-183, 680)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background/Guard:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5bcv4"]
+resource_name = "patrol"
+length = 20.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background/Guard:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.7, 10.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-183, 680), Vector2(1440, 518), Vector2(-183, 680)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background/Guard:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4.5, 4.9666667, 10.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.4, 0.4), Vector2(-0.4, 0.4), Vector2(-1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7pmgu"]
+_data = {
+&"RESET": SubResource("Animation_7pmgu"),
+&"patrol": SubResource("Animation_5bcv4")
+}
 
 [node name="CellRight" unique_id=1002500821 instance=ExtResource("1_5rmra")]
 room_id = "cell_left"
 
-[node name="Cell" parent="Background" parent_id_path=PackedInt32Array(931085633) index="0" unique_id=2013562304 instance=ExtResource("2_g4yfg")]
+[node name="Background" parent="." index="0" unique_id=931085633]
+texture = null
+
+[node name="Cell" parent="Background" index="0" unique_id=2013562304 instance=ExtResource("2_g4yfg")]
 position = Vector2(-14, -13)
+
+[node name="Guard" parent="Background" index="1" unique_id=1767729031 instance=ExtResource("6_5bcv4")]
+z_index = -1
+position = Vector2(-183, 680)
+
+[node name="Anims" type="AnimationPlayer" parent="Background/Guard" index="3" unique_id=804451327]
+root_node = NodePath("../../..")
+libraries/ = SubResource("AnimationLibrary_7pmgu")
+autoplay = &"patrol"
 
 [node name="DoorRight" parent="." index="2" unique_id=863558398 instance=ExtResource("3_5rmra")]
 offset_left = 1673.0

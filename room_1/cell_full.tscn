@@ -162,9 +162,11 @@ _data = {
 script = null
 
 [node name="Background" parent="." index="0" unique_id=931085633]
+z_index = -1
 texture = ExtResource("2_td86v")
 
 [node name="Cell" type="Sprite2D" parent="Background" index="0" unique_id=1841064139]
+z_index = 1
 texture = ExtResource("3_a47km")
 centered = false
 

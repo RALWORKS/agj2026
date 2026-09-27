@@ -10,6 +10,8 @@ var _hovering: bool = false
 
 @export var item_id: String
 
+@export var hide_for_dialogue_id: String
+
 var is_icon = false
 
 @export var takeable = false
@@ -48,7 +50,10 @@ func as_icon():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Status.cur_dialogue and Status.cur_dialogue.dialogue_id == hide_for_dialogue_id:
+		visible = false
+	elif hide_for_dialogue_id:
+		visible = true
 
 func take():
 	if taken:
