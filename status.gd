@@ -15,7 +15,11 @@ var cur_dialogue: Dialogue
 
 @export var purchased_items: Array[Resource]
 
-var fallen = false
+var fallen = false:
+	set(new_value):
+		fallen = new_value
+		if fallen:
+			emit_signal("show_health")
 
 var _fallen = false
 
@@ -23,6 +27,7 @@ var player: Player
 
 signal dialogue_ended
 
+signal show_health
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

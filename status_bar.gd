@@ -62,9 +62,14 @@ var vitality_bar: Range
 var progress_bars: Array[Range]
 @onready var turn_counter_label: Label = get_node("StatusContainer/TurnsContainer/TurnCounter")
 
+func turn_on():
+	visible = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	visible = false # wait to be turned on
+	Status.connect("show_health", turn_on)
+
 	for bar in find_children("*ProgressBar", "ProgressBar"):
 		match bar.name:
 			"SoulProgressBar":
@@ -88,7 +93,6 @@ func _ready() -> void:
 
 # # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void: pass
-	# visible = Status.fallen and not Status.paused
 
 
 func _on_button_pressed() -> void:
