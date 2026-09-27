@@ -1,5 +1,6 @@
 extends Node
 
+var handle = preload("res://room_1/handle.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,3 +11,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if not Status.locks["toilet"]:
 		$"../Unlocked".visible = true
+
+func on_unlock():
+	MyInventory.remove(handle)

@@ -31,3 +31,4 @@ lock_id = "toilet"
 script = ExtResource("6_vqilu")
 
 [connection signal="clicked" from="." to="UnlockWithItem" method="clicked"]
+[connection signal="unlocked" from="UnlockWithItem" to="Toilet" method="on_unlock"]

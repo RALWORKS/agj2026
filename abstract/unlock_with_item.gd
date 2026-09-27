@@ -6,6 +6,8 @@ extends Node
 
 @export var lock_id: String
 
+signal unlocked
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if lock:
@@ -21,6 +23,7 @@ func unlock():
 	if lock:
 		lock.queue_free()
 		Status.gone.push_back(lock.item_id)
+	emit_signal("unlocked")
 	
 func clicked():
 	if Cursor.item_id() == required_item_id:

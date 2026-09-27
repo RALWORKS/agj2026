@@ -28,6 +28,11 @@ func add(item_resource: Resource):
 	data.push_back(item_resource)
 	reload()
 
+func remove(item_resource: Resource):
+	var i = data.find(item_resource)
+	data.remove_at(i)
+	reload()
+
 func reload():
 	for c in inv:
 		c.free()
