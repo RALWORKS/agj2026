@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bhtcnbuysmp54" path="res://abstract/door.tscn" id="4_s73ki"]
 [ext_resource type="PackedScene" uid="uid://bbi5m5pef446a" path="res://abstract/play_animation.tscn" id="5_16eqo"]
 [ext_resource type="Script" uid="uid://bxi6h27k6to77" path="res://room_1/set_fallen.gd" id="6_11gk5"]
+[ext_resource type="PackedScene" uid="uid://eq7fysmrmi2s" path="res://abstract/dialogue/dialogue_starter.tscn" id="7_11gk5"]
+[ext_resource type="PackedScene" uid="uid://djefcsskp48hj" path="res://room_1/arrive_dialogue.tscn" id="8_mxd1d"]
 
 [sub_resource type="Animation" id="Animation_qf3ue"]
 length = 0.001
@@ -147,6 +149,20 @@ tracks/5/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../ArrivalRemarks")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.5333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"start"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mxd1d"]
 _data = {
@@ -205,5 +221,8 @@ player = NodePath("../AnimationPlayer")
 
 [node name="SetFallen" type="Node" parent="Discover" index="3" unique_id=754849864]
 script = ExtResource("6_11gk5")
+
+[node name="ArrivalRemarks" parent="." index="6" unique_id=1045975685 instance=ExtResource("7_11gk5")]
+dialogue = ExtResource("8_mxd1d")
 
 [connection signal="discover" from="." to="Discover/PlayAnimation" method="play"]
