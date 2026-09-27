@@ -2,7 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://c20qgr7jnmjwg" path="res://abstract/clickable.tscn" id="1_rmtfy"]
 [ext_resource type="PackedScene" uid="uid://ctqbfo53q31qw" path="res://room_1/rat_says.tscn" id="2_e5341"]
-[ext_resource type="Texture2D" uid="uid://bur8oi15hfwc0" path="res://assets/tmp/rat.png" id="2_xgdcl"]
+[ext_resource type="Texture2D" uid="uid://bnbyhlus1vcyw" path="res://assets/rat_hiding.png" id="3_xgdcl"]
+[ext_resource type="PackedScene" uid="uid://bru238crpmmjl" path="res://abstract/unlock_with_item.tscn" id="4_e5341"]
 
 [node name="Rat" unique_id=140587019 instance=ExtResource("1_rmtfy")]
 item_id = "rat"
@@ -10,7 +11,15 @@ disabled = null
 dialogue = ExtResource("2_e5341")
 
 [node name="Texture" parent="." index="0" unique_id=288946275]
-texture = ExtResource("2_xgdcl")
+position = Vector2(-59, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_xgdcl")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2" unique_id=1645983553]
-polygon = PackedVector2Array(-187, 43, -102, 85, 29, 95, 87, 35, 93, -32, 17, -88, -83, -63, -147, -108, -167, -98)
+polygon = PackedVector2Array(-250, 21, -108, 110, -5, 52, 70, 86, 139, 31, -5, -118, -80, -138, -147, -108, -167, -98)
+
+[node name="UnlockWithItem" parent="." index="3" unique_id=736216224 instance=ExtResource("4_e5341")]
+required_item_id = "cheese"
+lock_id = "rat"
+
+[connection signal="clicked" from="." to="UnlockWithItem" method="clicked"]
