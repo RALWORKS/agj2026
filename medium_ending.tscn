@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://d2a0rgukuskjq"]
 
+[ext_resource type="FontFile" uid="uid://bb6ekqum3kyrw" path="res://assets/fonts/Display_AlmendraSC.ttf" id="1_qofpc"]
+[ext_resource type="Texture2D" uid="uid://bisxffbu0bq7t" path="res://assets/backgrounds/badend.png" id="2_eiwpv"]
+
 [node name="MediumEnding" type="Node2D" unique_id=519835214]
 
 [node name="bg" type="ColorRect" parent="." unique_id=431420894]
@@ -8,14 +11,20 @@ offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="bg" unique_id=484020189]
+z_index = 1
 layout_mode = 0
-offset_left = 640.0
-offset_top = 339.0
-offset_right = 1243.0
-offset_bottom = 552.0
+offset_left = 43.0
+offset_top = 39.0
+offset_right = 752.0
+offset_bottom = 396.0
+theme_override_fonts/font = ExtResource("1_qofpc")
 theme_override_font_sizes/font_size = 50
 text = "You manage to free your son,
 but you gave up too much
 of your soul.
 
 You can't go home :("
+
+[node name="Badend" type="Sprite2D" parent="." unique_id=1377272068]
+position = Vector2(960, 540)
+texture = ExtResource("2_eiwpv")

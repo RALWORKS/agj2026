@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://cqb6ykwvkaahx"]
 
+[ext_resource type="FontFile" uid="uid://bb6ekqum3kyrw" path="res://assets/fonts/Display_AlmendraSC.ttf" id="1_dcbev"]
+[ext_resource type="Texture2D" uid="uid://bpaatv3u70mjs" path="res://assets/backgrounds/winend.png" id="2_ulwcf"]
+
 [node name="MediumEnding" type="Node2D" unique_id=519835214]
 
 [node name="bg" type="ColorRect" parent="." unique_id=431420894]
@@ -8,11 +11,17 @@ offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="bg" unique_id=484020189]
+z_index = 1
 layout_mode = 0
-offset_left = 640.0
-offset_top = 339.0
-offset_right = 1243.0
-offset_bottom = 552.0
+offset_left = 29.0
+offset_top = 25.0
+offset_right = 1554.0
+offset_bottom = 238.0
+theme_override_colors/font_color = Color(0.7607843, 0.35686275, 0, 1)
+theme_override_fonts/font = ExtResource("1_dcbev")
 theme_override_font_sizes/font_size = 50
-text = "You and your son escape together!
-Yay!"
+text = "You and your son have escaped! You can have fun together once again!"
+
+[node name="Winend" type="Sprite2D" parent="." unique_id=642141832]
+position = Vector2(960, 540)
+texture = ExtResource("2_ulwcf")
